@@ -1,0 +1,243 @@
+@font-face {
+    font-family: cartoon;
+    src:url('font/cartoon.ttf');
+}
+
+body{
+    text-align:center;
+    margin: 0 auto;
+    padding:0;
+    overflow-x: hidden;
+    /*background-image: url("img/1.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*-webkit-filter: blur(15px);*/
+    /*-moz-filter: blur(15px);*/
+    /*-o-filter: blur(15px);*/
+    /*-ms-filter: blur(15px);*/
+    /*filter: blur(15px);*/
+}
+
+#container{
+    background-image: url("http://localhost/wcp/page/img/0.jpg");
+    /*margin: 0 auto;*/
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    /*line-height: 600px;*/
+    /*float: left;*/
+    position: fixed;
+    z-index: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+#header{
+    width: 100%;
+    /*height: 120px;*/
+    /*top: 520px;*/
+    z-index: 9;
+    position: absolute;
+    text-align: center;
+
+    /*background-color: black;*/
+}
+#head{
+    top: 0;
+    /*position: absolute;*/
+    height: 10%;
+    width: 100%;
+    display: inline-block;
+    /*background-color: yellow;*/
+}
+#head ul{
+    padding:0;
+}
+#head ul li{
+    font-family: cartoon;
+    cursor:pointer;
+    color: black;
+    font-size: 26px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 25px;
+    padding:0;
+    /*float: left;*/
+    display: inline-block;
+    list-style: none;
+}
+#whole{
+    text-align: center;
+    margin: 0 auto;
+    position:absolute ;
+    width: 100%;
+    min-width: 1366px;
+    height: 70%;
+    top: 10%;
+}
+#body{
+    left: 80px;
+    position: absolute;
+    padding: 0;
+    height: 100%;
+}
+#bLeft{
+    position: absolute;
+    float: left;
+    height: 60%;
+    width: 120px;
+    cursor:pointer;
+    /*background-color: green;*/
+}
+#central{
+    position: absolute;
+    left: 120px;
+    float: left;
+    height: 400px;
+}
+.le {
+    overflow: hidden;
+    border: 10px solid white;
+    width: 580px;
+    height: 380px;
+    position: absolute;
+    float: left;
+    /*background-color: blue;*/
+}
+.ri{
+    position: absolute;
+    left: 600px;;
+    float: left;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    -webkit-filter: blur(15px);
+       -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+
+    -khtml-opacity: 0.85;
+    filter:alpha(Opacity=85);
+    -moz-opacity:0.85;
+    opacity: 0.85;
+}
+.text{
+    font-family: cartoon;
+    font-size: 17px;
+    height: 350px;
+    width: 260px;
+    position:absolute;
+    left: 620px;
+    top: 25px;
+    word-wrap:break-word ;
+    /*background-color: white;*/
+    border-radius: 5px;
+}
+#bRight{
+    left: 1020px;
+    position: absolute;
+    float: left;
+
+    /*background-color: grey;*/
+    height:400px;
+    width: 120px;
+    cursor:pointer;
+}
+
+
+#bLeft,#bRight{
+    -khtml-opacity: 0.8;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+#footer{
+    width: 100%;
+    height: 15%;
+    top: 80%;
+    z-index: 9;
+    position: absolute;
+    text-align: center;
+    background-color: black;
+}
+#foot{
+    position: relative;
+    min-width: 1366px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#foot #PRE{
+    position: absolute;
+    left: 0;
+}
+#PRE img{
+    position: absolute;
+    left: 0;
+}
+#foot #NEX{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+#NEX img{
+    position: absolute;
+    right: 0;
+}
+.Iright{
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    /*filter:FlipH;*/
+}
+#foot ul{
+    margin: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 90%;
+    left: 5%;
+    padding:0;
+    /*margin-top:55px;*/
+}
+#foot ul li{
+    position: relative;
+    list-style: none;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.img{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
+    -khtml-opacity: 0.7;
+    filter:alpha(Opacity=70);
+    -moz-opacity:0.7;
+    opacity: 0.7;
+    display: inline-block;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+.active{
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+}
