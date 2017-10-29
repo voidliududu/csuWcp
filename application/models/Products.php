@@ -15,7 +15,7 @@ class Products extends CI_Model
         $this->load->database();
         $this->load->library('session');
         $this->load->model('Studio');
-        $this->load->model('Intro');
+        //$this->load->model('Intro');
     }
     /**
      * 添加产品（product表部分）
@@ -84,8 +84,8 @@ class Products extends CI_Model
      * @return array
      * todo 添加一个delete字段
      * */
-    public function delProduct(){
-        $id = $this->session->user_data('pro_id');
+    public function delProduct($id){
+        //$id = $this->session->user_data('pro_id');
         if($id == null)
             return ['flag' => false,'error' => 'pro_id required'];
         $studio = $this->session->userdata('studio');
@@ -94,9 +94,9 @@ class Products extends CI_Model
         $result = $this->searchById($id);
         if($result['flag'] == false)
             return ['flag' => false,'error' => $result['error']];
-        if($result['product']->STUDIO != $studio)
+        if($result['product']->STU_ID != $studio)
             return ['flag' => false,'error' => 'denied'];
-        if($this->db->where('',$id)->update('PRODUCT',['DELETE'=>1]))
+        if($this->db->where('ID',$id)->update('PRODUCT',['DELETED'=>1]))
             return ['flag' => true,'pro_id' => $id];
         return ['flag' => false,'error' => 'database error'];
     }
@@ -106,7 +106,7 @@ class Products extends CI_Model
      * @return array
      * */
     public function searchById($id){
-        $product = $this->db->where('', $id)->where('DELETE',0)->get('PRODUCT')->row();
+        $product = $this->db->where('ID', $id)->where('DELETE',0)->get('PRODUCT')->row();
         if($product)
             return ['flag' => true,'product'=>$product];
         return ['flag' => false,'error' => 'no such product'];
@@ -116,7 +116,15 @@ class Products extends CI_Model
      * @return array array
      * */
     public function searchByCate($cateid,$offset = 0,$num = 0){
-        $product = $this->db->where('DELETE',0)->where('CATE',$cateid)->limit($offset,$num)->get('PRO_INFO');
+        $cate_map = [
+            '1' => 'WE_MOVIE',
+            '2' => 'WE_MUSIC',
+            '3' => 'WE_APP',
+            '4' => 'WE_MAG',
+            '5' => 'WE_CARTOON',
+            '6' => 'WE_ACT'
+        ];
+        $product = $this->db->limit($offset,$num)->get($cate_map[$cateid]);
         if(empty($product))
             return ['flag' => false,'error' => 'empty'];
         return $product;

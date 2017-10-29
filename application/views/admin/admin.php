@@ -16,7 +16,7 @@
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/define.js"></script>
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/adminJS.js"></script>
-    <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/adminJS_display.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('asset/');?>js/adminJS_display.js"></script>
 
 </head>
 <body style="font-family: 'Microsoft YaHei UI', sans-serif;width: 100%;background-color: #eaeef7" >

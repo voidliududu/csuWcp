@@ -123,7 +123,6 @@ window.onresize = function(){
             $('.c_r1_bg_right').css("right",'30px');
             $('.c_r1_bg_bottom').css("bottom",'30px');
 
-
         }
     }
 };

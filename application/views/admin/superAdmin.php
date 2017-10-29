@@ -1,9 +1,9 @@
 
 <?php
-    if(!$this->session->userdata('username')){
-        show_404();
-        exit();
-    }
+//    if(!$this->session->userdata('username')){
+//        show_404();
+//        exit();
+//    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -206,7 +206,7 @@
 <!--                    </table>-->
 <!---->
 <!--                </div>-->
-<!--                <!--分页-->-->
+<!--                <!--分页-->
 <!--                <div class="Pagination">-->
 <!--                    <ul class="pagination pagination-lg">-->
 <!--                        <li><a href="#">&laquo;</a></li>-->

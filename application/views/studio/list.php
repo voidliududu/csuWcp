@@ -24,9 +24,9 @@
             foreach ($studios->result() as $item){?>
             <tr>
                 <td><?php echo $count++;?></td>
-                <td class="pointer stu_detail"><?php echo $item->STU_NAME;?></td>
-                <td><?php echo $item->STU_DEPARTMENT;?></td>
-                <td class="pointer stu_change">修改></td>
+                <td class="pointer stu_detail"><?php echo $item->NAME;?></td>
+                <td><?php echo $item->DEPART;?></td>
+                <td class="pointer stu_change" id="<?php echo $item->ID;?>">修改</td>
                 <td class="pointer stu_detail">审核</td>
                 <td class="pointer stu_delete">删除</td>
             </tr>
@@ -48,4 +48,16 @@
             <li><a href="#">&raquo;</a></li>
         </ul>
     </div>
-
+<script>
+    $(function () {
+        $(".pointer.stu_change").on('click',function (e) {
+            $(visuable_frame).css("display","none");
+            $("#add_studio_page")
+                .load('http://127.0.0.2/index.php/Admin/modStudioView/' + e.target.id)
+                .css("display", "block");
+            console.log("hhh");
+            console.log(e);
+            visuable_frame = "#all_studio_page";
+        });
+    })
+</script>

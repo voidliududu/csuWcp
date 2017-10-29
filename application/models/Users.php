@@ -45,7 +45,7 @@ class Users extends CI_Model
             'CREATED' =>date('Y-m-d H:i:s'),
             'STU_ID' => $studio
         ];
-        if($this->db->where('ACCOUNT',$account)->select('USERS'))
+        if(!empty($this->db->where('ACCOUNT',$account)->select('ACCOUNT')->get('USERS')->row()))
             return ['error' => '用户名已存在','flag' => false];
         if($this->db->insert('USERS',$user))
             return ['flag' => true];

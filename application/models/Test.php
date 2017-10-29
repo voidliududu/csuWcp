@@ -26,4 +26,10 @@ class Test extends CI_Model
         $info['NAME'] = NULL;
         $this->db->where('ID',1)->update('TEST',$info);
     }
+
+    public function testUsers(){
+        $account = 'hello';
+        $result = $this->db->where("ACCOUNT",$account)->get('USERS')->row();
+        return $result;
+    }
 }

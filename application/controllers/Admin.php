@@ -15,10 +15,9 @@ class Admin extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Users');
         $this->load->model('Studio');
-        $this->load->library('session');
+        $this->load->library('Auth');
         $this->load->helper('form');
     }
-
     /*
      * @param account password
      *
@@ -32,8 +31,8 @@ class Admin extends CI_Controller
             $user = $this->Users->signIn($account, $password);
             if ($user['flag'] == true) {
                 $user = $user['user'];
-                $this->setLogin($user);
-                if($user->UID == 5)
+                $this->auth->login($user);
+                if($user->PRIVILEGE == 5)
                     $this->load->view('admin/superAdmin');
                 else
                     $this->load->view('admin/admin');
@@ -44,53 +43,44 @@ class Admin extends CI_Controller
             $this->load->view('admin/login',['flag' => 'first']);
         }
     }
-
     //登出并显示登录界面
     public function logout(){
-        $this->session->unset_userdata(['userid','username','privilege']);
+        $this->auth->logout();
         $this->load->view('login');
     }
 
-    /*
-         * 检查登录状态
-         * */
-    public function checkLogin(){
-        $userData = $this->session->userdata();
-        if($userData['userid'] and $userData['studio'] and ($userData['privilege']))
-            return true;
-        return false;
-    }
 
     /*
-     * 检查管理员登录状态
-     * */
-    public function checkAdminLogin(){
-        $userData = $this->session->userdata();
-        if($userData['userid'] and $userData['studio'] and ($userData['privilege'] == 5))
-            return true;
-        return false;
-    }
-
-    /*
-     * 设置登录状态
-     * */
-    private function setLogin($user){
-        $this->session->set_userdata([
-            'userid' => $user->UID,
-            'username' => $user->ACCOUNT,
-            'studio' => $user->STU_ID,
-            'privilege' => $user->PRIVILEGE
-        ]);
-    }
-
-
-    /*
-     * @param $studio->name,$studio->department
+     * 添加工作室
      *
      * */
     public function addStudio(){
         $flag = $this->Studio->addStudio();
-        $this->load->view('AddForm/studio',['flag' => $flag['flag']]);
+        $this->load->view('studio/add',['flag' => $flag]);
+    }
+    /**
+     * 显示更改工作室的界面
+     * */
+    public function modStudioView($id){
+        $result = $this->Studio->searchById($id);
+        if($result['flag'] == false){
+            echo "没有这样的工作室";
+            return;
+        } else{
+            $this->load->view('studio/modify',['studio' => $result['studio']]);
+        }
+    }
+    /**
+     * 修改工作室
+     * */
+    public function modStudio(){
+        $result = $this->Studio->update();
+        if($result['flag'] = false){
+            echo '<script>alert("修改失败");</script>';
+            //$this->modStudio();
+        }else{
+            echo '<script>alert("修改成功")</script>';
+        }
     }
     //todo the empty page
     /*
@@ -141,6 +131,87 @@ class Admin extends CI_Controller
     public function test(){
 //        $this->load->model('Studio');
 //        var_dump( $this->Studio->addStudio());
-        $this->listStudio();
+//        $this->listStudio();
+        $this->load->model('Test');
+        $result = $this->Test->testUsers();
+        var_dump($result);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    /*
+//         * 检查登录状态
+//         * */
+//    public function checkLogin(){
+//        $userData = $this->session->userdata();
+//        if($userData['userid'] and $userData['studio'] and ($userData['privilege']))
+//            return true;
+//        return false;
+//    }
+//
+//    /*
+//     * 检查管理员登录状态
+//     * */
+//    public function checkAdminLogin(){
+//        $userData = $this->session->userdata();
+//        if($userData['userid'] and $userData['studio'] and ($userData['privilege'] == 5))
+//            return true;
+//        return false;
+//    }
+//
+//    /*
+//     * 设置登录状态
+//     * */
+//    private function setLogin($user){
+//        $this->session->set_userdata([
+//            'userid' => $user->UID,
+//            'username' => $user->ACCOUNT,
+//            'studio' => $user->STU_ID,
+//            'privilege' => $user->PRIVILEGE
+//        ]);
+//    }
