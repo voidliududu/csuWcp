@@ -15,6 +15,7 @@ class Products extends CI_Model
         $this->load->database();
         $this->load->library('session');
         $this->load->model('Studio');
+        $this->load->library('Uploader');
         //$this->load->model('Intro');
     }
     /**
@@ -23,38 +24,34 @@ class Products extends CI_Model
      * @return array
      *
      * */
-    public function addProduct($product = null){
-        $counter = $this->session->userdata('studio');
-        if($counter == null)
-            return ['flag' => false,'error' => 'session expired'];
-        $product['STUDIO'] = $counter;
-        $counter = $this->input->post('name');
-        if($counter == null)
-            return ['flag' => false,'error' => 'name required'];
-        $product['PRO_NAME'] = $counter;
-        $counter = $this->input->post('intro');
-        if($counter == null)
-            return ['flag' => false,'error' => 'intro required'];
-            //$product['PRO_INTRO'] = $counter;
-        $intro = $counter;
-        $counter = $this->input->post('cate');
-        if($counter != null)
-            $product['CATE'] = $counter;
-        $product['CREATED'] = date('Y-m-d H:i:s');
-        $this->db->trans_start();
-        //TODO 更改author
-        $result = $this->Intro->add(['AUTHOR' => 'AUTHOR','CONTENT' => $intro]);
-        if($result['flag'] == false)
-            return ['flag' => false,'error' => $result['error']];
-        $product['PRO_INTRO'] = $result['id'];
-        $this->refreshStudio(true);
-        $flag = $this->db->insert('PRODUCT',$product);
-        $this->db->trans_complete();
-        if($flag)
-            return ['flag' => true];
-        return ['flag' => false,'error' => 'insert error'];
+    public function addProduct(){
+        $media['STU_ID'] = $this->session->userdata('STU_ID');
+        if($media['STU_ID'] == null)
+            return ['flag' =>false,'error' => "session expired"];
+        $media['NAME'] = $this->input->post('name');
+        if($media['NAME'] == null)
+            return ['flag' => false,'error' => 'product name required'];
+        $media['AUTHOR'] = $this->input->post('author');
+        $media['CATE_ID'] = $this->input->post('cate');
+        $media['CREATED'] = date('Y-m-d H:i:s');
+        $media['MODIFIED'] = $media['CREATED'];
+        return ['flag' => true,'media' => $media];
     }
-
+    /**
+     * 更新产品
+     * */
+    public function updateProduct($id){
+        $media['STU_ID'] = $this->session->userdata('STU_ID');
+        if($media['STU_ID'] == null)
+            return ['flag' =>false,'error' => "session expired"];
+        $media['NAME'] = $this->input->post('name');
+        if($media['NAME'] == null)
+            return ['flag' => false,'error' => 'product name required'];
+        $media['AUTHOR'] = $this->input->post('author');
+        $media['CATE_ID'] = $this->input->post('cate');
+        $media['MODIFIED'] = date('Y-m-d H:i:s');
+        return ['flag' => true,'media' => $media];
+    }
     /**
      * 更新工作室计数
      * @param bool $flag  true to add , false to dec
@@ -124,9 +121,25 @@ class Products extends CI_Model
             '5' => 'WE_CARTOON',
             '6' => 'WE_ACT'
         ];
-        $product = $this->db->limit($offset,$num)->get($cate_map[$cateid]);
-        if(empty($product))
-            return ['flag' => false,'error' => 'empty'];
+        $product = $this->db->limit($num,$offset)->get($cate_map[$cateid]);
+        return $product;
+    }
+    /**
+     * 通过cate和id搜索具体产品
+     * */
+    public function searchByCateId($cateid,$id){
+        $cate_map = [
+            '1' => 'WE_MOVIE',
+            '2' => 'WE_MUSIC',
+            '3' => 'WE_APP',
+            '4' => 'WE_MAG',
+            '5' => 'WE_CARTOON',
+            '6' => 'WE_ACT'
+        ];
+        $product = $this->db->where('ID',$id)->get($cate_map[$cateid])->row();
+//        if(empty($product))
+//            return ['flag' => false,'error' => 'empty'];
+//        return ['flag' => false,'product' => $product];
         return $product;
     }
     /**
@@ -138,4 +151,8 @@ class Products extends CI_Model
             return ['flag' => false,'error' => 'empty'];
         return $product;
     }
+
 }
+
+
+

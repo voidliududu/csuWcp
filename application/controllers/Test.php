@@ -85,4 +85,11 @@ class Test extends CI_Controller
         $result = $this->Test->testUsers();
         var_dump($result);
     }
+    public function testMedia(){
+        $this->load->model('Media');
+        $_POST['name'] = "hello";
+        $_SESSION['STU_ID'] = 1;
+        $var = $this->Media->addProduct();
+        var_dump($var);
+    }
 }

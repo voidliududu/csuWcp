@@ -95,9 +95,10 @@ class Admin extends CI_Controller
         }
     }
     /*
-     * 列出产品
+     * 列出产品  //todo data
      * */
-    public function listProduct(){
+    public function listProduct($cateid){
+
         $this->load->view('product/list');
     }
     /*
@@ -107,8 +108,7 @@ class Admin extends CI_Controller
     public function showStudioInformation($id){
         $studio = $this->Studio->searchById($id);
         if($studio['flag'])
-            $this->load->view('studio/discribe',$studio['studio']);
-
+            $this->load->view('studio/discribe',['studio' => $studio['studio']]);
     }
     /*
      * 显示一个产品的信息
@@ -116,6 +116,101 @@ class Admin extends CI_Controller
     public function showProductInformation($id){
         $this->load->view('product/discribe');
     }
+    /**
+     * 添加产品的视图
+     * @param string $cateid
+     *
+     * */
+    public function addProduct($cateid = null){
+        if($cateid == null)
+             show_404();
+        $addView = [
+            '1' => 'product/weMovie/add',
+            '2' => 'product/weMusic/add',
+            '3' => 'product/weApp/add',
+            '4' => 'product/weMag/add',
+            '5' => 'product/weCartoon/add',
+            '6' => 'product/weAct/add'
+        ];
+        $this->load->view($addView[$cateid]);
+    }
+    /**
+     * media资源产品的添加
+     *
+     * */
+    public function addMedia(){
+        $this->load->model('Media');
+        $result = $this->Media->addProduct();
+        if($result['flag'] == false) {
+//            $this->load->view('errors/html/error_general');
+            echo "<script>alert('失败')</script>";
+            return;
+        }
+        echo "<script>alert('成功');</script>";
+    }
+    /**
+     * article资源的添加
+     * */
+    public function addArticle(){
+        $_SESSION['STU_ID'] = 2;
+        $this->load->model('Article');
+        $result = $this->Article->addProduct();
+        if($result['flag'] == false) {
+            //$this->load->view('errors/html/error_general');
+            echo "<script>alert('失败')</script>";
+            return;
+        }
+        echo "<script>alert('成功');</script>";
+    }
+    /**
+     * image资源的添加
+     * */
+    public function addImage(){
+        $_SESSION['STU_ID'] = 2;
+        $this->load->model('Image');
+        $result = $this->Image->addProduct();
+        if($result['flag'] == false) {
+            //$this->load->view('errors/html/error_general');
+            echo "<script>alert('失败')</script>";
+            return;
+        }
+        echo "<script>alert('成功');</script>";
+    }
+
+    /**
+     * 修改产品的视图
+     * */
+    public function modProductView($cateid,$id){
+        $product = $this->Product->searchByCateId($cateid,$id);
+        $modView = [
+            '1' => 'product/weMovie/modify',
+            '2' => 'product/weMusic/modify',
+            '3' => 'product/weApp/modify',
+            '4' => 'product/weMag/modify',
+            '5' => 'product/weCartoon/modify',
+            '6' => 'product/weAct/modify'
+            ];
+        $this->load->view($modView[$cateid],['product' => $product]);
+    }
+    /**
+     * 修改产品
+     * */
+    public function modProduct($cateid,$id){
+        if(in_array($cateid,[1,2,3])){
+            $this->load->model('Media');
+            $this->Media->updateProduct($id);
+        }elseif (in_array($cateid,[4,6])){
+            $this->load->model('Article');
+            $this->Article->updateProduct($id);
+        }elseif ($cateid == 5){
+            $this->load->model('Image');
+            $this->Image->updateProduct($id);
+        }else{
+            //todo error page
+        }
+    }
+
+
 
     //视图测试模块
     public function testView()

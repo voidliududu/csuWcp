@@ -82,13 +82,12 @@ class Studio extends CI_Model
     }
 
     //查询工作室信息
-    public function searchAll(){
-        $studios = $this->db->get('STUDIO');
+    public function searchAll($num = 0,$offset = 0){
+        $studios = $this->db->limit($num,$offset)->get('STUDIO');
         if(!$studios)
             return ['flag' => false];
         return ['flag' =>true,'studios' => $studios];
     }
-
     public function searchById($id){
         $studio = $this->db->where('ID',$id)->get('STUDIO')->row();
         if(!$studio)

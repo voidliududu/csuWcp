@@ -6,7 +6,11 @@
  * Time: 下午3:54
  */
 ?>
-
+<?php
+/**
+  * $item 所有微产品 todo 创建所有微产品的视图
+  * */
+?>
 <!--全部微产品-->
 <div id="all_product_page" style="display: none">
     <!--微产品列表-->
@@ -20,96 +24,21 @@
                 <th>产品类型</th>
                 <th colspan="3">操作</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td class="pointer pro_detail">小弟弟</td>
-                <td>小弟弟工作室</td>
-                <td>微电影</td>
-                <td class="pointer pro_change">修改</td>
-                <td class="pointer pro_detail">审核</td>
-                <td class="pointer pro_delete">删除</td>
-            </tr>
+            <?php
+            foreach ($items as $key => $item) {
+            ?>
+                <tr>
+                    <td><?php echo $item->ID;?></td>
+                    <td class="pointer pro_detail" cate="<?php echo $item->CATEID;?>"><?php echo $item->NAME;?></td>
+                    <td><?php echo $item->STUDIO;?></td>
+                    <td><?php echo $item->CATENAME?></td>
+                    <td class="pointer pro_change" pro_id="<?php echo $item->ID; ?>">修改</td>
+                    <td class="pointer pro_detail" pro_id="<?php echo $item->ID; ?>">审核</td>
+                    <td class="pointer pro_delete" pro_id="<?php echo $item->ID; ?>">删除</td>
+                </tr>
+            <?php }
+            ?>
+
         </table>
 
     </div>

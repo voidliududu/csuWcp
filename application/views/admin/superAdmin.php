@@ -70,13 +70,13 @@
                         <span class="glyphicon glyphicon-chevron-down" style="display: none"></span>
                     </ul>
                     <ul class="three_ul" id="classify_toggle">
-                        <li class="sub_ul_li" id="all_product">全部</li>
-                        <li class="sub_ul_li" id="we_movie">微电影</li>
-                        <li class="sub_ul_li" id="we_app">app</li>
-                        <li class="sub_ul_li" id="we_cartoon">微漫画</li>
-                        <li class="sub_ul_li" id="we_mv">微音乐</li>
-                        <li class="sub_ul_li" id="we_magazine">微杂志</li>
-                        <li class="sub_ul_li" id="we_activity">微活动</li>
+                        <li class="sub_ul_li" id="all_product" name="0">全部</li>
+                        <li class="sub_ul_li" id="we_movie" name="1">微电影</li>
+                        <li class="sub_ul_li" id="we_app" name="3">app</li>
+                        <li class="sub_ul_li" id="we_cartoon" name="5">微漫画</li>
+                        <li class="sub_ul_li" id="we_mv" name="2">微音乐</li>
+                        <li class="sub_ul_li" id="we_magazine" name="4">微杂志</li>
+                        <li class="sub_ul_li" id="we_activity" name="6">微活动</li>
                         <!--<li class="sub_ul_li" id="we_vote">微投票</li>-->
                     </ul>
                     <ul class="sub_ul">
@@ -113,112 +113,6 @@
 
             <!--全部工作室-->
             <div id="all_studio_page" style="display: none">
-                <!--工作室列表-->
-<!--                <header class="page_head"><span class="glyphicon glyphicon-link"></span> 全部工作室</header>-->
-<!--                <div id="studio-list">-->
-<!--                    <table id="studio_table">-->
-<!--                        <tr>-->
-<!--                            <th style="max-width: 50px">工作室ID</th>-->
-<!--                            <th>工作室名</th>-->
-<!--                            <th>工作室所属部门</th>-->
-<!--                            <th colspan="3">操作</th>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td>1</td>-->
-<!--                            <td class="pointer stu_detail">小弟弟工作室</td>-->
-<!--                            <td>升华网</td>-->
-<!--                            <td class="pointer stu_change">修改</td>-->
-<!--                            <td class="pointer stu_detail">审核</td>-->
-<!--                            <td class="pointer stu_delete">删除</td>-->
-<!--                        </tr>-->
-<!--                    </table>-->
-<!---->
-<!--                </div>-->
-<!--                <!--分页-->
-<!--                <div class="Pagination">-->
-<!--                    <ul class="pagination pagination-lg">-->
-<!--                        <li><a href="#">&laquo;</a></li>-->
-<!--                        <li><a href="#">1</a></li>-->
-<!--                        <li><a href="#">2</a></li>-->
-<!--                        <li><a href="#">3</a></li>-->
-<!--                        <li><a href="#">4</a></li>-->
-<!--                        <li><a href="#">5</a></li>-->
-<!--                        <li><a href="#">...</a> </li>-->
-<!--                        <li><a href="#">&raquo;</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
 
             </div>
 
@@ -269,8 +163,6 @@
                         <button id="studiobut_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>
                     </div>
                     <br><br><br>
-<!--                    <button id="studio_add_check" class="check_add">确认添加</button>-->
-<!--                        <button id="studio_change_check" class="check_add" style="display: none">确认修改</button>-->
                         <input type="submit" value="确认" id="studio_add_check" class="check_add"/>
                         <div class="clearfix"></div>
                     </form>
@@ -439,109 +331,8 @@
                 </div>
 
                 <div id="add_product_page_main" style="display: none">
-                    <div id="page_main_act" style="display: none">
-                        <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
-                        <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
-                        <!--添加微产品内容填写-->
-                        <div class="cate_add add">
-                            <div class="add_text">活动名:<span class="glyphicon glyphicon-pencil"></span>
-                                <input placeholder="请输入微产品名" class="add_input"/>
-                            </div>
-                            <div class="add_text">&nbsp来 源 :<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入来源" class="add_input"/>
-                            </div>
-                            <div class="add_main">
-                                <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
-                                <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre" id="act_img1">
-                                </div>
-                                <div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>
-                                <textarea class="add_intro" id="act_text1"></textarea>
-                                <button class="check_delete" style="float:left;display: none">删除</button>
-                            </div>
-                            <button id="act_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>
-                        </div>
-                    </div>
-                    <div id="page_main_app" style="display: none">
-                        <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
-                        <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
-                        <!--添加微产品内容填写-->
-                        <div class="cate_add add">
-                            <div class="add_text"> APP 名 :<span class="glyphicon glyphicon-pencil"></span>
-                                <input placeholder="请输入微产品名" class="add_input"/>
-                            </div>
-                            <div class="add_text">&nbsp&nbsp&nbsp来 源 :<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入来源" class="add_input"/>
-                            </div>
-                            <div class="add_text"> (你可以外接网站或者直接上传APP的安装文件，如果有密码信息，请写到“文件密码里面”)</div>
-                            <div class="add_text">文件网站:<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入文件网站" class="add_input"/>
-                            </div>
-                            <div class="add_text">文件密码:<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入文件密码" class="add_input"/>
-                            </div>
-                            <div class="add_text"> 安 装 包:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加安装包</span>
-                                <img src="" class="add_pic_pre">
-                            </div>
-                            <div class="add_main">
-                                <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
-                                <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre">
-                                </div>
-                                <div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>
-                                <textarea class="add_intro"></textarea>
-                                <button class="check_delete" style="float:left;display: none">删除</button>
-                            </div>
-                            <button id="app_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>
-                        </div>
-                    </div>
-                    <div id="page_main_cartoon" style="display: none">
-                        <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
-                        <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
-                        <!--添加微产品内容填写-->
-                        <div class="cate_add add">
-                            <div class="add_text"> 漫 画 名:<span class="glyphicon glyphicon-pencil"></span>
-                                <input placeholder="请输入微漫画名" class="add_input"/>
-                            </div>
-                            <div class="add_text">&nbsp&nbsp&nbsp来 源 :<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入来源" class="add_input"/>
-                            </div>
-                            <div class="add_text">漫画介绍:<span class="glyphicon glyphicon-tag"></span> </div>
-                            <textarea class="add_intro"></textarea>
-                            <div class="add_main">
-                                <div class="add_text add_title"> (主要内容，可以添加多个图片)</div>
-                                <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre">
-                                </div>
-                                <button class="check_delete" style="float:left;display: none">删除</button>
-                            </div>
-                            <button id="cartoon_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>
-                        </div>
-                    </div>
-                    <div id="page_main_mag" style="display: none">
-                        <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
-                        <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
-                        <!--添加微产品内容填写-->
-                        <div class="cate_add add">
-                            <div class="add_text">杂志名:<span class="glyphicon glyphicon-pencil"></span>
-                                <input placeholder="请输入微产品名" class="add_input"/>
-                            </div>
-                            <div class="add_text">&nbsp来 源 :<span class="glyphicon glyphicon-pushpin"></span>
-                                <input placeholder="请输入来源" class="add_input"/>
-                            </div>
-                            <div class="add_text"> (只能上传一份PPT、WORD或PDF文件来展示你的杂志，请您将要展示的信息都显示在杂志上。)</div>
-                            <div class="add_text">&nbsp文 件 :<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加PPT、WORD、PDF文件</span>
-                                <img src="" class="add_pic_pre">
-                            </div>
+                    <div id="page_main_all"></div>
 
-                            <!--</div>-->
-
-                        </div>
                     </div>
                     <div id="page_main_movie" style="display: none">
                         <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
@@ -585,10 +376,10 @@
                             </div>
                         </div>
                     </div>
-                    <br><br><br>
-                    <button id="product_add_check" class="check_add">确认添加</button>
-                    <button id="product_change_check" class="check_add" style="display: none">确认修改</button>
-                    <div class="clearfix"></div>
+<!--                    <br><br><br>-->
+<!--                    <button id="product_add_check" class="check_add">确认添加</button>-->
+<!--                    <button id="product_change_check" class="check_add" style="display: none">确认修改</button>-->
+<!--                    <div class="clearfix"></div>-->
                 </div>
             </div>
         </div>
