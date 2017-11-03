@@ -92,4 +92,12 @@ class Test extends CI_Controller
         $var = $this->Media->addProduct();
         var_dump($var);
     }
+    public function testListProduct(){
+        $this->load->model('Products');
+        $result = $this->Products->list();
+        var_dump($result->result());
+        echo '<br>';
+        $result = $this->Products->list(6);
+        var_dump($result->result());
+    }
 }

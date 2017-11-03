@@ -12,7 +12,7 @@
   * */
 ?>
 <!--全部微产品-->
-<div id="all_product_page" style="display: none">
+<!--<div id="all_product_page" style="display: block">-->
     <!--微产品列表-->
     <header class="page_head"><span class="glyphicon glyphicon-link"></span> 全部微产品</header>
     <div id="product-list">
@@ -25,7 +25,7 @@
                 <th colspan="3">操作</th>
             </tr>
             <?php
-            foreach ($items as $key => $item) {
+            foreach ($items->result() as $key => $item) {
             ?>
                 <tr>
                     <td><?php echo $item->ID;?></td>
@@ -55,4 +55,4 @@
             <li><a href="#">&raquo;</a></li>
         </ul>
     </div>
-</div>
+<!--</div>-->

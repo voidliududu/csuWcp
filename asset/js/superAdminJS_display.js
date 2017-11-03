@@ -512,5 +512,131 @@ $(function () {
             .css("display", "block");
         visuable_frame = "#add_studio_page";
     });
+    $("#we_my_studio").on('click', function () {
+        //alert("hello");
+        $(visuable_frame).css("display","none");
+        $(".studio_info_page")
+            .load(base_url + '/')
+            .css('display','block');
+        //alert("hello");
+        visuable_frame = '.studio_info_page';
+    });
+    $("#index").on('click',function () {
+        $(visuable_frame).css("display","none");
+        $("#index_page")
+            .css('display','block');
+        visuable_frame = '#index_page';
+    });
+    $("#all_product").on('click',function (e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct')
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_movie").on('click',function ( e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+1)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_app").on('click',function (e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+3)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_cartoon").on('click',function (e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+5)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_mv").on('click',function (e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+2)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_magazine").on('click',function (e) {
+        var cateid = e.target.name;
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+4)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#we_activity").on('click',function (e) {
+        var cateid = e.target.name;
+        console.log(e);
+        $(visuable_frame).css("display","none");
+        $('#all_product_page')
+            .load(base_url + 'Admin/listProduct/'+6)
+            .css('display','block');
+        visuable_frame = '#all_product_page';
+    });
+    $("#add_product").on('click',function () {
+        $(visuable_frame).css("display","none");
+        $('#add_product_page').css('display','block');
+        $('#add_product_page_confirm').css("display",'block');
+        visuable_frame = '#add_product_page';
+    });
 
+    $("#page_confirm_act").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/6')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main';
+    });
+    $("#page_confirm_app").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/3')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main';
+    });
+    $("#page_confirm_cartoon").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/5')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main';
+    });
+    $("#page_confirm_mag").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/4')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main';
+    });
+    $("#page_confirm_movie").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/1')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main,#page_main_movie';
+    });
+    $("#page_confirm_music").on('click',function () {
+        $("#add_product_page_confirm").css("display","none");
+        $("#add_product_page_main").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/2')
+            .css("display","block");
+        visuable_frame = '#add_product_page_main,#page_main_music';
+    });
 });

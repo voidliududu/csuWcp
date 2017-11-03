@@ -1,7 +1,7 @@
 
 $(function () {
     var visuable_frame = '#index_page';
-    var base_url = "http://127.0.0.2/index.php"
+    var base_url = "http://127.0.0.2/index.php/";
     $("#we_my_studio").on('click', function () {
         //alert("hello");
         $(visuable_frame).css("display","none");
@@ -61,7 +61,9 @@ $(function () {
     $("#page_confirm_act").on('click',function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
-        $("#page_main_act").css("display","block");
+        $("#page_main_all")
+            .load(base_url + 'Admin/addProduct/')
+            .css("display","block");
         visuable_frame = '#add_product_page_main';
     });
     $("#page_confirm_app").on('click',function () {

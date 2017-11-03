@@ -108,6 +108,15 @@ class Products extends CI_Model
             return ['flag' => true,'product'=>$product];
         return ['flag' => false,'error' => 'no such product'];
     }
+    public function list($cate = null){
+        if($cate == null){
+            $product = $this->db->get('PRODUCT_INFO');
+            return $product;
+        }else{
+            $product = $this->db->where('CATEID',$cate)->get('PRODUCT_INFO');
+            return $product;
+        }
+    }
     /**
      * 通过分类查询产品
      * @return array array

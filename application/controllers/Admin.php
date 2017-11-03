@@ -97,9 +97,10 @@ class Admin extends CI_Controller
     /*
      * 列出产品  //todo data
      * */
-    public function listProduct($cateid){
-
-        $this->load->view('product/list');
+    public function listProduct($cateid = null){
+        $this->load->model('Products');
+        $result = $this->Products->list($cateid);
+        $this->load->view('product/list',['items' => $result]);
     }
     /*
      * 显示一个工作室的详细信息
