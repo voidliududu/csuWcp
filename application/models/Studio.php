@@ -76,7 +76,8 @@ class Studio extends CI_Model
         $counter = $this->input->post('department');
         if($counter != null)
             $studio['DEPART'] = $counter;
-        if($this->db->where('ID',$id)->update('STUDIO',$studio))
+        $studio['MODIFIED'] = date("Y-m-d H:i:s");
+        if($this->db->where('ID',$id)->update('STUDIO',$studio) == true)
             return ['flag' => true];
         return ['flag' => false,'error' => 'database error'];
     }

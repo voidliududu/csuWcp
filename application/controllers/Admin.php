@@ -75,8 +75,8 @@ class Admin extends CI_Controller
      * */
     public function modStudio(){
         $result = $this->Studio->update();
-        if($result['flag'] = false){
-            echo '<script>alert("修改失败");</script>';
+        if($result['flag'] == false){
+            echo "<script>alert('修改失败'".$result['error'].")</script>";
             //$this->modStudio();
         }else{
             echo '<script>alert("修改成功")</script>';
@@ -117,6 +117,9 @@ class Admin extends CI_Controller
     public function showProductInformation($cate,$id){
         $this->load->model('Products');
         $product = $this->Products->searchByCateId($cate,$id);
+        if($product == NULL){
+            show_404();
+        }
         $this->load->view('product/discribe',['product'=>$product,'cate'=>$cate]);
     }
     /**
@@ -213,6 +216,9 @@ class Admin extends CI_Controller
             //todo error page
         }
     }
+    /**
+     * 删除微产品
+     * */
     public function delProduct($id){
         $this->load->model('Products');
         $result = $this->Prodcuts->delProduct($id);
@@ -220,6 +226,19 @@ class Admin extends CI_Controller
             echo '<script>alert("删除成功");</script>';
         else{
             echo '<script>alert("删除失败");</script>';
+        }
+    }
+    /*
+     *
+     * */
+    public function aduitProduct($id){
+        $this->load->model('Products');
+        $result = $this->Products->audit($id,true);
+        if($result) {
+            echo "<script>alert('审核成功')</script>";
+        }
+        else{
+            echo "<script>alert('审核失败')</script>";
         }
     }
 

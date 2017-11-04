@@ -11,14 +11,14 @@
     <header class="page_head change_studio"><span class="glyphicon glyphicon-edit"></span>修改工作室信息 </header>
     <!--添加工作室内容填写-->
     <div id="studio_add" class="cate_add add">
-        <?php echo form_open('Admin/modStudio',["enctype" => "MULTIPART/FORM-DATA"]);?>
+        <?php echo form_open('Admin/modStudio',["enctype" => "MULTIPART/FORM-DATA","target"=>'hidden_frame']);?>
         <div id="studio_add_main">
             <div class="add_text">工作室名:<span class="glyphicon glyphicon-pencil"></span>
                 <input value="<?php echo $studio->NAME;?>" class="add_input" name="name"/>
             </div>
             <div class="add_text">所属部门:<span class="glyphicon glyphicon-pushpin"></span>
                 <input value="<?php echo $studio->DEPART;?>" class="add_input" name="department"/>
-                <input type="hidden" value="<?php $studio->ID;?>" name="id" />
+                <input type="hidden" value="<?php echo $studio->ID;?>" name="id" />
             </div>
             <div class="add_main">
                 <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
@@ -39,5 +39,6 @@
         <input type="submit" value="确认" id="studio_add_check" class="check_add" />
         <div class="clearfix"></div>
         </form>
+        <iframe name="hidden_frame" style="display: none"></iframe>
     </div>
 

@@ -21,7 +21,7 @@
         ];
 ?>
 
-    <header class="page_head"><span class="glyphicon glyphicon-file"></span>product1 </header>
+    <header class="page_head"><span class="glyphicon glyphicon-file"></span>产品信息</header>
     <!--微产品信息-->
     <div class="info_show">
         <div class="info_text">产品:<?php echo $product->NAME;?></div>
@@ -38,7 +38,7 @@
         <div class="product_intro" id="product_intro">
             <p><?php echo $product->CONTENT;?></p>
         </div>
-        <div class="info_text">来源:网络</div>
+        <div class="info_text">来源:<?php echo $product->AUTHOR;?></div>
         <div class="info_text">所属分类:<?php echo $cateMap[$cate];?></div>
         <div class="info_text">创建时间:<?php echo $product->TIME;?></div>
         <div class="info_text">点击量:<?php echo @$product->READ_COUNT?0:0;?></div>

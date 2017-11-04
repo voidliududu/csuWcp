@@ -97,7 +97,18 @@ class Products extends CI_Model
             return ['flag' => true,'pro_id' => $id];
         return ['flag' => false,'error' => 'database error'];
     }
-
+    /**
+     * @param int $id  产品id
+     * @param bool $flag  true为通过审核，false为不通过审核
+     * */
+    public function audit($id,$flag = true){
+        if($flag){
+            $result = $this->db->where('ID',$id)->update('PRODUCTS',['AUDIT'=>1]);
+        }else{
+            $result = $this->db->where('ID',$id)->update('PRODUCTS',['AUDIT' => 0]);
+        }
+        return $result;
+    }
     /**
      * 通过id查询产品
      * @return array

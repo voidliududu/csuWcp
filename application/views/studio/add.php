@@ -11,7 +11,7 @@
 <!--    <header class="page_head change_studio"><span class="glyphicon glyphicon-edit"></span>修改工作室信息 </header>-->
     <!--添加工作室内容填写-->
     <div id="studio_add" class="cate_add add">
-        <?php echo form_open('Admin/addStudio',["enctype" => "MULTIPART/FORM-DATA"]);?>
+        <?php echo form_open('Admin/addStudio',["enctype" => "MULTIPART/FORM-DATA",'target' => 'hidden_frame']);?>
         <div id="studio_add_main">
             <div class="add_text">工作室名:<span class="glyphicon glyphicon-pencil"></span>
                 <input placeholder="请输入工作室名" class="add_input" name="name"/>
@@ -39,3 +39,4 @@
         <div class="clearfix"></div>
         </form>
     </div>
+<iframe name="hidden_frame" style="display: none;"></iframe>

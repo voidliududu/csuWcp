@@ -12,6 +12,7 @@
  * */
 ?>
 <div id="page_main_act" style="display: block">
+    <?php echo form_open('Admin/modProduct',["enctype" => "MULTIPART/FORM-DATA",'target' => 'hidden_frame']);?>
 <!--    <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>-->
     <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
     <!--添加微产品内容填写-->
@@ -29,8 +30,10 @@
         <div class="add_text">&nbsp活 动 内 容 :<span class="glyphicon glyphicon-pushpin"></span></div>
         <textarea name="describe" class="add_intro"><?php echo $product->CONTENT;?></textarea>
     </div>
+    <input type="submit" value="确认" id="studio_add_check" class="check_add" />
+    </form>
 </div>
  <br><br><br>
-<!--                    <button id="product_add_check" class="check_add">确认添加</button>-->
-<!--                    <button id="product_change_check" class="check_add" style="display: none">确认修改</button>-->
-                    <div class="clearfix"></div>
+<input type="submit" value="确认" id="studio_add_check" class="check_add" />
+</form>
+<div class="clearfix"></div>
