@@ -29,12 +29,12 @@
             ?>
                 <tr>
                     <td><?php echo $item->ID;?></td>
-                    <td class="pointer pro_detail" cate="<?php echo $item->CATEID;?>"><?php echo $item->NAME;?></td>
+                    <td class="pointer pro_detail" role="<?php echo $item->CATEID;?>" id="<?php echo $item->CATEID;?> <?php echo $item->ID; ?>"><?php echo $item->NAME;?></td>
                     <td><?php echo $item->STUDIO;?></td>
                     <td><?php echo $item->CATENAME?></td>
-                    <td class="pointer pro_change" pro_id="<?php echo $item->ID; ?>">修改</td>
-                    <td class="pointer pro_detail" pro_id="<?php echo $item->ID; ?>">审核</td>
-                    <td class="pointer pro_delete" pro_id="<?php echo $item->ID; ?>">删除</td>
+                    <td class="pointer pro_change" id="<?php echo $item->CATEID;?> <?php echo $item->ID; ?>">修改</td>
+                    <td class="pointer pro_detail" id="<?php echo $item->CATEID;?> <?php echo $item->ID; ?>">审核</td>
+                    <td class="pointer pro_delete" id="<?php echo $item->CATEID;?> <?php echo $item->ID; ?>">删除</td>
                 </tr>
             <?php }
             ?>
@@ -42,6 +42,39 @@
         </table>
 
     </div>
+<script>
+    $(function () {
+        base_url = "http://127.0.0.2/index.php/";
+        $(".pro_detail").on('click',function (e) {
+            var data = e.target.id;
+            var res = data.split(' ');
+            $("#all_product_page").css("display",'none');
+            $("#add_product_page").css("display",'none');
+            console.log(base_url + 'Admin/showProductInformation/' + res[0] +'/' + res[1]);
+           $(".product_info_page")
+               .load(base_url + 'Admin/showProductInformation/' + res[0] +'/' + res[1])
+               .css('display','block');
+        });
+        $(".pro_change").on('click',function (e) {
+            var data = e.target.id;
+            var res = data.split(' ');
+            $(".product_info_page").css("display",'none');
+            $("#all_product_page").css("display",'none');
+            $("#add_product_page")
+                .load(base_url + 'Admin/modProductView/' + res[0] +'/' + res[1])
+                .css("display","block")
+        });
+        $(".pro_delete").on('click',function (e) {
+            var data = e.target.id;
+            var res = data.split(' ');
+            $("#all_product_page").css("display",'none');
+            $(".product_info_page").css("display",'none');
+            $("#add_product_page")
+                .load(base_url + 'Admin/delProduct/' + res[1])
+                .css("display","block")
+        })
+    })
+</script>
     <!--分页-->
     <div class="Pagination">
         <ul class="pagination pagination-lg">

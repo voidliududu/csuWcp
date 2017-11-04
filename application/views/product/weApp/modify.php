@@ -6,7 +6,7 @@
  * Time: 上午9:27
  */
 ?>
-<div id="page_main_app" style="display: none">
+<div id="page_main_app" style="display: block">
     <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span> 添加微产品 </header>
     <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span> 修改微产品信息 </header>
     <!--添加微产品内容填写-->

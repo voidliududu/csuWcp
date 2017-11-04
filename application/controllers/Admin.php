@@ -114,8 +114,10 @@ class Admin extends CI_Controller
     /*
      * 显示一个产品的信息
      * */
-    public function showProductInformation($id){
-        $this->load->view('product/discribe');
+    public function showProductInformation($cate,$id){
+        $this->load->model('Products');
+        $product = $this->Products->searchByCateId($cate,$id);
+        $this->load->view('product/discribe',['product'=>$product,'cate'=>$cate]);
     }
     /**
      * 添加产品的视图
@@ -182,7 +184,8 @@ class Admin extends CI_Controller
      * 修改产品的视图
      * */
     public function modProductView($cateid,$id){
-        $product = $this->Product->searchByCateId($cateid,$id);
+        $this->load->model('Products');
+        $product = $this->Products->searchByCateId($cateid,$id);
         $modView = [
             '1' => 'product/weMovie/modify',
             '2' => 'product/weMusic/modify',
@@ -210,7 +213,15 @@ class Admin extends CI_Controller
             //todo error page
         }
     }
-
+    public function delProduct($id){
+        $this->load->model('Products');
+        $result = $this->Prodcuts->delProduct($id);
+        if($result['flag'] == true)
+            echo '<script>alert("删除成功");</script>';
+        else{
+            echo '<script>alert("删除失败");</script>';
+        }
+    }
 
 
     //视图测试模块

@@ -33,6 +33,6 @@
 </div>
 <input type="submit" value="确认" id="studio_add_check" class="check_add" />
 </form>
-<iframe name="hidden_frame" id="hidden_frame"></iframe>
+<iframe name="hidden_frame" id="hidden_frame" style="display: none;"></iframe>
  <br><br><br>
 <div class="clearfix"></div>

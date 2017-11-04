@@ -67,7 +67,7 @@ class Studio extends CI_Model
         $this->db->trans_complete();
     }
     //更改工作室信息
-    public function update($studio){
+    public function update(){
         $id = $this->input->post('id');
         if($id == null) return ['flag' => false,'error' => 'id required'];
         $counter = $this->input->post('name');
