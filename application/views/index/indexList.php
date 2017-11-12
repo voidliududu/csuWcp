@@ -25,7 +25,7 @@ $classMap = [
             <div id="l_b_left">
                 <div style="vertical-align: middle"><img id="l_b_l_leftA" cateId="<?php echo $cate; ?>" page="<?php echo $page;?>" src="<?php echo base_url('asset/');?>img/arrow.png" /></div>
             </div>
-                <div class="l_b_middle <?php echo $classMap[$cate];?>" style="display: block;">
+                <div class='l_b_middle <?php echo $classMap[$cate];?> ' style='display: block;'>
                     <?php
                     foreach ($items->result() as $item){
                     ?>

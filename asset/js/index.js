@@ -2,51 +2,6 @@
  * Created by hesongxian on 2017/5/3.
  */
 var base_url = "http://127.0.0.2/index.php/";
-function hov_pic_over(This){
-    if($(This).parent().parent().css('background-color') == 'rgba(0, 0, 0, 0)' || $(This).parent().parent().css('background-color') == 'rgba(255, 255, 255, 0)')
-        $(This).parent().parent().animate({
-                backgroundColor: 'white'
-            }, 200)
-
-}
-function hov_pic_out(This){
-    if($(This).parent().parent().css('background-color') != 'rgba(0, 0, 0, 0)')
-        $(This).parent().parent().animate({
-            backgroundColor:'transparent'
-        },100)
-}
-function cell_pic_over(This){
-    if($(This).parent().next().css('background-color') == 'rgba(0, 0, 0, 0)' || $(This).parent().next().css('background-color') == 'rgba(255, 255, 255, 0)' ||$(This).parent().next().css('background-color') == 'rgb(255, 255, 255)'  )
-        $(This).parent().next().animate({
-            backgroundColor: 'white'
-        }, 200);
-    // if($(This).parent().next().children().children('.c_r1_bg_font').css('display') == 'none')
-    //     $(This).parent().next().children().children('.c_r1_bg_font').css('display','inline-block').animate({
-    //         color:'#13227a'
-    //     },200)
-}
-function cell_pic_out(This){
-    if($(This).css('background-color') != 'rgba(0, 0, 0, 0)'){
-        $(This).animate({
-            backgroundColor:'transparent'
-        },100);
-    // if($(This).children().children('.c_r1_bg_font').css('display') == 'inline-block')
-    //     $(This).children().children('.c_r1_bg_font').animate({
-    //         color:'transparent'
-    //      },200).css('display','none')
-    }
-}
-function cell_title_over(This){
-    if($(This).parent().css('background-color') == 'rgba(0, 0, 0, 0)' || $(This).parent().css('background-color') == 'rgba(255, 255, 255, 0)')
-        $(This).parent().animate({
-            backgroundColor: 'white'
-        }, 200)
-}function cell_title_out(This){
-    if($(This).parent().css('background-color') != 'rgba(0, 0, 0, 0)')
-        $(This).parent().animate({
-            backgroundColor:'transparent'
-        },100)
-}
 $(function(){
     var angle=0;
     setInterval(function(){
@@ -58,9 +13,10 @@ $(function(){
     $('.c_r_i_pic').on('click',function () {
         var id = $(this).attr('id').split('c_r_i_')[1];
         $('#Index').css('display','none');
+        $('#l_body').load(base_url + 'Index/showIndexList/' + nameZN_forPHP[id]);
         $('.l_b_middle-'+id).css('display','block');
         $('#all').css('display','block');
-        $('#b03').css('height','320px');
+        $('#b03').css('height','323px');
 
     });
 
@@ -68,14 +24,14 @@ $(function(){
     $('#r_index').on('click',function () {
         $('#Index').css('display','block');
         $('#all').css('display','none');
-        $('#b03').css('height','320px');
+        $('#b03').css('height','323px');
 
     });
     // $('.nav').on('click',function () {
     //     var now = $(this).attr('id').split('r_')[1];
     //     $('.l_b_middle').css({'display':'none'});
     //     $('.l_b_middle-'+now).css('display','block');
-    //     $('#b03').css('height','320px');
+    //     $('#b03').css('height','323px');
     // });
 
     $('.nav').on('click',function (e) {
@@ -85,7 +41,7 @@ $(function(){
         var cate = e.target.name;
         console.log(e.target);
         $('#l_body').load(base_url + 'Index/showIndexList/' + cate);
-        $('#b03').css('height','320px');
+        $('#b03').css('height','323px');
 
     });
     //----------------------------------点击（出现/关闭）产品页-------------------------------------------
@@ -139,7 +95,7 @@ window.onresize = function(){
     // }
 
     if($('#Index').css('display') != 'none'){
-        if(document.getElementById("Index").clientHeight > 600 && document.getElementById('Index').clientWidth > 1080){
+        if(document.getElementById("Index").clientHeight > 500 && document.getElementById('Index').clientWidth > 1024){
             $('#c_l1_row2').css("font-size",'1.6vmax');
             $('#c_l1_row3').css("font-size",'1.6vmax');
             $('#c_l1_row4').css("font-size",'1.6vmax');
@@ -148,6 +104,7 @@ window.onresize = function(){
             $('.c_r1_bg_left').css("left",'3vmax');
             $('.c_r1_bg_right').css("right",'3vmax');
             $('.c_r1_bg_bottom').css("bottom",'2.7vmax');
+            console.log(1)
         }
         else{
             $('#c_l1_row2').css("font-size",'20px');
@@ -158,6 +115,7 @@ window.onresize = function(){
             $('.c_r1_bg_left').css("left",'30px');
             $('.c_r1_bg_right').css("right",'30px');
             $('.c_r1_bg_bottom').css("bottom",'30px');
+            console.log(2)
 
 
         }

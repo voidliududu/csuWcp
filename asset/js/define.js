@@ -20,3 +20,13 @@ nameZN = {
     5 : '微活动',
     6 : '微工作室'
 };
+
+nameZN_forPHP = {
+    gzs : 0,
+    wdy : 1,
+    wyy : 2,
+    app : 3,
+    wzz : 4,
+    wmh : 5,
+    whd : 6
+};

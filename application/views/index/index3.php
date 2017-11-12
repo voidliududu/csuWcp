@@ -18,9 +18,9 @@
 
     </style>
     <link href="<?php echo base_url("asset/");?>css/video-js.css" rel="stylesheet">
-    <link href="<?php echo base_url("asset/");?>css/index.css" rel="stylesheet" media="screen">
-    <link href="<?php echo base_url("asset/");?>css/index2.css" rel="stylesheet" media="screen">
-    <link href="<?php echo base_url("asset/");?>css/buju.css" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index.css?ver=1.2" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index2.css?ver=1.0" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/buju.css?ver=1.0" rel="stylesheet" media="screen">
 </head>
 
 
@@ -29,8 +29,8 @@
 <script src="<?php echo base_url("asset/");?>js/jquery.color-2.1.0.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/buju.js"></script>
 <script src="<?php echo base_url("asset/");?>js/indexCanvas.js"></script>
-<script src="<?php echo base_url("asset/");?>js/define.js"></script>
-<script src="<?php echo base_url("asset/");?>js/index.js"></script>
+<script src="<?php echo base_url("asset/");?>js/define.js?ver=1.0"></script>
+<script src="<?php echo base_url("asset/");?>js/index.js?ver=1.1"></script>
 <script src="<?php echo base_url("asset/");?>js/jquery.mousewheel.js"></script>
 <script src="<?php echo base_url("asset/");?>js/unslider.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/video.min.js"></script>
@@ -53,7 +53,6 @@
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
                     <img class="c_r_i_pic gear" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
                 </div>
-                <!--<div class="c_r1_bg"  onmouseout="cell_pic_out(this)"></div>-->
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row2" class="c_row c_row2">
@@ -76,7 +75,7 @@
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
                     <img class="c_r_i_pic gear2" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
                 </div>
-                <!--<div class="c_r2_bg" onmouseout="cell_pic_out(this)"></div>-->
+                <!--<div class="c_r2_bg"></div>-->
             </div>
             <div class="c_right"></div>
         </div>
@@ -86,29 +85,17 @@
             <div id="c_l2_row1" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_wzz" src="<?php echo base_url("asset/");?>img/index/BigMag.png">
-                </div>
-                <div class="c_r1_bg" onmouseout="cell_pic_out(this)" >
-                    <div class="c_r1_bg_left">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微<br>杂<br>志</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_wzz" src="<?php echo base_url("asset/");?>img/index/BigMag.png?ver=1.0">
                 </div>
             </div>
             <div id="c_l2_row2">
                 <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                <div onmouseover="cell_title_over(this)" onmouseout="cell_title_out(this)" style="display: inline-block;vertical-align: middle">中南大学微产品创意工作室</div>
+                <div style="display: inline-block;vertical-align: middle">中南大学微产品创意工作室</div>
             </div>
             <div id="c_l2_row3" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_wyy" src="<?php echo base_url("asset/");?>img/index/BigMusic.png">
-                </div>
-                <div class="c_r2_bg"  onmouseout="cell_pic_out(this)">
-                    <div class="c_r1_bg_right">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微<br>音<br>乐</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_wyy" src="<?php echo base_url("asset/");?>img/index/BigMusic.png?ver=1.1">
                 </div>
             </div>
             <div class="c_right"></div>
@@ -117,70 +104,54 @@
         <div id="c_line3" class="cell">
             <div class="c_left"></div>
             <div id="c_l3_row1" class="c_row c_row3">
-                <div class="c_r_img">
+                <div class="c_r_img c_r_img_after">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_whd" src="<?php echo base_url("asset/");?>img/index/BigAct.png">
-                </div>
-                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
-                    <div class="c_r1_bg_bottom">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微活动</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_whd" src="<?php echo base_url("asset/");?>img/index/BigAct.png?ver=1.0">
                 </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row2" class="c_row c_row3">
-                <div class="c_r_img">
+                <div class="c_r_img c_r_img_after">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_app" src="<?php echo base_url("asset/");?>img/index/BigApp.png">
-                </div>
-                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)" >
-                    <div class="c_r1_bg_bottom">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">APP</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_app" src="<?php echo base_url("asset/");?>img/index/BigApp.png?ver=1.0">
                 </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row3" class="c_row c_row3">
-                <div class="c_r_img">
+                <div class="c_r_img c_r_img_after">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_wdy" src="<?php echo base_url("asset/");?>img/index/BigMoive.png">
-                </div>
-                <div class="c_r3_bg" onmouseout="cell_pic_out(this)" >
-                    <div class="c_r1_bg_bottom">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微电影</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_wdy" src="<?php echo base_url("asset/");?>img/index/BigMoive.png?ver=1.0">
                 </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row4" class="c_row c_row3">
-                <div class="c_r_img">
+                <div class="c_r_img c_r_img_after">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_wmh" src="<?php echo base_url("asset/");?>img/index/BigCartoon.png">
-                </div>
-                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
-                    <div class="c_r1_bg_bottom">
-                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微漫画</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_wmh" src="<?php echo base_url("asset/");?>img/index/BigCartoon.png?ver=1.0">
                 </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row5" class="c_row c_row3">
-                <div class="c_r_img">
+                <div class="c_r_img c_r_img_after">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_gzs" src="<?php echo base_url("asset/");?>img/index/BigStdio.png">
-                </div>
-                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
-                    <div class="c_r1_bg_bottom">
-                        <div style="width:100%;display: inline-block;vertical-align: middle"></div>
-                        <div class="c_r1_bg_font">微工作室</div>
-                    </div>
+                    <img class="c_r_i_pic" id="c_r_i_gzs" src="<?php echo base_url("asset/");?>img/index/BigStdio.png?ver=1.0">
                 </div>
             </div>
             <div class="c_right"></div>
+        </div>
+        <div class="bodyBlank"></div>
+
+        <div id="c_footer">
+            <div style="position:relative;text-align: center">
+                <br>
+                Copyright©2001-2017 中南大学微产品创意工作室 版权所有
+                <br>
+                湖南长沙岳麓区麓山南路932号 410083
+                <br>
+                联系方式:0731-88877617
+                <br>
+            </div>
+
         </div>
     </div>
 </div>
