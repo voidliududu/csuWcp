@@ -65,7 +65,7 @@ body{
 #l_b_left{
     position: relative;
     height:100%;
-    width:15%;
+    width:4.5%;
     /*background-color: black;*/
     float: left;
 }
@@ -83,63 +83,112 @@ body{
     -khtml-opacity: 0.7;
 }
 .l_b_middle{
+    position: relative;
     display: none;
-    height:100%;
-    width:70%;
-    /*background-color: #2e6da4;*/
-    /*margin-left:-0.5em;*/
-    /*display: inline-block;*/
+    width:90%;
+    margin:0 5%;
     float: left;
-}
-#l_b_m_1{
-    /*width:100%;*/
-    /*background-color: white;*/
-    /*height: 50%;*/
 }
 .pic{
-    position: relative;
-    width:25%;
-    height: 50%;
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    min-width: 200px;
+    width:217px;
+    height: auto;
     float: left;
+    margin:10px;
+    background-color: white;
+    /*border:1px #0000FF solid;*/
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
+    transition: all 0.5s;
+    filter: drop-shadow(3px 3px #bbbbba);
+
 }
+.pic:hover{
+    filter: drop-shadow(0 0 #bbbbba);
+    /*background-color: #f1f1f1;*/
+
+}
+
 .p_pic{
-    position: absolute;
+    cursor: pointer;
+    /*position: absolute;*/
     width: 80%;
     height: 70%;
+    min-width: 180px;
     top: 6%;
     left: 10%;
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-        /*background-color: #fffffd;*/
-        /*border-radius: 10px;*/
-        /*-moz-border-radius: 10px;*/
-        /*-webkit-border-radius: 10px;*/
+    transition: all 0.5s;
 }
-.p_title{
+.p_pic:hover{
+    transform:scale(1);
+    -ms-transform:scale(1); 	/* IE 9 */
+    -moz-transform:scale(1); 	/* Firefox */
+    -webkit-transform:scale(1); /* Safari 和 Chrome */
+    -o-transform:scale(1);
+    /*background-color: mediumblue;*/
+}
+.p_pic:before{
+    content: '';
+    width: 100%;
+    margin-top: -10px;
+    height: 100%;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
     position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.7s;
+}
+.p_pic:hover:before{
+    background-color: white;
+    opacity: 0;
+    transform:scale(1.1);
+    -ms-transform:scale(1.1); 	/* IE 9 */
+    -moz-transform:scale(1.1); 	/* Firefox */
+    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+    -o-transform:scale(1.1);
+    /*background-color: mediumblue;*/
+}
+.p_title,.p_introduce{
+    /*position: absolute;*/
     text-align: center;
     /*font-size: 1.6vmax;*/
     width:70%;
-    left:15%;
+    margin-left:15%;
     top: 78%;
     -khtml-opacity: 0.70;
     filter:alpha(Opacity=70);
     -moz-opacity:0.70;
     opacity: 0.70;
     /*background-color: #b6d7f4;*/
-
+}
+.p_introduce{
+    text-align: left;
+    margin-left:5%;
+    width:90%;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    max-height:80px;
 }
 .p_p_p{
-    height:100%;
-    vertical-align: middle;
+    line-height:100%;
+    width:100%;
+    min-width: 180px;
+    vertical-align: bottom;
 }
 #l_b_right{
     height:100%;
-    width:15%;
+    width:4.5%;
     position: relative;
     /*background-color: black;*/
     /*margin-left:-0.5em;*/
@@ -193,24 +242,61 @@ body{
     min-height: 40px;
     float:left;
 }
-.nav{
+.nav,.nav2{
+    position: relative;
+    cursor: pointer;
     float: left;
     margin: 0 1.2% 0 1.3%;
     background-color: #E0E0E0;
-    /*margin: 0 auto;*/
     text-align: center;
     width: 10%;
     height:100%;
-    /*background-color: #5bc0de;*/
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    transition: all 0.5s;
+}
+.nav:hover,.nav2:hover{
+    background-color: white;
+    filter: drop-shadow(2px 2px #a5c2df);
+}
+.nav:after,.nav2:after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    transition: all 0.35s;
+}
+.nav:hover:after,.nav2:hover:after{
+    margin-left:-5px;
+    margin-top:-5px;
+    border: 5px solid blue;
+    -khtml-opacity: 0;
+    filter:alpha(Opacity=0);
+    -moz-opacity:0;
+    opacity: 0;
 }
 .n_nav{
 
 }
 
 .n_n_n{
+    position: relative;
     margin-top: 5px;
-   width: 90%;
+    width: 90%;
     max-height: 100%;
+    overflow: hidden;
+    /*border-right: 200px solid transparent;*/
+    /*-webkit-filter: drop-shadow(200px 0 #f00);*/
+    /*filter: drop-shadow(200px 0 #f00);*/
+
     /*float:right;*/
     /*margin-right:-40px;*/
+    /*transition: all 0.2s;*/
 }

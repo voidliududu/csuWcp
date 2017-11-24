@@ -1,8 +1,21 @@
 /**
  * Created by hesongxian on 2017/5/3.
  */
-var base_url = "http://127.0.0.2/index.php/";
+function setPic(pic){
+    document.getElementById(pic).onload = function() {
+        oPic = $(document.getElementById(pic));
+        urlPic = pic.toString();
+        picId = $(oPic).attr('id').split('/upload/')[1].split('.png')[0];
+        $(oPic).attr('id',picId);
+        setWidth(picId,urlPic);
+    };
+}
 $(function(){
+    var n = Math.ceil(($('#Index').css('width').split('px')[0]-0.1*$('#Index').css('width').split('px')[0])/237)-1 ;
+    nowN = n;
+    $('#l_body').unbind().on('resize',function(){
+        // resizePic();
+    });
     var angle=0;
     setInterval(function(){
         angle += 1;
@@ -10,43 +23,54 @@ $(function(){
         $('.gear2').rotate(-angle);
     },20);
 
-    $('.c_r_i_pic').on('click',function () {
-        var id = $(this).attr('id').split('c_r_i_')[1];
-        $('#Index').css('display','none');
-        $('#l_body').load(base_url + 'Index/showIndexList/' + nameZN_forPHP[id]);
-        $('.l_b_middle-'+id).css('display','block');
-        $('#all').css('display','block');
-        $('#b03').css('height','323px');
-
-    });
-
     //回主导航页
     $('#r_index').on('click',function () {
         $('#Index').css('display','block');
         $('#all').css('display','none');
         $('#b03').css('height','323px');
-
     });
-    // $('.nav').on('click',function () {
-    //     var now = $(this).attr('id').split('r_')[1];
-    //     $('.l_b_middle').css({'display':'none'});
-    //     $('.l_b_middle-'+now).css('display','block');
-    //     $('#b03').css('height','323px');
-    // });
 
-    $('.nav').on('click',function (e) {
-        // var now = $(this).attr('id').split('r_')[1];
-        // $('.l_b_middle').css({'display':'none'});
-        // $('.l_b_middle-'+now).css('display','block');
-        var cate = e.target.name;
-        console.log(e.target);
-        $('#l_body').load(base_url + 'Index/showIndexList/' + cate);
-        $('#b03').css('height','323px');
+
+    $('.c_r_i_pic').unbind('click').on('click',function () {
+        $('#all').css('display','block');
+        var id = $(this).attr('id').split('c_r_i_')[1];
+        $('#Index').css('display','none');
+        $('.l_b_middle').css('display','none');
+        thisList = $('#l_b_middle-'+id);
+        $('#l_body').attr('now',id);
+        if(thisList.attr('click')){
+            $('#l_b_middle-'+id).css('display','block');
+        }
+        else{
+            myfall = new waterFall(id, $('#l_b_middle-'+id).parent(),237);
+            iniPic(id,n,1,myfall);
+
+            myfall.initWater();
+        }
+    });
+
+    $('.nav').unbind('click').on('click',function () {
+        var id = $(this).attr('id').split('r_')[1];
+        $('.l_b_middle').css('display','none');
+        thisList = $('#l_b_middle-'+id);
+        $('#l_body').attr('now',id);
+        if(thisList.attr('click')){
+            $('#l_b_middle-'+id).css('display','block');
+        }
+        else{
+            myfall = new waterFall(id, $('#l_b_middle-'+id).parent(),237);
+            myfall.initWater();
+
+            iniPic(id,n,1,myfall);
+            // for(m=0;m<n;m++){
+            //     $('#' + id + m).toggle('slow');
+            // }
+        }
 
     });
     //----------------------------------点击（出现/关闭）产品页-------------------------------------------
     var scrollTop = 0;
-    $('.pic').on('click',function () {
+    $('.l_b_middle').on('click','.pic',function () {
         var name = $(this).parent().attr('class').substring(22,25);
         if(name == "wyy"){
             name = "wdy"
@@ -62,7 +86,6 @@ $(function(){
         $(this).parent().css('display','none');
         scrollTop = 0;
     });
-
     //产品里的滚动条
     $('.scroll').on('mousewheel',function (event,delta) {
         height = $(this).children('.height');
@@ -84,16 +107,7 @@ $(function(){
     })
 });
 
-
-
 window.onresize = function(){
-    // if(document.getElementById("all").clientHeight > 600 && document.getElementById('all').clientWidth > 1080) {
-    //     $('body').css('overflow','hidden');
-    // }
-    // else{
-    //     $('body').css('overflow','auto');
-    // }
-
     if($('#Index').css('display') != 'none'){
         if(document.getElementById("Index").clientHeight > 500 && document.getElementById('Index').clientWidth > 1024){
             $('#c_l1_row2').css("font-size",'1.6vmax');
@@ -104,7 +118,6 @@ window.onresize = function(){
             $('.c_r1_bg_left').css("left",'3vmax');
             $('.c_r1_bg_right').css("right",'3vmax');
             $('.c_r1_bg_bottom').css("bottom",'2.7vmax');
-            console.log(1)
         }
         else{
             $('#c_l1_row2').css("font-size",'20px');
@@ -115,9 +128,9 @@ window.onresize = function(){
             $('.c_r1_bg_left').css("left",'30px');
             $('.c_r1_bg_right').css("right",'30px');
             $('.c_r1_bg_bottom').css("bottom",'30px');
-            console.log(2)
-
-
         }
     }
 };
+
+
+

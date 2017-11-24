@@ -117,7 +117,7 @@ function init()
 
     var starfield=$i('starfield');
 
-    starfield.style.position='absolute';
+    starfield.style.position='fixed';
 
     starfield.width=w;
 
@@ -360,7 +360,7 @@ document.onkeypress=key_manager;
 
 document.onkeyup=release;
 
-document.onmousewheel=mouse_wheel;
+// document.onmousewheel=mouse_wheel;
 
-if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,false);
+if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,true);
 

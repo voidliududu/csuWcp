@@ -30,3 +30,25 @@ nameZN_forPHP = {
     wmh : 5,
     whd : 6
 };
+var base_url = "http://127.0.0.2/index.php/";
+var nowN = 0;
+var picID = {
+    // gzs:0,
+    // wdy:0,
+    // wyy:0,
+    // app:0,
+    // wzz:0,
+    // wmh:0,
+    // whd:0
+};
+var storeN_id =[];
+// {
+//     gzs:0,
+//     wdy:0,
+//     wyy:0,
+//     app:0,
+//     wzz:0,
+//     wmh:0,
+//     whd:0
+// };
+var oWaterList = {};

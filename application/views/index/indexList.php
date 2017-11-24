@@ -22,51 +22,28 @@ $classMap = [
     '6' => 'l_b_middle-whd'
 ];
 ?>
-            <div id="l_b_left">
-                <div style="vertical-align: middle"><img id="l_b_l_leftA" cateId="<?php echo $cate; ?>" page="<?php echo $page;?>" src="<?php echo base_url('asset/');?>img/arrow.png" /></div>
-            </div>
-                <div class='l_b_middle <?php echo $classMap[$cate];?> ' style='display: block;'>
-                    <?php
-                    foreach ($items->result() as $item){
-                    ?>
-                    <div id="l_b_m_1" class="pic">
-                        <div class="p_pic">
-                            <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="<?php
-                            if($cate == 0){
-                                echo $item->LOGO;
-                            }elseif (array_key_exists($cate,[3=>'',4=>'',5=>'',6 =>''])){
-                                echo $item->COVER;
-                            }elseif(array_key_exists($cate,[1=>'',2=>''])){
-                                echo $item->SCREENSHOOT;
-                            } ?>">
-                        </div>
-                        <div class="p_title"><?php echo $item->NAME;?></div>
-                    </div>
-                    <?php
-                    }
-                    ?>
-                </div>
+    <?php
+    foreach ($items->result() as $item){
+    ?>
+    <div class="pic">
+        <div class="p_pic">
+            <?php
+            if($cate == 0){
+                $getID = $item->LOGO;
+            }elseif (array_key_exists($cate,[3=>'',4=>'',5=>'',6 =>''])){
+                $getID = $item->COVER;
+            }elseif(array_key_exists($cate,[1=>'',2=>''])){
+                $getID = $item->SCREENSHOOT;
+            } ?>
+            <img class="p_p_p" id="<?php echo $getID ?>" src="<?php echo $getID ?>">
+            <script>
+                    setPic('<?php echo $getID ?>');
+            </script>
+            <div class="p_title"><?php echo $item->NAME;?></div>
+            <div class="p_introduce">这里放介绍呀~~~~~我会控制输出多少个字aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        </div>
+    </div>
 
-            <div id="l_b_right">
-                <div style="vertical-align: middle"><img id="l_b_l_rightA" cateId="<?php echo $cate; ?>" page="<?php echo $page;?>" src="<?php echo base_url('asset/');?>img/arrow.png"></div>
-            </div>
-<script>
-    var scrollTop = 0;
-    $('.pic').on('click',function () {
-        var name = $(this).parent().attr('class').substring(22,25);
-        if(name == "wyy"){
-            name = "wdy"
-        }else if(name == "gzs"||name == "app"||name == "whd"){
-            name = "wcp"
-        }
-        $('.page-bac').css('display','block');
-        $('.'+name+'-page')
-            .load(base_url + 'Index/showArticle/' + <?php echo $cate . '/'.$page;?>)
-            .css("display","block");
-    });
-    $('.page-close').on('click',function () {
-        $('.page-bac').css('display','none');
-        $(this).parent().css('display','none');
-        scrollTop = 0;
-    });
-</script>
+        <?php
+    }
+    ?>

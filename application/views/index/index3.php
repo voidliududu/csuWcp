@@ -1,4 +1,4 @@
-<?php 
+<?php
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html lang="zh-CN">
 
@@ -19,28 +19,30 @@
     </style>
     <link href="<?php echo base_url("asset/");?>css/video-js.css" rel="stylesheet">
     <link href="<?php echo base_url("asset/");?>css/index.css?ver=1.2" rel="stylesheet" media="screen">
-    <link href="<?php echo base_url("asset/");?>css/index2.css?ver=1.0" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index2.css?ver=1.6" rel="stylesheet" media="screen">
     <link href="<?php echo base_url("asset/");?>css/buju.css?ver=1.0" rel="stylesheet" media="screen">
 </head>
 
-
-<script src="<?php echo base_url("asset/");?>js/jquery-1.11.1.min.js"></script>
+<script src="<?php echo base_url("asset/");?>js/define.js?ver=1.3"></script>
+<script src="<?php echo base_url("asset/");?>js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/jquery.rotate.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/jquery.color-2.1.0.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/buju.js"></script>
-<script src="<?php echo base_url("asset/");?>js/indexCanvas.js"></script>
-<script src="<?php echo base_url("asset/");?>js/define.js?ver=1.0"></script>
-<script src="<?php echo base_url("asset/");?>js/index.js?ver=1.1"></script>
-<script src="<?php echo base_url("asset/");?>js/jquery.mousewheel.js"></script>
+<script src="<?php echo base_url("asset/");?>js/indexCanvas.js?ver=1.0  "></script>
+<script src="<?php echo base_url("asset/");?>js/indexEvent.js?ver=1.1"></script>
+<script src="<?php echo base_url("asset/");?>js/indexWaterfall.js?ver=1.3"></script>
+<script src="<?php echo base_url("asset/");?>js/indexAjax.js?ver=1.1"></script>
+<!--<script src="--><?php //echo base_url("asset/");?><!--js/jquery.mousewheel.js"></script>-->
 <script src="<?php echo base_url("asset/");?>js/unslider.min.js"></script>
+<script src="<?php echo base_url("asset/");?>js/jquery.ba-resize.min.js?ver=1.0"></script>
 <script src="<?php echo base_url("asset/");?>js/video.min.js"></script>
 <!-- If you'd like to support IE8 -->
 <script src="<?php echo base_url("asset/");?>js/videojs-ie8.min.js"></script>
 
 <body id="body" onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
 
-<canvas id="starfield" style="background-color:rgb(240,240,245);left: 0"></canvas>
-<div id="adsense" style="position:absolute;background-color:transparent;display:none">
+<canvas id="starfield" style="position:fixed;background-color:rgb(240,240,245);left: 0"></canvas>
+<div id="adsense" style="position:fixed;background-color:transparent;display:none">
 
 </div>
 <div id="Index" class="bodyScroll" style="display: block">
@@ -175,7 +177,7 @@
             </div>
 
         <div id="right">
-            <div id="r_index" class="nav">
+            <div id="r_index" class="nav2 ">
                 <img class="n_n_n" src="<?php echo base_url("asset/");?>img/index/IconIndex.png">
                 <div class="n_nav">
                 </div>
@@ -217,18 +219,31 @@
         </div>
         <!--产品及工作室列表-->
         <div id="l_body">
-
+            <div id="l_b_middle-gzs" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-wdy" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-wyy" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-app" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-wzz" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-wmh" class='l_b_middle' style='display: none;'>
+            </div>
+            <div id="l_b_middle-whd" class='l_b_middle' style='display: none;'>
+            </div>
         </div>
 
-        <div id="l_foot">
-            <br>
-            Copyright©2001-2017 中南大学微产品创意工作室 版权所有
-            <br>
-            湖南长沙岳麓区麓山南路932号 410083
-            <br>
-            联系方式:0731-88877617
-            <br>
-        </div>
+<!--        <div id="l_foot">-->
+<!--            <br>-->
+<!--            Copyright©2001-2017 中南大学微产品创意工作室 版权所有-->
+<!--            <br>-->
+<!--            湖南长沙岳麓区麓山南路932号 410083-->
+<!--            <br>-->
+<!--            联系方式:0731-88877617-->
+<!--            <br>-->
+<!--        </div>-->
     </div>
 
 </div>
