@@ -287,35 +287,35 @@ function release()
 
 }
 
-function mouse_wheel(evt)
-
-{
-
-    evt=evt||event;
-
-    var delta=0;
-
-    if(evt.wheelDelta)
-
-    {
-
-        delta=evt.wheelDelta/120;
-
-    }
-
-    else if(evt.detail)
-
-    {
-
-        delta=-evt.detail/3;
-
-    }
-
-    star_speed=(delta>=0)?-0.2:0.2;
-
-    if(evt.preventDefault) evt.preventDefault();
-
-}
+// function mouse_wheel(evt)
+//
+// {
+//
+//     evt=evt||event;
+//
+//     var delta=0;
+//
+//     if(evt.wheelDelta)
+//
+//     {
+//
+//         delta=evt.wheelDelta/120;
+//
+//     }
+//
+//     else if(evt.detail)
+//
+//     {
+//
+//         delta=-evt.detail/3;
+//
+//     }
+//
+//     star_speed=(delta>=0)?-0.2:0.2;
+//
+//     if(evt.preventDefault) evt.preventDefault();
+//
+// }
 
 function start()
 
@@ -362,5 +362,5 @@ document.onkeyup=release;
 
 // document.onmousewheel=mouse_wheel;
 
-if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,true);
+// if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,true);
 

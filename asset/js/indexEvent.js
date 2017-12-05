@@ -8,11 +8,11 @@ function setPic(pic){
         picId = $(oPic).attr('id').split('/upload/')[1].split('.png')[0];
         $(oPic).attr('id',picId);
         setWidth(picId,urlPic);
+
     };
 }
 $(function(){
-    var n = Math.ceil(($('#Index').css('width').split('px')[0]-0.1*$('#Index').css('width').split('px')[0])/237)-1 ;
-    nowN = n;
+    // nowN = n;
     $('#l_body').unbind().on('resize',function(){
         // resizePic();
     });
@@ -25,6 +25,7 @@ $(function(){
 
     //回主导航页
     $('#r_index').on('click',function () {
+        $(window).unbind('scroll');
         $('#Index').css('display','block');
         $('#all').css('display','none');
         $('#b03').css('height','323px');
@@ -42,10 +43,13 @@ $(function(){
             $('#l_b_middle-'+id).css('display','block');
         }
         else{
-            myfall = new waterFall(id, $('#l_b_middle-'+id).parent(),237);
-            iniPic(id,n,1,myfall);
-
-            myfall.initWater();
+            myfall = new waterFall(id, thisList,thisList.parent(),237);
+            iniPic(id,1,myfall,false);
+            getPic(id,myfall);
+            // $(window).on('scroll',function () {
+            //     getPic(id,1,myfall)
+            // });
+            // myfall.initWater();
         }
     });
 
@@ -58,10 +62,13 @@ $(function(){
             $('#l_b_middle-'+id).css('display','block');
         }
         else{
-            myfall = new waterFall(id, $('#l_b_middle-'+id).parent(),237);
-            myfall.initWater();
-
-            iniPic(id,n,1,myfall);
+            myfall = new waterFall(id, thisList,thisList.parent(),237);
+            iniPic(id,1,myfall,false);
+            getPic(id,myfall);
+            // $(window).on('scroll',function () {
+            //     console.log('1')
+            // });
+            // myfall.initWater();
             // for(m=0;m<n;m++){
             //     $('#' + id + m).toggle('slow');
             // }
@@ -77,8 +84,8 @@ $(function(){
         }else if(name == "gzs"||name == "app"||name == "whd"){
             name = "wcp"
         }
-        $('.page-bac').css('display','block');
-        $('.'+name+'-page').css("display","block");
+        // $('.page-bac').css('display','block');
+        // $('.'+name+'-page').css("display","block");
 
     });
     $('.page-close').on('click',function () {

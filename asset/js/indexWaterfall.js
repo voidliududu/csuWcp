@@ -2,10 +2,10 @@
  * Created by hesongxian on 2017/11/19.
  */
 //瀑布流布局JS。兼容最窗口改变的时候，瀑布位置的变化。用一个waterFall对象进行所有的操作，
-// 只需要输入‘名字’、‘父节点’和‘宽度’即可进行瀑布流布局，方便简单。
+// 只需要输入‘名字’、‘父节点（用于操作瀑布）’、‘祖父节点（用获取网页100%宽度或者最大宽度）’和‘宽度’即可进行瀑布流布局，方便简单。
 // 前提是父节点下的子节点就是你需要布局的对象。
 
-function waterFall(name,father,width){
+function waterFall(name,father,grandfather,width){
 /*member*/
 //public
     //该瀑布流的名字，用于分类不同的瀑布流
@@ -14,43 +14,42 @@ function waterFall(name,father,width){
     this.father = father;
     //获取要移动对象的宽度，宽度为  margin + padding + width
     this.width = width;
-
+    //获取要操作的瀑布流的父级节点，从而获取最大的列数n。
+    this.grandfather = grandfather;
+    this.n = parseInt(0.9 * parseInt(this.grandfather.css('width'))/this.width) ;
+    //全局变量保存得到相同名字下，有多少个瀑布被获取了。
+    storeN_id[this.name] = [];
+    //全局变量保存得到相同名字下，每一列下，每一个瀑布的左边距和上边距。
+    oWaterList[this.name] = [];
 /*method*/
 //public
     //初始化当前窗口下列的布局
     this.initWater = function (){
-        storeN_id[this.name] = [];
-        oWaterList[this.name] = [];
-        oHeight_Width = {
-            left : 0,
-            height: 0
-        };
-        k = 0;
-        for (j = 1; j <= this.getCol(); j++) {
-            $(this.father.children()[k]).attr('id', this.name + (j - 1));
-            k++;
-        }
         l = 1;
         for (j = 1; j <= this.getCol(); j++) {
-            oWaterList[this.name][l] = oHeight_Width;
+            $(this.father.children()[l-1]).attr('id', this.name + (j - 1));
+            oWaterList[this.name][l] = {
+                left : 0,
+                height: 0
+            };
             storeN_id[this.name][j] = (this.name + (j-1));
-                console.log(($('#' + this.name + (j - 1))));
             if(l == 1){
-                oWaterList[this.name][l]['left'] = parseInt($('#' + this.name + (j - 1)).css('width')) + 20;
+                oWaterList[this.name][l]['left'] = 0;
             }
             else {
-                oWaterList[this.name][l]['left'] = oWaterList[this.name][(l-1)]['left'] + parseInt($('#' + this.name + (j - 1)).css('width')) + 20;
+                oWaterList[this.name][l]['left'] = oWaterList[this.name][(l-1)]['left'] + this.width;
             }
             l++;
         }
         this.father.css('display', 'block');
+        this.father.children().css('display', 'block');
         this.father.attr('click', true);
         m = 1;
         for (j = 1; j <= this.getCol(); j++) {
             water = $('#' + this.name + (j - 1));
-            setWaterLeft(water,oWaterList[this.name],j - 1);
-            oWaterList[id][m]['height'] = parseInt(water.css('height')) + 60;
-            m++;
+            setWaterLeft(water,oWaterList[this.name],j);
+            oWaterList[this.name][m]['height'] = parseInt(water.css('height')) + 60;
+                m++;
             water.fadeIn('slow');
         }
     };
@@ -136,7 +135,6 @@ function waterFall(name,father,width){
         getHeight = new Array;
         for(j=1;j<=n;j++){
             getHeight[j] = array[j]['height'];
-            // console.log(array[j]['height'],minHeight,j);
             if(array[j]['height'] < minHeight){
                 minHeight = array[j]['height'];
                 minLeft = array[j]['left'];
@@ -153,7 +151,7 @@ function waterFall(name,father,width){
     //设置对象的左边距
     setWaterLeft = function (oPic,array,picID){
         oPic.css('left',array[picID]['left'])
-    }
+    };
 }
 
 

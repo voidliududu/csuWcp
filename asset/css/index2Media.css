@@ -1,0 +1,25 @@
+@media screen and (min-width:320px ) and (max-width: 480px) {
+    .l_b_img {
+        width: 480px;
+        height: 170px;
+    }
+    .nav,.nav2{
+        height:40%
+    }
+}
+@media screen and  (min-width:480px ) and (max-width: 750px) {
+    .dots{
+        bottom:-19px;
+    }
+    .dot{
+        width:5px;
+        height:5px;
+    }
+    .l_b_img {
+        width: 750px;
+        height: 266px;
+    }
+    #l_head{
+        height:40px;
+    }
+}

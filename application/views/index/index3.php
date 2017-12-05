@@ -7,7 +7,7 @@
     <title>中南大学微产品创新工作室</title>
 
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="content-language" content="zh-CN">
 
     <style type="text/css">
@@ -18,8 +18,10 @@
 
     </style>
     <link href="<?php echo base_url("asset/");?>css/video-js.css" rel="stylesheet">
-    <link href="<?php echo base_url("asset/");?>css/index.css?ver=1.2" rel="stylesheet" media="screen">
-    <link href="<?php echo base_url("asset/");?>css/index2.css?ver=1.6" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index.css?ver=1.3" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index2.css?ver=1.7" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/indexMedia.css?ver=1" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url("asset/");?>css/index2Media.css?ver=1.1" rel="stylesheet" media="screen">
     <link href="<?php echo base_url("asset/");?>css/buju.css?ver=1.0" rel="stylesheet" media="screen">
 </head>
 
@@ -28,10 +30,10 @@
 <script src="<?php echo base_url("asset/");?>js/jquery.rotate.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/jquery.color-2.1.0.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/buju.js"></script>
-<script src="<?php echo base_url("asset/");?>js/indexCanvas.js?ver=1.0  "></script>
-<script src="<?php echo base_url("asset/");?>js/indexEvent.js?ver=1.1"></script>
-<script src="<?php echo base_url("asset/");?>js/indexWaterfall.js?ver=1.3"></script>
-<script src="<?php echo base_url("asset/");?>js/indexAjax.js?ver=1.1"></script>
+<script src="<?php echo base_url("asset/");?>js/indexCanvas.js?ver=1.3"></script>
+<script src="<?php echo base_url("asset/");?>js/indexEvent.js?ver=1.5"></script>
+<script src="<?php echo base_url("asset/");?>js/indexWaterfall.js?ver=1.4"></script>
+<script src="<?php echo base_url("asset/");?>js/indexAjax.js?ver=1.3"></script>
 <!--<script src="--><?php //echo base_url("asset/");?><!--js/jquery.mousewheel.js"></script>-->
 <script src="<?php echo base_url("asset/");?>js/unslider.min.js"></script>
 <script src="<?php echo base_url("asset/");?>js/jquery.ba-resize.min.js?ver=1.0"></script>
@@ -53,29 +55,29 @@
             <div id="c_l1_row1" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img class="c_r_i_pic gear" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
+                    <img class="c_r_i_pic2 gear" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
                 </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row2" class="c_row c_row2">
-                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                <div style="display: inline-block;vertical-align: middle">队伍<br>介绍</div>
+<!--                <span style="height:100%;display: inline-block;vertical-align: middle"></span>-->
+<!--                <div style="margin: auto;padding: 0">队伍<br>介绍</div>-->
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row3" class="c_row c_row2">
                 <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                <div style="display: inline-block;vertical-align: middle">工作室<br>介绍</div>
+<!--                <div style="display: inline-block;vertical-align: middle">工作室</div>-->
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row4" class="c_row c_row2">
                 <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                <div style="display: inline-block;vertical-align: middle">实施<br>成效</div>
+<!--                <div style="display: inline-block;vertical-align: middle">实施<br>成效</div>-->
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row5" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img class="c_r_i_pic gear2" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
+                    <img class="c_r_i_pic2 gear2" src="<?php echo base_url("asset/");?>img/index/BigGear.png">
                 </div>
                 <!--<div class="c_r2_bg"></div>-->
             </div>
@@ -91,8 +93,8 @@
                 </div>
             </div>
             <div id="c_l2_row2">
-                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                <div style="display: inline-block;vertical-align: middle">中南大学微产品创意工作室</div>
+                <span class="c_l_r2_span" style=""></span>
+                <div class="c_l_r2_title" style="display: inline-block;vertical-align: middle">中南大学微产品创意工作室</div>
             </div>
             <div id="c_l2_row3" class="c_row">
                 <div class="c_r_img">
@@ -166,11 +168,11 @@
 
             <div class="l_banner" id="b03" >
                 <ul>
-                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
-                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
-                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
-                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
-                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" class="l_b_img" ></li>
+                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" class="l_b_img" ></li>
+                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" class="l_b_img" ></li>
+                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" class="l_b_img" ></li>
+                    <li><img src="<?php echo base_url("asset/");?>img/head-background.jpg" class="l_b_img" ></li>
                 </ul>
                 <!--<a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="arrowl.png" alt="prev" width="20" height="35"></a>-->
                 <!--<a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="arrowr.png" alt="next" width="20" height="37"></a>-->

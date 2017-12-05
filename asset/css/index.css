@@ -77,11 +77,14 @@
     -webkit-border-radius: 50px;
     transition: all 1s;
 }
-#c_l2_row2:hover{
-    background-color: white;
-    transition: all 0.5s;
+.c_l_r2_span{
+    height:100%;
+    display: inline-block;
+    vertical-align: middle
 }
-
+.c_l_r2_title{
+    transition: all 1s;
+}
 .c_row2{
     font-size: 1.6vmax;
     letter-spacing:0.2vmax;
@@ -154,7 +157,7 @@
     background-color: white;
     transition: all 0.5s;
 }
-.c_r_i_pic{
+.c_r_i_pic,.c_r_i_pic2{
     display: inline-block;
     vertical-align: middle;
     width: 65%;

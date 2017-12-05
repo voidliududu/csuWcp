@@ -59,7 +59,7 @@ body{
     margin: 4px auto;
     /*margin-top: 4px;*/
     width:100%;
-    height:40%;
+    height:auto;
     display: inline-block;
 }
 #l_b_left{
@@ -113,7 +113,10 @@ body{
     /*background-color: #f1f1f1;*/
 
 }
-
+.l_b_img{
+    width:1920px;
+    height:680px;
+}
 .p_pic{
     cursor: pointer;
     /*position: absolute;*/

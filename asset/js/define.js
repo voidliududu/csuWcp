@@ -52,3 +52,7 @@ var storeN_id =[];
 //     whd:0
 // };
 var oWaterList = {};
+// var oHeight_Width = {
+//     left : 0,
+//     height: 0
+// };

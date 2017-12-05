@@ -12,7 +12,6 @@
     <!--时间选择器-->
     <link rel="stylesheet" href="<?php echo base_url('asset/');?>css/pikaday.css">
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/jquery-1.10.1.js"></script>
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/define.js"></script>
     <script type="text/javascript" rel="script" src="<?php echo base_url('asset/');?>js/adminJS.js"></script>
