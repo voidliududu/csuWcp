@@ -1,13 +1,77 @@
-@media screen and (min-width:320px ) and (max-width: 480px) {
+@media screen and (min-width: 0px) and (max-width:321px ) {
+    .pic{
+        width:130px;
+        min-width: 0;
+    }
+    .p_pic{
+        min-width: 0;
+    }
+    .p_introduce{
+        max-height: 100px;
+    }
+    .p_p_p{
+        min-width: 0;
+    }
     .l_b_img {
         width: 480px;
         height: 170px;
     }
     .nav,.nav2{
+        width:20%;
+        margin: 10px 2.5%;
+        margin-top: 0;
         height:40%
     }
+    .n_n_n{
+        margin-top:0;
+    }
+    #b03{
+        height: 170px;
+    }
+}
+@media screen and (min-width:321px ) and (max-width: 480px) {
+    .pic{
+        width:150px;
+        min-width: 0;
+    }
+    .p_pic{
+        min-width: 0;
+    }
+    .p_introduce{
+        max-height: 100px;
+    }
+    .p_p_p{
+        min-width: 0;
+    }
+
+    .nav,.nav2{
+        width:20%;
+        margin: 10px 2.5%;
+        margin-top: 0;
+        height:40%
+    }
+    .n_n_n{
+        margin-top:0;
+    }
+    /*.l_b_img {*/
+        /*width: 480px;*/
+        /*height: 170px;*/
+    /*}*/
+    /*#b03{*/
+        /*height: 170px;*/
+    /*}*/
 }
 @media screen and  (min-width:480px ) and (max-width: 750px) {
+    .pic{
+        width:175px;
+        min-width: 0;
+    }
+    .p_pic{
+        min-width: 0;
+    }
+    .p_p_p{
+        min-width: 0;
+    }
     .dots{
         bottom:-19px;
     }
@@ -15,11 +79,33 @@
         width:5px;
         height:5px;
     }
-    .l_b_img {
-        width: 750px;
-        height: 266px;
-    }
+
     #l_head{
         height:40px;
     }
+    /*.l_b_img {*/
+    /*width: 1024px;*/
+    /*height: 384px;*/
+    /*}*/
+    /*#b03{*/
+        /*height: 384px;*/
+    /*}*/
+}
+@media screen and  (min-width:750px ) and (max-width: 1024px){
+    /*#b03{*/
+        /*height: 720px;*/
+    /*}*/
+    /*.l_b_img{*/
+        /*height:720px;*/
+    /*}*/
+}
+@media screen and  (min-width:1024px) {
+    /*#b03{*/
+        /*width:1920px;*/
+        /*height: 720px;*/
+    /*}*/
+    /*.l_b_img{*/
+        /*width:1920px;*/
+        /*height:720px;*/
+    /*}*/
 }
