@@ -9,7 +9,7 @@ function iniPic(id,i,myFall,async){
     }
     $.ajax({
         url: base_url + 'Index/showIndexList/' + nameZN_forPHP[id] + '/' + 1 + '/' + myFall.n,
-        async: async,
+        async: true,
         cache: true,
         success: function (result) {
             if (result != '    ') {
@@ -42,7 +42,6 @@ function getPic(id,myFall){
                 picID[myFall.name] += myFall.n;
                 myFall.father.append(result);
                 myFall.setWater();
-                // $('#b03').css('height', '723px').css('width', '100%');
             }
             else {
                 return false;

@@ -479,8 +479,8 @@ ul, ol { padding: 0;}
 #b03 {
     /*width: 1280px;left:50%;margin-left: -640px;*/
     /*width:500%;*/
-    height:30%;
-    margin-top: -16px;margin-bottom: 20px;}
+    /*height:30%;*/
+    margin-top: -16px;margin-bottom: 20px;  }
 #b03 .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
 #b03 .dots li
 {

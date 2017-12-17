@@ -13,6 +13,10 @@ body{
     height:auto;
     min-width: 1024px;
     min-height: 768px;
+    /*filter:alpha(opacity=0);*/
+    /*-moz-opacity:0;*/
+    /*-khtml-opacity: 0;*/
+    opacity: 0;
 }
 
 #left{

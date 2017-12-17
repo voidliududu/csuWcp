@@ -65,11 +65,8 @@ function waterFall(name,father,grandfather,width,minWidth){
             oWater_HL[this.name][m]['height'] = parseInt(water.css('height')) + parseInt(water.css('margin-bottom')) + parseInt(water.css('margin-top'))+ parseInt(water.css('padding-bottom'))+ parseInt(water.css('padding-top')) ;
                 m++;
             water.fadeIn('slow');
-
         }
         this.father.css('height',findMaxHeight(oWater_HL[this.name],this.n));
-
-
     };
     //触发事件后，对加载的对象进行布局
     this.setWater = function (){
@@ -81,6 +78,10 @@ function waterFall(name,father,grandfather,width,minWidth){
             water = $('#' + this.name + k);
             if(oWaterList[this.name][oMin.locate]){
                 listLength = oWaterList[this.name][oMin.locate].length;
+                if(listLength==0){
+                    oWaterList[this.name][oMin.locate] = [];
+                    listLength = 1;
+                }
             }
             else{
                 oWaterList[this.name][oMin.locate] = [];
@@ -123,17 +124,18 @@ function waterFall(name,father,grandfather,width,minWidth){
         }
          oWaterList[name].splice(tempN,1);
          oWater_HL.splice(tempN,1);
+         return 1;
     };
-    moveRow = function(oWater_HL,array,nowN,name,tempN){
+    this.moveRow = function(oWater_HL,array,nowN,name,tempN){
         oMin = findMinArray(oWater_HL,tempN);
         oWaterList[name][oMin.locate] = [];
         //判断是否为第一行。
         flag = 0;
         for(s=1;s<tempN;s++){
-            if(array[s].length == 2){
+            if(array[s] && array[s].length == 2){
                 flag++;
             }
-            if(flag == tempN-1){
+            if(flag == this.n){
                 return 0;
             }
         }
@@ -155,18 +157,20 @@ function waterFall(name,father,grandfather,width,minWidth){
             array[oMax.locate].splice(r,1);
             i++;
         }
+        return 1;
     };
     //改变窗口大小的时候进行移动。
     this.moveWater = function (){
         nowN =  parseInt(0.9 * parseInt(this.grandfather.css('width'))/this.width);
         if(nowN == this.n){
-            return 0;
+            return 3;
         }
         else if(nowN != this.n){
             //当页面列数变小
             if(nowN < this.n){
                 for(p=this.n; p>nowN; p--){
                     moveCol(oWater_HL[this.name],oWaterList[this.name][p],nowN,this.name,p);
+                    judge = 1;
                 }
             }
             //当页面列数变大
@@ -176,11 +180,13 @@ function waterFall(name,father,grandfather,width,minWidth){
                         left : this.width*(p-1),
                         height: 0
                     };
-                    moveRow(oWater_HL[this.name],oWaterList[this.name],nowN,this.name,p)
+                    judge = this.moveRow(oWater_HL[this.name],oWaterList[this.name],nowN,this.name,p)
                 }
             }
             this.n = nowN;
         }
+        return judge;
+
     };
 
 //private

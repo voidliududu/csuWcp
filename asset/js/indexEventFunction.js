@@ -29,7 +29,6 @@ function showIndex() {
 
 //加载瀑布流
 function showWater(id){
-    setBackGroundSize();
     $('.l_b_middle').css('display','none');
     thisList = $('#l_b_middle-'+id);
     $('#l_body').attr('now',id);
@@ -44,7 +43,10 @@ function showWater(id){
                 getPic(id,myfall);
             }
         }).unbind('resize').on('resize',function () {
-            myfall.moveWater()
+            judge = myfall.moveWater();
+            if(judge == 0){
+                getPic(id,myfall);
+            }
         });
     }
 }
@@ -79,27 +81,30 @@ function getMyfall(id,thisList){
 }
 
 function setBackGroundSize(){
-    windowWidth = $(document).width();
-    height = parseInt(windowWidth/2.667);
+    windowWidth = $(window).width();
+    windowWidthPX =  $(window).width() + 'px';
+    b03Height = parseInt(windowWidth/2.55) + 'px';
+    imgHeight = (parseInt(windowWidth/2.55)-3) + 'px';
     if(windowWidth <= 321){
-        $('#b03').css('height',height).css('width',windowWidth);
-        $('.l_b_img').css('height',height).css('width',windowWidth);
+        $('#b03').css('height',b03Height).css('width',windowWidthPX);
+        $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
     else if(windowWidth > 321 && windowWidth <= 480){
-        $('#b03').css('height',height).css('width',windowWidth);
-        $('.l_b_img').css('height',height).css('width',windowWidth);
+        $('#b03').css('height',b03Height).css('width',windowWidthPX);
+        $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
     else if(windowWidth >480 && windowWidth <= 750){
-        $('#b03').css('height',height).css('width',windowWidth);
-        $('.l_b_img').css('height',height).css('width',windowWidth);
+        $('#b03').css('height',b03Height).css('width',windowWidthPX);
+        $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
     else if(windowWidth > 750 && windowWidth <= 1024){
-        $('#b03').css('height',height).css('width',windowWidth);
-        $('.l_b_img').css('height',height).css('width',windowWidth);
+
+        $('#b03').css('height',b03Height).css('width',windowWidthPX);
+        $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
     else if(windowWidth > 1024){
-        $('#b03').css('height','723px').css('width','1920px');
-        $('.l_b_img').css('height','720px').css('width','1920px');
+        $('#b03').css('height',b03Height).css('width',windowWidthPX);
+        $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
 }
 
