@@ -20,7 +20,7 @@
 //
 //];
 use think\Route;
-
+use \Auth;
 
 //test begin
 Route::get('test/install/studio','admin/Stud/index');
