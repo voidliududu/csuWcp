@@ -56,7 +56,27 @@ class Auth
         //删除产品
         'deleteProduct' => 'admin/Product/deleteProduct',
         //添加产品
-        'addProduct' => 'admin/Product/addProduct'
+        'addProduct' => 'admin/Product/addProduct',
+
+        //上传视频
+        'uploadVideo' => 'admin/Resource/addVideo',
+        //上传视频的表单
+        'addVideoForm' => 'admin/Resource/addVideoForm',
+        //上传图片的表单
+        'addImageForm' => 'admin/Resource/addVideoForm',
+        //上传其他资源的表单
+        'addOtherForm' => 'admin/Resource/addVideoForm',
+
+        //获取页面信息
+        'getPages' => 'admin/Page/getPages',
+        //添加页面
+        'addPages' => 'admin/Page/save',
+        //显示界面
+        'showPage' => 'admin/Page/read',
+        //更新页面
+        'updatePage' => 'admin/Page/update',
+        //删除页面
+        'deletePage' => 'admin/Page/delete'
     ];
     //登录，记录session
     static function login($user){
@@ -177,5 +197,11 @@ class Auth
     public function getProductByStudio($stuid)
     {
         return Url::build(self::$api['getProductByStudio']);
+    }
+
+    //上传视频
+    public function uploadVideo()
+    {
+        return Url::build(self::$api['uploadVideo']);
     }
 }

@@ -261,6 +261,38 @@ return
 //}
 //```json```
 
+4. 添加产品
+/admin//product/add
+post数据：
+    pname   产品名
+    cate    分类id
+    studio  工作室id
+    img     图片链接
+    description 产品描述
+    info_page  详情介绍页链接
+return
+```json
+    {
+      err : 0 ,
+      msg : '成功'
+    }
+```
+5. 通过id更改产品
+/admin//product/mmodify/[id]
+post数据：
+    pname   产品名
+    cate    分类id
+    studio  工作室id
+    img     图片链接
+    description 产品描述
+    info_page  详情介绍页链接
+return
+```json
+    {
+      err : 0 ,
+      msg : '成功'
+    }
+```
 
 
 
@@ -276,7 +308,7 @@ return
 
 ## 资源管理
 1. 上传图片
-/admin/upload/image
+/admin/upload/2
 post:name           //图片名称
      imageFile      //图片文件
      description    //图片描述
@@ -288,7 +320,7 @@ return
 }
 ```
 2. 上传视频
-/admin/upload/video
+/admin/upload/1
 post:name       //视频名称
      videoFile  //视频文件
      description   //视频描述
@@ -304,7 +336,7 @@ post：title
 }
 ```
 4. 其他
-/admin/upload/other
+/admin/upload/3
 post:name       
      File 
      description  

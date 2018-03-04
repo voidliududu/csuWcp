@@ -168,6 +168,7 @@ class Product extends Controller
         if ($req->has('info_page'))
             $product->info_page = $req->post('info_page');
         $product->update_at = date('Y-m-d H;i:s');
+        $product->create_at = $product->update_at;
         if($product->save())
             return json([
                 'err' => 0,
@@ -175,7 +176,7 @@ class Product extends Controller
             ]);
         return json([
             'err' => 4,
-            'msg' => '更改失败'
+            'msg' => '添加失败'
         ]);
     }
 }

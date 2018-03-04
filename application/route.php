@@ -20,11 +20,11 @@
 //
 //];
 use think\Route;
-use \Auth;
 
 //test begin
 Route::get('test/install/studio','admin/Stud/index');
 Route::get('test/install/product','admin/product/index');
+Route::get('test/install/resource','admin/resource/index');
 //test end
 
 
@@ -62,4 +62,27 @@ Route::get('common/product/info/:id',Auth::$api['getProductById']);
 Route::get('admin/product/delete/:id',Auth::$api['deleteProduct']);
 //通过offset，number ，cate获取产品    (ok)
 Route::get('common/product/all/:cate/:offset/:num',Auth::$api['getProducts']);
+//添加产品                            (ok)
+Route::post('admin/product/add',Auth::$api['addProduct']);
+//更改产品
+Route::post('admin/product/modify/:id',Auth::$api['modifyProduct']);
 
+//上传资源
+Route::post('admin/upload/:flag',Auth::$api['uploadResource']);
+//上传媒体资源的表单
+Route::get('admin/form/addVideo',Auth::$api['addVideoForm']);
+//上传图片资源的表单
+Route::get('admin/form/addVideo',Auth::$api['addImageForm']);
+//上传其他资源的表单
+Route::get('admin/form/addVideo',Auth::$api['addOtherForm']);
+
+//通过offset num获取页面信息
+Route::get('admin/page/get/:offset/:num',Auth::$api['getPages']);
+//添加页面
+Route::post('admin/page/add', Auth::$api['addPages']);
+//显示页面
+Route::get('common/page/preview/:id', Auth::$api['showPage']);
+//更新页面
+Route::post('admin/page/update/:id', Auth::$api['updatePage']);
+//删除页面
+Route::get('admin/page/delete/:id',Auth::$api['deletePage']);
