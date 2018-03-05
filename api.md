@@ -107,7 +107,7 @@ return
     "catelogo":""
   },
   {},
-  {},
+  {}
   ]
 }
 ```
@@ -190,26 +190,7 @@ return
     "msg":""
 }
 ```
-3. 添加工作室的表单信息(尚未完成)
-/admin/formParam/addStudio
-```json```
-{
-    err:0
-    msg: '',
-    data:[
-        {
-            formLabel:'工作室名',
-            formName :'studio_name',
-            formType :'input'|'text'|'hidden'|'file',
-            require : true|false
-            value : "默认值"
-        },+++++++++++++++
-        {},
-        {}
-    ],
-    submit:'admin/addStudio'        //数据提交的地址
-}
-```json```
+
 4. 删除工作室
 /admin/studio/delete/[id]
 return 
@@ -295,17 +276,6 @@ return
 ```
 
 
-
-
-
-
-
-
-
-
-
-#尚未完成的接口
-
 ## 资源管理
 1. 上传图片
 /admin/upload/2
@@ -324,17 +294,7 @@ return
 post:name       //视频名称
      videoFile  //视频文件
      description   //视频描述
-3. 添加文章
-post：title
-     author
-     from
-     content
-```json
-{
-    "err":0,
-    "msg":""
-}
-```
+
 4. 其他
 /admin/upload/3
 post:name       
@@ -346,6 +306,7 @@ post:name
     "msg":""
 }
 ```
+
 ## 页面管理
 1. 添加页面表单
 /admin/formParam/Page
@@ -369,8 +330,12 @@ post:name
 }
 ```
 2. 添加页面
-/admin/addPage
-post:data:json数据
+/admin/page/add
+post: 
+    必须：name   页面名
+        template 页面模板
+    可选：任意个键值对，用于上传模板参数
+    
 ```json
 {
     "err":0,
@@ -378,9 +343,36 @@ post:data:json数据
 }
 ```
 
-3.预览页面
-/admin/pagePreview
-post:data:json数据
+3. 预览页面
+/admin/page/preview/[id]
+```json
+{
+    "err":0,
+    "msg":""
+}
+```
+4. 获取页面信息
+/admin/page/get/:offset/:num
+```json
+{
+    "err":0,
+    "msg":""
+}
+```
+5. 更新页面
+/admin/page/update/:id
+post:
+    必须：name   页面名
+        template 页面模板
+    可选：任意个键值对，用于上传模板参数
+```json
+{
+    "err":0,
+    "msg":""
+}
+```
+6. 删除页面
+/admin/page/delete/:id
 ```json
 {
     "err":0,

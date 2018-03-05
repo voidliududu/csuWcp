@@ -13,7 +13,7 @@ class Page extends Controller
     public function getPages($offset, $num)
     {
         $page = new Pages();
-            $result = $page->where('isdelete' , 0)->limit($offset,$num)->order('update_at','desc')->select();
+            $result = $page->limit($offset,$num)->order('update_at','desc')->select();
         if (empty($result)) {
             return json([
                 'err' => 1,

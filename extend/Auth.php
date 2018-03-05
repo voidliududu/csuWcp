@@ -59,7 +59,7 @@ class Auth
         'addProduct' => 'admin/Product/addProduct',
 
         //上传视频
-        'uploadVideo' => 'admin/Resource/addVideo',
+        'uploadResource' => 'admin/Resource/addResource',
         //上传视频的表单
         'addVideoForm' => 'admin/Resource/addVideoForm',
         //上传图片的表单
