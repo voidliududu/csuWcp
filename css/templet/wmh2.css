@@ -1,0 +1,172 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+/*    min-width: 300px;*/
+    max-width: 900px;
+    background-color: #333333;
+}
+
+/*body{
+    max-height: 768px;
+    max-width: 1024px;
+    margin:0;
+    padding:0;
+    background-color: #333333;
+!*    height:100%;
+    width:100%;*!
+}*/
+
+
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+
+
+.ue-bar{
+    display:none;
+    overflow:hidden;
+}
+
+
+#header{
+    font-family: "microsoft yahei", "Times New Roman", "宋体", Times, serif;
+    background-color: #d8d1be/*#8e8787*/;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 100%;
+    height:55px;
+    padding: 2% 2% ;
+    box-shadow: 5px 5px 3px #000000;
+    border-radius:2px;
+    text-align: center;
+    font-size:90px;
+    padding-bottom: 4%;
+}
+
+
+
+#readtop{
+    width:870px;
+    margin:0 auto;
+    padding:20px 0 20px;
+    height:26px;
+    position:relative;
+    z-index:21;
+}
+#readtop h1{
+    float:left;
+}
+#readtop h1,#readtop h1 a{
+    font:36px/40px "Microsoft Yahei";
+    color:#aaa59c;
+}
+#readtop h1 .comic_name{
+    font-size:40px;
+    color:#fff;
+    position:relative;
+    float:left
+}
+/*
+#readtop h1 .ico_comic{
+    position:absolute;
+    right:-20px;
+    top:-10px;
+    width:20px;
+    height:12px;
+    background:#c74949;
+    color:#fff
+}
+#readtop h1 .ico_comic i{
+    font:10px/12px "Arial";
+    -webkit-transform:scale(0.87);
+    position:absolute; top:0;
+    left:0;
+    width:20px;
+    height:12px;
+    text-align:center
+}
+*/
+
+
+
+
+
+/*翻页*/
+.pagebar{
+    float:right;
+    height:40px
+}
+.pagebar .prev,.pagebar .next{
+    padding-top: 6%;
+    font-size: 40px;
+    display:block;
+    float:left;
+    width:150px;
+    height:50px;
+    text-align:center;
+    line-height:26px;
+    color:#ccc;
+    background:#333;
+    font-weight:bold
+}
+.pagebar .prev:hover,.pagebar .next:hover{
+    font-size: 40px;
+    text-decoration:none;
+    border:1px solid /*#8e8787*/#d8d1be;
+    width:150px;
+    height:55px;
+    line-height:24px
+}
+
+
+
+form{
+    background:/*#FE4C40*/#d8d1be;
+}
+
+select{
+    margin-top: 12px;
+    border: solid 5px /*#8e8787*/#d8d1be;
+    /*    appearance:none;*/
+    -moz-appearance:none;    /*for firefox*/
+    -webkit-appearance:none;    /*for chrome*/
+    padding-right: 10px;
+    color:#323131;
+    font-size: 40px;
+    width: 150px;
+    height: 55px;
+    overflow: hidden;
+    background: url(images/18.png) no-repeat right /*#8e8787*/#d8d1be;
+    border-radius: 15px;
+}
+option{
+    color:#323131;
+}
+#page{
+    font-size: 30px;
+}
+
+
+
+
+#content{
+    width: 100%;
+    text-align: center;
+}
+#content img{
+    margin-left: 5%;
+    width:90%;
+}
+
+.footer{
+    display:none;
+    overflow:hidden;
+}
+

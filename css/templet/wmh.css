@@ -1,0 +1,311 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    min-width: 1024px;
+    min-height: 768px;
+    background-color: #333333;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+/*body{
+    max-height: 768px;
+    max-width: 1024px;
+    margin:0;
+    padding:0;
+    background-color: #333333;
+!*    height:100%;
+    width:100%;*!
+}*/
+
+/*标题*/
+#header{
+    font-family: "microsoft yahei", "Times New Roman", "宋体", Times, serif;
+    background-color: #d8d1be/*#8e8787*/;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 20%;
+    height:5%;
+    padding: 2% 2% ;
+    box-shadow: 5px 5px 3px #000000;
+    border-radius:2px;
+    text-align: center;
+    font-size:48px;
+    padding-bottom: 4%;
+
+
+
+/*    position: absolute;
+    top: 3%;
+    line-height: 100%;
+    word-break: keep-all;
+    white-space: nowrap;
+    background-color: #d8d1be;
+    width: 15%;
+    padding: 25px 0;
+    box-shadow: 5px 5px 3px #000000;
+    border-radius: 2px;
+    font-size: 48px;
+    !* vertical-align: middle; *!
+    text-align: center;*/
+}
+
+
+
+/*漫画内容*/
+#content{
+    text-align: center;
+}
+#content img{
+    width:60%;
+}
+
+
+
+
+
+
+/*顶部导航栏*/
+ul{
+    list-style: none;
+}
+
+.ue-bar{
+    width:100%;
+    top: auto;
+/*    position: fixed;*/
+    font-size: 14px;
+    font-family: "Lantinghei SC","Microsoft Yahei",宋体,Arial,Helvetica,sans-serif;
+    background-color: #0c0c0c;
+    filter:alpha(opacity=70);
+    opacity:0.7;
+}
+
+.ue-bar-warp{
+    width:980px;
+    height:70px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.ue-bar-logo{
+    width: 134px;
+    height:50px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+
+.ue-bar-logo a{
+    display:inline-block;
+    width: 100%;
+    height: 100%;
+    margin-top: 12px;
+}
+
+
+.ue-bar-nav{
+    height: 70px;
+    float: left;
+}
+
+
+.ue-bar-nav li{
+    height:70px;
+    float: left;
+    margin-right: 20px;
+}
+
+
+.ue-bar-nav li *{
+    color: #dadada;
+    font-size: 14px;
+    display:inline-block;
+    line-height: 17px;
+    vertical-align: top;
+}
+
+.ue-bar-nav li a{
+    height: 22px;
+    line-height: 22px;
+    padding:26px 17px;
+}
+
+.ue-bar-nav li.active{
+    background:#333;
+}
+
+.ue-bar-nav li a:hover{
+    background:#333;
+}
+
+
+
+
+
+
+
+
+/*章节，翻页*/
+#readtop{
+    width:870px;
+    margin:0 auto;
+    padding:20px 0 20px;
+    height:26px;
+    position:relative;
+    z-index:21;
+}
+#readtop h1{
+    float:left;
+}
+#readtop h1,#readtop h1 a{
+    font:16px/20px "Microsoft Yahei";
+    color:#aaa59c;
+}
+#readtop h1 .comic_name{
+    font-size:20px;
+    color:#fff;
+    position:relative;
+    float:left
+}
+/*
+#readtop h1 .ico_comic{
+    position:absolute;
+    right:-20px;
+    top:-10px;
+    width:20px;
+    height:12px;
+    background:#c74949;
+    color:#fff
+}
+#readtop h1 .ico_comic i{
+    font:10px/12px "Arial";
+    -webkit-transform:scale(0.87);
+    position:absolute; top:0;
+    left:0;
+    width:20px;
+    height:12px;
+    text-align:center
+}
+*/
+
+
+
+
+
+/*翻页*/
+.pagebar{
+    float:right;
+    height:26px
+}
+.pagebar .prev,.pagebar .next{
+    display:block;
+    float:left;
+    width:75px;
+    height:26px;
+    text-align:center;
+    line-height:26px;
+    color:#ccc;
+    background:#333;
+    font-weight:bold
+}
+.pagebar .prev:hover,.pagebar .next:hover{
+    text-decoration:none;
+    border:1px solid /*#8e8787*/#d8d1be;
+    width:73px;
+    height:24px;
+    line-height:24px
+}
+
+
+
+form{
+    background:/*#FE4C40*/#d8d1be;
+}
+
+select{
+    border: solid 5px /*#8e8787*/#d8d1be;
+/*    appearance:none;*/
+    -moz-appearance:none;    /*for firefox*/
+    -webkit-appearance:none;    /*for chrome*/
+    padding-right: 10px;
+    color:#323131;
+    font-size: 18px;
+    width: 100px;
+    height: 32px;
+    overflow: hidden;
+    background: url(images/18.png) no-repeat right /*#8e8787*/#d8d1be;
+    border-radius: 15px;
+}
+option{
+    color:#323131;
+}
+
+
+
+
+
+
+/*底部页码栏*/
+.footer{position:relative;
+    height: 20%;
+    width: 100%;
+    float: left;
+}
+
+.pagination {
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-top: 10px;
+    font-style:oblique;
+}
+.pagination li {
+    display: inline;
+    text-align: center;
+}
+.pagination a {
+    float: left;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 12px;
+    color: #000;
+    margin-left: -1px;
+    border: 1px solid transparent;
+    line-height: 1.5;
+}
+.pagination a.active {
+    cursor: pointer;
+}
+.pagination a:active {
+    outline: none;
+}
+
+.modal a {
+    margin-left: 10px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+.modal a:hover {
+    background-color: /*#776f61*/#d8d1be;
+}
+.active{
+    background-color: /*#776f61*/#d8d1be;
+}
+

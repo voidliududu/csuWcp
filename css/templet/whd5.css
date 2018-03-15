@@ -1,0 +1,121 @@
+html{
+    margin:0;
+    height:100%;
+}
+body{
+    min-height: 600px;
+    min-width: 1024px;
+    height: 100%;
+    width: 100%;
+    margin:0;
+    overflow: hidden;
+}
+#bcground{
+    width: 100%;
+    min-height: 2768px;
+    min-width: 1024px;
+    position: absolute;
+    left: 0;
+    top:-100%;
+    z-index: -1;
+}
+.blur {
+    filter:blur(10px);
+    -webkit-filter:blur(10px);
+    -moz-filter:blur(10px);
+    -ms-filter:blur(10px);
+    -o-filter:blur(10px);
+}
+#lside{
+    width: 50%;
+    height: 80%;
+    float: left;
+}
+header{
+    width: 70%;
+    height: 15%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+    background-color: #fe9814;
+    font-size: 48px;
+    text-align: center;
+    box-shadow:8px 4px 15px #000 ;
+    line-height: 200%;
+    border: 1px solid #000;
+}
+article{
+    word-wrap:break-word;
+    width: 50%;
+    position: relative;
+    top: 15%;
+    left: 35%;
+    font-size: 18px;
+    padding: 20px;
+    background-color:rgba(255,255,255,.8);
+    box-shadow:0 0 30px 30px rgba(255,255,255,.8)
+}
+#rside{
+    width: 50%;
+    height: 80%;
+    float: left;
+}
+#picture{
+    width: 45%;
+    position: relative;
+    top:15%;
+}
+footer{
+    height: 20%;
+    width: 100%;
+    float: left;
+}
+footer div{
+    width: 30%;
+    position: relative;
+    min-width: 530px;
+    margin: 0 auto;
+}
+footer div a
+{
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    float: left;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-right: 10px;
+    font-size: 20px;
+}
+a:hover{
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: #FFA328;
+}
+.colored{
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: #FFA328;
+}
+.arrow-right{
+    position: relative;
+    top: 2px;
+    left: 2px
+}
+.arrow-left{
+    position: relative;
+    top: 2px;
+    left: -2px;
+}
+@media only screen and (max-width: 2000px) { article{ font-size: 26px; }}
+@media only screen and (max-width: 1900px) { article{ font-size: 24px; }}
+@media only screen and (max-width: 1800px) { article{ font-size: 24px; }}
+@media only screen and (max-width: 1700px) { article{ font-size: 22px; }}
+@media only screen and (max-width: 1600px) { article{ font-size: 20px; }}
+@media only screen and (max-width: 1500px) { article{ font-size: 18px; }}
+@media only screen and (max-width: 1100px) { article{ font-size: 16px; }}

@@ -1,0 +1,549 @@
+html {
+    font-family: Microsoft YaHei, NSimSun, STHeiti;
+    margin: 0 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;
+    min-height: 600px;
+    margin: 0 0;
+}
+
+.blur{
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    -webkit-filter: blur(20px); /* Chrome, Opera */
+    -moz-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+}
+
+#background_img_wrapper {
+    position: fixed;
+    width: 100%; /*只有设置了width才能，height不能*/
+    height: auto; /*设置图片充满*/
+    z-index: -10;
+}
+
+#background_img {
+    /*position: relative;*/
+    top: -300px;
+    left: -80px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /*-webkit-filter: blur(50px); !* Chrome, Safari, Opera *!*/
+    /*filter: blur(50px);*/
+    opacity: 1;
+    z-index: -10;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#headline_wrapper {
+    position: relative;
+    width: 100%;
+    height: 20%;
+
+}
+
+/*#headline{*/
+/*position: relative;*/
+/*text-align: center;*/
+/*left: 0;*/
+/*bottom: 0;*/
+/*height: 50%;*/
+/*width: 40%;*/
+/*background-color: #6B1EAC;*/
+/*!*z-index: 10;*!*/
+/*}*/
+
+#headline {
+    position: absolute;
+    bottom: 15%;
+    line-height: 100%;
+    word-break: keep-all;
+    white-space: nowrap;
+    background-color: #6B1EAC;
+    width: 37%;
+    padding: 25px 0; /*   (head_line.height-fontsize)/2  */
+    box-shadow: 5px 5px 3px #000000;
+    border-radius: 2px;
+    font-size: 48px;
+    margin: 0 auto;
+}
+
+#main_part_wrapper {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 80%;
+
+}
+
+#main_part_left {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+#cover_wrapper {
+    position: absolute;
+    right: 120px;
+    top: 15%;
+    width: 33%;
+    height: 33%;
+}
+
+#cover {
+    width: 100%;
+    height: auto;
+}
+
+#music_name {
+    font-size: 45px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 100%;
+}
+
+#main_part_right {
+    float: left;
+    position: relative;
+    left: 0;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+}
+
+#lyric_background {
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+
+#lyric {
+    position: absolute;
+    left: 0;
+    width: 60%;
+    height: 80%;
+    color: white;
+    font-size: 18px;
+    overflow-y: scroll;
+    word-break: break-all;
+}
+
+/* 滚动槽 */
+#lyric::-webkit-scrollbar {
+    width: 12px;
+}
+
+#lyric::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#lyric::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(60, 81, 103, 0.9);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+#player_wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(43, 43, 43, 0.9);
+}
+
+#player {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    left: 180px;
+}
+
+#middle_wrapper {
+    display: inline;
+}
+
+#small_cover {
+    cursor: pointer;
+    height: 88%;
+    background-image: url("../../img/templet/wyy.jpg");
+    background-size: 100% 100%;
+    float: left;
+    position: relative;
+    top: 5%;
+}
+
+.btn {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    border: none;
+    z-index: 1;
+    box-shadow: 0 0 0 0;
+    background-color: transparent;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+}
+
+#button_left {
+    float: left;
+    height: 100%;
+    width: auto;
+    position: relative;
+    right: 18px;
+}
+
+.btn_left {
+    border-radius: 50%;
+    -webkit-transition: background-color 0.2s, color 0.2s;
+    -moz-transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#last_button {
+    background: url("../../img/templet/images/last_before.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+}
+
+#next_button {
+    position: relative;
+    background: url("../../img/templet/images/next_before.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+}
+
+#player_button {
+    background: url("../../img/templet/images/play.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0;
+    margin-right: 15px;
+    width: 55px;
+    height: 55px;
+}
+
+#pause_button {
+    display: none;
+    background: url("../../img/templet/images/pause.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0;
+    margin-right: 15px;
+    width: 55px;
+    height: 55px;
+}
+
+#player_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#pause_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#last_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#next_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#button_right {
+    display: inline;
+    float: left;
+    height: 100%;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.btn_right {
+    float: left;
+    margin-right: 30px;
+    width: 22px;
+    height: 22px;
+}
+
+/*#volume_box{*/
+    /*position: relative;*/
+    /*float: left;*/
+/*}*/
+
+#volume_button {
+    background: url("../../img/templet/images/volume.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position:relative;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#volume_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20%;
+    box-shadow: 2px 1px 1px 1px;
+}
+
+#silence_button {
+    background: url("../../img/templet/images/silence1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position:relative;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: none;
+}
+
+#silence_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20%;
+    box-shadow: 2px 1px 1px 1px;
+}
+
+/*!*音量控制美化*!
+!*横条样式*!
+input[type=range] {
+    -webkit-appearance: none; !*清除系统默认样式*!
+    position: absolute;
+    width: 100px;
+    background: -webkit-linear-gradient(#61bd12, #61bd12) no-repeat, #61bd12;
+        !*background-size: 75% 100%;!*设置左右宽度比例*!*!
+    height: 3px;
+    right: 400px;
+    z-index: 100;
+}
+
+!*拖动块的样式*!
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; !*清除系统默认样式*!
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    border-radius: 50%;
+    border: solid 1px #ddd; !*设置边框*!
+}*/
+
+
+
+/*音量控制美化*/
+/*横条样式*/
+input[type=range] {
+    right: 30%;
+    position: absolute;
+    -webkit-appearance: none;/*清除系统默认样式*/
+    width: 10%;
+    background: -webkit-linear-gradient(#61bd12, #61bd12) no-repeat, #61bd12;
+    /*    background-size: 75% 100%;!*设置左右宽度比例*!*/
+    height: 3px;
+}
+/*拖动块的样式*/
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;/*清除系统默认样式*/
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    border-radius: 50%;
+    border: solid 1px #ddd; /*设置边框*/
+}
+
+
+
+
+
+
+
+
+#order_button {
+    background: url("../../img/templet/images/order.png");
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: center;
+}
+
+#order_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20%;
+    box-shadow: 2px 1px 1px 1px;
+}
+
+#download_button {
+    background: url("../../img/templet/images/download.png");
+    background-repeat: no-repeat;
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+#download_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20%;
+    box-shadow: 2px 1px 1px 1px;
+}
+
+#share_button {
+    background: url("../../img/templet/images/share.png");
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: center;
+}
+
+#share_button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20%;
+    box-shadow: 2px 1px 1px 1px;
+}
+
+#music_list_button {
+    position: absolute;
+    left: 5px;
+    top: 0;
+    background: url("../../img/templet/images/music_list.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 0;
+}
+
+#music_list_wrapper {
+    position: relative;
+    left: 240px;
+    top: 11px;
+    border-radius: 70px;
+    width: 56px;
+    height: 20px;
+    background-color: #1A1A1A;
+    line-height: 100%;
+    font-size: 100%;
+}
+
+#music_list_wrapper:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#list_number {
+    position: absolute;
+    left: 27px;
+    top: 0;
+    font-size: 14px;
+    color: white;
+}
+
+#progress_base {
+    float: left;
+    position: relative;
+    width: 400px;
+    height: 100%;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+#information_wrapper {
+    position: relative;
+    width: 400px;
+    height: auto;
+    top: 10%;
+}
+
+#name {
+    height: 18px;
+    line-height: 18px;
+    float: left;
+    position: relative;
+    color: rgb(195, 195, 195);
+}
+
+#timer {
+    float: right;
+    position: relative;
+    color: rgb(100, 100, 100);
+}
+
+#progress_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#progress_below {
+    position: relative;
+    top: 30%;
+    margin: 0 0;
+    width: 400px;
+    height: 4px;
+    background-color: rgba(163, 163, 163, 0.6);
+    float: left;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+#progress_below span {
+    position: relative;
+    width: 0;
+    height: 4px;
+    background-color: #FFF;
+    border-radius: 5px;
+    display: block;
+    -webkit-transition: width ease-out 0.3s;
+    -o-transition: width ease-out 0.3s;
+    transition: width ease-out 0.3s;
+}
+
+#progress_below span:after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -0.6rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #FFF;
+}
+
+#js-video {
+    display: none;
+}
+
+.haha{
+
+}

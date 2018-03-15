@@ -1,0 +1,125 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+html,body
+{
+    min-width:1024px;
+    min-height:600px;
+    height: 100%;
+    width: 100%;
+}
+.bg
+{
+    background-image: url("../../img/templet/wdy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    min-width:1024px;
+    min-height:600px;
+}
+.main
+{
+    position:relative;
+    height: 100%;
+    width: 100%;
+    min-width:1024px;
+    min-height:600px;
+}
+.top
+{
+    position: absolute;
+    height: 17%;
+    width: 100%;
+
+}
+.bar
+{
+    position: absolute;
+    left: 0;
+    top: 24%;
+    height: 54%;
+    width: 40%;
+    background-color:#369DEF;
+    box-shadow:10px 10px 10px black;
+    font-size: 46px;
+    text-align:center;
+    letter-spacing: 0.5em;
+    padding-top: 20px;
+}
+.middle
+{
+    position: absolute;
+    top: 19%;
+    height: 70%;
+    width: 100%;
+}
+.mid-left
+{
+    position: absolute;
+    top: 0;
+    left: 3%;
+    /*background-image: url("../../img/templet/bg.jpg");*/
+    background-repeat: repeat-y;epeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100%;
+    width: 63%;
+}
+.mid-right
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 24%;
+    padding: 1% 4% 1% 4%;
+    font-size: 28px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow:hidden;
+    letter-spacing: 0.5em;
+}
+.mid-right::before
+{
+    content: "";
+    position: absolute;
+    right: 10%;
+    height: 85%;
+    width: 80%;
+    background-color: white;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+}
+.foot
+{
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+}
+.block
+{
+    background-color:#369DEF;
+    box-shadow:10px 10px 10px black;
+    width: 5%;
+    height: 35%;
+    float: left;
+    margin: 58px 2% 0 5%;
+}
