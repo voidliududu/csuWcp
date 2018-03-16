@@ -307,6 +307,66 @@ post:name
 }
 ```
 
+5.查询资源
+/admin/resource/get/:offset/:num
+```json
+{
+    "err": 0,
+    "msg": "成功",
+    "data": [
+        {
+            "id": 11,
+            "rname": "bb",
+            "image_link": null,
+            "media_link": "/static/uploads/20180317/c4dc23c9f877985eb34d356864227d7b.jpeg",
+            "description": "a bb",
+            "type": "image",
+            "create_at": "2018-03-17 12:47:38",
+            "update_at": "2018-03-17 12:47:38"
+        },
+        {
+            "id": 10,
+            "rname": "a ",
+            "image_link": null,
+            "media_link": "/static/uploads/20180317/f96072370954e867f2afb8788b4f1e48.png",
+            "description": "a ",
+            "type": "image",
+            "create_at": "2018-03-17 12:47:04",
+            "update_at": "2018-03-17 12:47:04"
+        },
+        {
+            "id": 9,
+            "rname": "测试文件",
+            "image_link": null,
+            "media_link": "/static/uploads/20180317/4be2ac9a6513ddce0975a5b748060611.png",
+            "description": "this is a test image file",
+            "type": "image",
+            "create_at": "2018-03-17 12:34:02",
+            "update_at": "2018-03-17 12:34:02"
+        },
+        {
+            "id": 8,
+            "rname": "测试文件",
+            "image_link": null,
+            "media_link": "/static/uploads/20180317/ba7c22b11005d9aff47d0b75a24b8100.png",
+            "description": "this is a test image file",
+            "type": "image",
+            "create_at": "2018-03-17 12:19:35",
+            "update_at": "2018-03-17 12:19:35"
+        }
+    ]
+}
+```
+
+6.资源的删除
+/admin/resource/delete/:id
+返回
+```json
+{
+  "err" : 0,
+  "msg" : "成功"
+}
+```
 ## 页面管理
 1. 添加页面表单
 /admin/formParam/Page

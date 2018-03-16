@@ -66,6 +66,10 @@ class Auth
         'addImageForm' => 'admin/Resource/addVideoForm',
         //上传其他资源的表单
         'addOtherForm' => 'admin/Resource/addVideoForm',
+        //查询资源
+        'getResource' => 'admin/Resource/getResource',
+        //删除资源
+        'deleteResource' => 'admin/Resource/deleteResource',
 
         //获取页面信息
         'getPages' => 'admin/Page/getPages',

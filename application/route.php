@@ -75,6 +75,10 @@ Route::get('admin/form/addVideo',Auth::$api['addVideoForm']);
 Route::get('admin/form/addVideo',Auth::$api['addImageForm']);
 //上传其他资源的表单
 Route::get('admin/form/addVideo',Auth::$api['addOtherForm']);
+//资源的查询
+Route::get('admin/resource/get/:offset/:num',Auth::$api['getResource']);
+//资源的删除
+Route::get('admin/resource/delete/:id',Auth::$api['deleteResource']);
 
 //通过offset num获取页面信息
 Route::get('admin/page/get/:offset/:num',Auth::$api['getPages']);
