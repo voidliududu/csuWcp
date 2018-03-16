@@ -141,12 +141,12 @@ class Resource extends Controller
             case 1:
                 $theName = "vedioFile";
                 $theType = "vedio";
-                $theExt = "mp4";
+                $theExt = "mp3,mp4";
                 break;
             case 2:
                 $theName = "imageFile";
                 $theType = "image";
-                $theExt = "png,jpeg";
+                $theExt = "png,jpeg,jpg";
                 break;
             case 3:
                 $theName = "otherFile";
