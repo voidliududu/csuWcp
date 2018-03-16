@@ -146,7 +146,7 @@ class Resource extends Controller
             case 2:
                 $theName = "imageFile";
                 $theType = "image";
-                $theExt = "mp3";
+                $theExt = "png,jpeg";
                 break;
             case 3:
                 $theName = "otherFile";
@@ -160,7 +160,7 @@ class Resource extends Controller
                 ]);
         }
         if ($request->has($theName,'file')) {
-            $uploadfile = $request->file('videoFile');
+            $uploadfile = $request->file($theName);
             if ($uploadfile) {
                 if($info = $uploadfile->validate(['size' => 10000000, 'ext' => $theExt])
                     ->move(ROOT_PATH.'/public/static/uploads')){
