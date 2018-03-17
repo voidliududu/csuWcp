@@ -173,6 +173,7 @@ class Resource extends Controller
                         return json([
                             'err' => 0,
                             'msg' => '成功',
+                            'link' => $data['media_link']
                         ]);
                     else
                         return json([

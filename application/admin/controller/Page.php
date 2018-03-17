@@ -63,7 +63,8 @@ class Page extends Controller
         if($page->save($info))
             return json([
                 'err' => 0,
-                'msg' => '成功'
+                'msg' => '成功',
+                'link' => '/pages/'.$page->temp_id.'/'.$page->aid,
             ]);
         return json([
             'err' => 4,

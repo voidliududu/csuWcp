@@ -285,8 +285,9 @@ post:name           //图片名称
 return 
 ```json
 {
-    "err":0,
-    "msg":""
+    "err": 0,
+    "msg": "成功",
+    "link": "/static/uploads/20180317/3f1c53c32b1e5154f47921914d04af2f.jpeg"
 }
 ```
 2. 上传视频
@@ -303,7 +304,8 @@ post:name
 ```json
 {
     "err":0,
-    "msg":""
+    "msg":"",
+    "link": ""
 }
 ```
 
@@ -398,8 +400,9 @@ post:
     
 ```json
 {
-    "err":0,
-    "msg":""
+    "err": 0,
+    "msg": "成功",
+    "link": "/pages/3/4"
 }
 ```
 
