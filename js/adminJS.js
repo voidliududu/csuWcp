@@ -16,7 +16,6 @@ $(function () {
         $('#operation_toggle').toggle(500);
         $('#operation span').toggle();
     });
-
     $('#studio_add_check').on('click',function () {
         children = $(this).parent().children();
         stdioName = $(children[0]).children('.add_input').val();

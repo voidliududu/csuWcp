@@ -13,6 +13,9 @@
     float: left;
     margin-right: 40px;
 }
+.quit_word{
+    cursor: pointer;
+}
 #administratorImg img{
     width: 80px;
     height: 80px;
@@ -31,7 +34,7 @@
 /*左列表*/
 /*列表*/
 .active{
-    background-color: #5eacd2;
+    background-color: #5eacd2 !important;
 }
 #left_line .glyphicon{
     float: right;
@@ -44,7 +47,7 @@
     color: #ffffff;
     float: left;
 }
-#studio_toggle,#product_toggle,#classify_toggle,#operation_toggle{
+#studio_toggle,#product_toggle,#classify_toggle,#operation_toggl{
     display: none;
 }
 .main_ul,.sub_ul,.three_ul{
@@ -196,6 +199,7 @@
     padding-left: 50px;
 }
 .add_input{
+    display:inline-block !important;
     padding: 5px 10px;
     color: #425671;
     border: 1px solid #e1e2e6;
