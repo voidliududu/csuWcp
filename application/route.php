@@ -44,6 +44,9 @@ Route::get('admin/cate/info/:id',Auth::$api['getOneCateInfoById']);
 Route::get('admin/cate/delete/:id',Auth::$api['deleteCate']);
 //更改分类
 Route::post('admin/cate/modify/:id',Auth::$api['updateCate']);
+//添加分类
+Route::post('admin/cate/add',Auth::$api['addCate']);
+
 
 //通过id获取工作室信息  (ok)
 Route::get('admin/studio/info/:id',Auth::$api['getStudioById']);

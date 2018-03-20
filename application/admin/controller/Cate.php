@@ -45,6 +45,52 @@ class Cate extends Controller
             ]);
         }
     }
+
+    //更改分类
+    public function addCate(){
+        if(!Auth::checkPrivilege(Auth::$ADMIN))
+            return json([
+                'err' => 5,
+                'msg' => '权限不足'
+            ]);
+        $cate = new Category();
+        $request = Request::instance();
+        if($request->has('catename','post'))
+            $cate->catename = $request->post('catename');
+        else
+            return json([
+                'err' => 1,
+                'msg' => "需要分类名"
+            ]);
+        if($request->has('description','post'))
+            $cate->description = $request->post('description');
+        else
+            return json([
+                'err' => 2,
+                'msg' => '需要描述信息'
+            ]);
+        if($request->has('catelogo','post'))
+            $cate->catelogo = $request->post('catelogo');
+        else
+            return json([
+                'err' => 3,
+                'msg' => '需要logo链接'
+            ]);
+        $cate->update_at = date('Y-m-d H;i:s');
+        $cate->create_at = $cate->update_at;
+        if($cate->save())
+            return json([
+                'err' => 0,
+                'msg' => '成功',
+                'cateid' => $cate->id
+            ]);
+        else
+            return json([
+                'err' => 4,
+                'msg' => '数据库错误'
+            ]);
+    }
+
     //更改分类
     public function modifyOneCate($id){
         if(!Auth::checkPrivilege(Auth::$ADMIN))

@@ -35,6 +35,8 @@ class Auth
         'updateCate' => 'admin/Cate/modifyOneCate',
         //删除分类的接口
         'deleteCate' => 'admin/Cate/deleteCate',
+        //添加分类
+        'addCate' => 'admin/Cate/addCate',
 
         //获取所有工作室
         'getAllStudio' => 'admin/Stud/getAllStudio',
