@@ -1,46 +1,91 @@
 /**
  * Created by hesongxian on 2017/11/20.
  */
-function iniPic(id,i,myFall,async){
-    // picID[myFall.name] = 0;
+function iniPic(id,myFall,async){
     $('#b03').css('width', '100%');
-    if(myFall.n < i){
-        return false;
+    if(id == 'gzs'){
+        url = basicUrl + '/admin/studio/all/'+ '/' + 0 + '/' + myFall.n;
+        name = 'studio_name';
+        img = 'logo';
+    }
+    else{
+        url = basicUrl + '/common/product/all/' + nameZN_forPHP[id] + '/' + 0 + '/' + myFall.n;
+        name = 'pname';
+        img = 'img';
     }
     $.ajax({
-        url: base_url + 'Index/showIndexList/' + nameZN_forPHP[id] + '/' + 1 + '/' + myFall.n,
-        async: true,
+        url: url,
+        async: false,
         cache: true,
         success: function (result) {
-            if (result != '    ') {
-                picID[myFall.name] += myFall.n;
-                myFall.father.append(result);
-                myFall.initWater();
-                $('#b03').css('width', '100%');
-            }
-            else {
+
+            string ='';
+            if (result.err != 0) {
                 return false;
             }
+            if(result.data.length < myFall.n){
+                $('#l_b_middle-'+id).attr('full',1);
+            }
+            else{
+                $('#l_b_middle-'+id).attr('full',0);
+            }
+            for(i=0; i<result.data.length; i++){
+                string +=
+                    '<div class="pic">'+
+                    '<div class="p_pic">'+
+                    '<img class="p_p_p" id="" src="'+result.data[i][img]+'">'+
+                    '<div class="p_title">'+result.data[i][name]+'</div>'+
+                    '<div class="p_introduce">'+result.data[i].description+'</div>'+
+                    '</div>'+
+                    '</div>';
+            }
+            picID[myFall.name] += myFall.n;
+            myFall.father.append(string);
+            myFall.initWater();
+            $('#b03').css('width', '100%');
         }
     })
 }
 
 function getPic(id,myFall){
-    i = storeN_id[myFall.name].length;
-    // console.log(myFall.n);
-    // if(myFall.n < i){
-    //     return false;
-    // }
+    i = storeN_id[myFall.name].num;
+    if(id == 'gzs'){
+        url = basicUrl + '/admin/studio/all/'+ '/' + i + '/' + myFall.n;
+        name = 'studio_name';
+        img = 'logo';
+    }
+    else{
+        url = basicUrl + '/common/product/all/' + nameZN_forPHP[id] + '/' + i + '/' + myFall.n;
+        name = 'pname';
+        img = 'img';
+    }
+    if(i % myFall.n == 0){
+        $('#l_b_middle-'+id).attr('full',0);
+    }
+    else{
+        $('#l_b_middle-'+id).attr('full',1);
+    }
     $.ajax({
         // url: base_url + 'Index/showIndexList/' + nameZN_forPHP[id] + '/' + i + '/' + myFall.n,
         //暂时用这个代替触发事件，要改这里的地址。
-        url: base_url + 'Index/showIndexList/' + nameZN_forPHP[id] + '/' + 1 + '/' + myFall.n,
+        url: url,
         async: false,
         cache: true,
         success: function (result) {
-            if (result != '    ') {
+            string ='';
+            if (result.err == 0) {
+                for(i=0; i<result.data.length; i++){
+                    string +=
+                        '<div class="pic">'+
+                        '<div class="p_pic">'+
+                        '<img class="p_p_p" id="" src="'+result.data[i][img]+'">'+
+                        '<div class="p_title">'+result.data[i][name]+'</div>'+
+                        '<div class="p_introduce">'+result.data[i].description+'</div>'+
+                        '</div>'+
+                        '</div>';
+                }
                 picID[myFall.name] += myFall.n;
-                myFall.father.append(result);
+                myFall.father.append(string);
                 myFall.setWater();
             }
             else {

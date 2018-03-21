@@ -25,6 +25,26 @@ function showIndex() {
     $(window).unbind('scroll');
     $('#Index').css('display','block');
     $('#all').css('display','none');
+    $('.c_r_i_pic').animate({
+        height:'toggle',
+        width:'toggle'
+    },"slow");
+    $('.c_r_i_pic2').animate({
+        height:'toggle',
+        width:'toggle'
+    },'slow');
+    $('.c_row').animate({
+        opacity:1
+    },'fast',function(){
+    });
+    $('.c_l_r2_title').animate({
+        opacity:1
+    },'fast',function(){
+    });
+    $('#c_footer').animate({
+        opacity:1
+    },'normal',function(){
+    });
 }
 
 //加载瀑布流
@@ -37,7 +57,16 @@ function showWater(id){
     }
     else{
         myfall = getMyfall(id,thisList);
-        iniPic(id,1,myfall,false);
+        iniPic(id,myfall,false);
+        if(thisList.attr('full') == 1){
+            $(window).unbind('resize').on('resize',function () {
+                judge = myfall.moveWater();
+                if(judge == 0){
+                    getPic(id,myfall);
+                }
+            });
+            return false;
+        }
         $(window).unbind('scroll').on('scroll',function () {
             if($(this).scrollTop() >= parseInt($(document).height()-$(this).height())){
                 getPic(id,myfall);
@@ -81,6 +110,7 @@ function getMyfall(id,thisList){
 }
 
 function setBackGroundSize(){
+
     windowWidth = $(window).width();
     windowWidthPX =  $(window).width() + 'px';
     b03Height = parseInt(windowWidth/2.55) + 'px';
@@ -98,7 +128,6 @@ function setBackGroundSize(){
         $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }
     else if(windowWidth > 750 && windowWidth <= 1024){
-
         $('#b03').css('height',b03Height).css('width',windowWidthPX);
         $('.l_b_img').css('height',imgHeight).css('width',windowWidthPX);
     }

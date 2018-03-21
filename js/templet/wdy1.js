@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    bodyChange();
     function autoheight(){
         var txtheight=$(".bottom").height();
         $(".txt-bg").height(txtheight);
@@ -12,3 +13,19 @@ $(document).ready(function(){
     });
 
 });
+$('body').on('resize',function () {
+    bodyChange();
+
+});
+function bodyChange() {
+    a = $(window);
+    console.log(a.width());
+    console.log(a.height());
+    if(a.height() >= a.width()){
+        $('#background').css('height','100%').css('width','auto')
+
+    }
+    else{
+        $('#background').css('width','100%').css('height','auto')
+    }
+}

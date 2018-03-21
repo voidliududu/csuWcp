@@ -249,6 +249,8 @@
     transition: background-color .3s;
     float: right;
     font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .check_add{
     background-color: #5eacd2;

@@ -30,9 +30,10 @@ function waterFall(name,father,grandfather,width,minWidth){
 //public
     //初始化当前窗口下列的布局
     this.initWater = function (){
+        storeN_id[this.name]['num'] = father.children().length;
         l = 1;
         for (j = 1; j <= this.getCol(); j++) {
-            $(this.father.children()[l-1]).attr('id', this.name + (j - 1));
+            $(this.father.children()[l-1]).attr('id', this.name + (j - 1)).length;
             storeN_id[this.name][j] = (this.name + (j-1));
             oWaterList[this.name][l] = [];
             oWaterList[this.name][l][1] = {
@@ -70,6 +71,7 @@ function waterFall(name,father,grandfather,width,minWidth){
     };
     //触发事件后，对加载的对象进行布局
     this.setWater = function (){
+        storeN_id[this.name]['num'] = father.children().length;
         length = storeN_id[this.name].length - 1;
         for (k = length; k < this.getCol()+length; k++) {
             oMin = findMinArray(oWater_HL[this.name],this.n);
@@ -168,10 +170,17 @@ function waterFall(name,father,grandfather,width,minWidth){
         else if(nowN != this.n){
             //当页面列数变小
             if(nowN < this.n){
-                for(p=this.n; p>nowN; p--){
+                if(this.n > storeN_id[this.name]['num']){
+                    p = storeN_id[this.name]['num']
+                }
+                else{
+                    p = this.n;
+                }
+                for(p; p>nowN; p--){
                     moveCol(oWater_HL[this.name],oWaterList[this.name][p],nowN,this.name,p);
                     judge = 1;
                 }
+                console.log(oWater_HL);
             }
             //当页面列数变大
             else{
@@ -248,10 +257,6 @@ function waterFall(name,father,grandfather,width,minWidth){
         oPic.css('top',array[picID]['height'])
     }
 }
-
-
-
-
 
 function setWidth(picId,urlPic){
     var img = new Image();

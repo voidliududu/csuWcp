@@ -119,3 +119,23 @@ h1{
 	font-size:18px;
 	line-height:200%;
 }
+@media screen and (max-device-width: 768px) {
+
+	#titles {
+		height:40%;
+		width:80%;
+	}
+	#lefter{
+		right:0;
+		height:auto;
+		width:96%;
+		top:0;
+	}
+	#main-text{
+		width:84%;
+		top:2%;
+	}
+	h1{
+		font-size:14px;
+	}
+}

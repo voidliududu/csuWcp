@@ -27,7 +27,7 @@ body {
 #background_img_wrapper {
     position: fixed;
     width: 100%; /*只有设置了width才能，height不能*/
-    height: auto; /*设置图片充满*/
+    height: 100%; /*设置图片充满*/
     z-index: -10;
 }
 
@@ -172,7 +172,7 @@ body {
 
 #player {
     position: relative;
-    width: 1200px;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     left: 180px;

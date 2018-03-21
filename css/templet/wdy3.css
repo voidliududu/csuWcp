@@ -1,3 +1,4 @@
+
 *
 {
     margin:0;
@@ -122,4 +123,22 @@ html,body
     height: 35%;
     float: left;
     margin: 58px 2% 0 5%;
+}
+@media screen and (max-device-width: 768px) {
+    .mid-right {
+        height:40%;
+        width:94%;
+    }
+    .mid-left{
+        padding-left: 0;
+        margin-left:3%;
+        height:auto;
+        width:94%;
+        top:40%;
+    }
+    .mid-left::before{
+        left:0;
+        height:100%;
+        width:94%;
+    }
 }

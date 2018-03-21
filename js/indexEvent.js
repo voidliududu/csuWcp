@@ -48,7 +48,7 @@ $(function(){
     //二级页面点击触发事件
     $('.nav').unbind('click').on('click',function () {
         var id = $(this).attr('id').split('r_')[1];
-        showWater(id)
+        showWater(id);
     });
 
     //----------------------------------点击（出现/关闭）产品页-------------------------------------------
@@ -72,8 +72,6 @@ $(function(){
     //产品里的滚动条
     $('.scroll').on('mousewheel',function (event,delta) {
         height = $(this).children('.height');
-        console.log(height);
-
         if(delta === -1){
             if(height.length == 0)
                 height = $(this);
@@ -87,10 +85,10 @@ $(function(){
             scrollTop -=100;
             $(this).scrollTop(scrollTop);
         }
+    });
+    $(window).on('resize',function () {
+        resize_changeFont();
+        setBackGroundSize();
+        $('#b03').css('width', '100%');
     })
 });
-
-window.onresize = function(){
-    resize_changeFont();
-    setBackGroundSize();
-};

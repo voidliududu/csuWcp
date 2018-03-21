@@ -23,30 +23,27 @@
             var formData = new FormData();
             formData.append("name", 'aaa');
             formData.append("description", 'bbbb');
-            formData.append("File", document.getElementById("file1").files[0]);
-            $.ajax({
-                processData : false,
-                contentType : false,
-                url : 'http://123.207.108.16/admin/upload/3',
-                async : true,
-                cache : true,
-                type : 'POST',
-                data : {
-                    name : 'aaa' ,
-                    description : 'bbbb',
-                    File :  document.getElementById("file1").files[0]
-                },
-                error:function(result){
-                    console.log(result);
-                    if(result.err == 2){
-                        tishi.text(result.msg + "£¡");
-                    }
-                },
-                success:function (result) {
-
-                    console.log(result);
-                }
-            })
+            formData.append("otherFile", document.getElementById("file1").files[0]);
+            console.log(formData);
+//            $.ajax({
+//                processData : false,
+//                contentType : false,
+//                url : 'http://123.207.108.16/admin/upload/3',
+//                async : true,
+//                cache : true,
+//                type : 'POST',
+//                data : formData,
+//                error:function(result){
+//                    console.log(result);
+//                    if(result.err == 2){
+//                        tishi.text(result.msg + "£¡");
+//                    }
+//                },
+//                success:function (result) {
+//
+//                    console.log(result);
+//                }
+//            })
         })
     })
 </script>

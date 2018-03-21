@@ -117,4 +117,22 @@ p{
 }
 h1{
 	font-size:18px;
-}	
+}
+@media screen and (max-device-width: 768px) {
+
+	.mid-left {
+		height:40%;
+		width:94%;
+	}
+	.mid-right{
+		right:0;
+		height:auto;
+		width:94%;
+		top:40%;
+	}
+	.mid-right::before{
+		right:2%;
+		height:100%;
+		width:94%;
+	}
+}

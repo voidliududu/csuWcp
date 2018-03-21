@@ -116,3 +116,32 @@ h1{
 	font-size:18px;
 	line-height:200%;
 }
+@media screen and (max-device-width: 768px) {
+	#header{
+		height:8%;
+	}
+	#titles {
+		height:100%;
+		width:80%;
+	}
+	#righter{
+		right:0;
+		height:auto;
+		width:96%;
+		position:absolute;
+		left:2%;
+		top:14%;
+	}
+	#main-text{
+		width:94%;
+		top:46%;
+
+	}
+	h1{
+		font-size:2vh;
+	}
+	#footer{
+		position:absolute;
+		top:94%;
+	}
+}

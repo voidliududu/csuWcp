@@ -1,4 +1,11 @@
-
+function click2display_none(){
+    $('#index_page').css('display','none');
+    $('#all_studio_page').css('display','none');
+    $('#studio_info_page').css('display','none');
+    $('#add_studio_page').css('display','none');
+    $('#all_product_page').css('display','none');
+    $('#product_info_page').css('display','none');
+}
 function click2active(obj,thisObj){
     obj.removeClass('active');
     thisObj.addClass('active');
@@ -16,15 +23,16 @@ $(function () {
         clickActive = click2active(clickActive, $(this));
         $(visuable_frame).css("display","none");
         $("#all_studio_page")
-            // .load('list.html' )
+            // .load('studioList.php' )
             .css("display", "block");
         visuable_frame = "#all_studio_page";
     });
     $("#add_studio").on('click',function () {
         clickActive = click2active(clickActive, $(this));
         $(visuable_frame).css("display","none");
+        click2display_none();
         $("#add_studio_page")
-            // .load( 'add.html')
+            .load( 'add.php')
             .css("display", "block");
         visuable_frame = "#add_studio_page";
     });

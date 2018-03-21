@@ -19,14 +19,16 @@ $(function(){
 
             },
             error:function(result){
-                console.log(result);
                 if(result.err == 2){
                     tishi.text(result.msg + "！");
                 }
             },
             success:function (result) {
-
-                console.log(result);
+                if(result.err != 0){
+                    tishi.text("帐号或密码错误！");
+                }
+                tishi.text("登陆中，请稍候。。。");
+                window.location.href = 'superAdmin.html'
             }
         })
     })

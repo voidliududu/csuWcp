@@ -21,6 +21,7 @@ nameZN = {
     6 : '微工作室'
 };
 
+
 nameZN_forPHP = {
     gzs : 0,
     wdy : 1,
@@ -53,7 +54,19 @@ var storeN_id =[];
 // };
 var oWaterList = {};
 var oWater_HL = {};
+var oWaterCount ={}
 // var oHeight_Width = {
 //     left : 0,
 //     height: 0
 // };
+
+var click2list = [
+    'all_product','we_movie','we_mv','we_app','we_cartoon','we_magazine','we_activity','all_studio'
+];
+var click2inf = ['all_studio_page','all_product_page'];
+var backCheck = ['studio_return_check','product_return_check'];
+var changeCheck = ['studio_change_check','product_change_check'];
+var delCheck = ['studio_del_check','product_del_check'];
+var infChange = ['stu_change','pro_change'];
+var infPage = ['studio_info_page','product_info_page'];
+var basicUrl = 'http://123.207.108.16';

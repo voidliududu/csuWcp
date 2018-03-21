@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>upload</title>
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html;  charset=GB18030">
+    <script type="text/javascript" rel="script" src="../../js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+<form action="http://123.207.108.16/admin/upload/2" method="post" enctype="multipart/form-data">
+
+    <input id="submit" type="button" value="上传" />
+</form>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#submit').on('click',function () {
+            $.ajax({
+
+                url : 'http://123.207.108.16/admin/cate/add',
+                async : true,
+                cache : true,
+                type : 'POST',
+                data : {catename:"微活动",description:'',catelogo :''},
+                error:function(result){
+                    console.log(result);
+                    if(result.err == 2){
+                        tishi.text(result.msg + "！");
+                    }
+                },
+                success:function (result) {
+
+                    console.log(result);
+                }
+            })
+        })
+    })
+</script>
