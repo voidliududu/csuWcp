@@ -9,10 +9,11 @@
 
 <body>
 <form action="http://123.207.108.16/admin/upload/2" method="post" enctype="multipart/form-data">
-<input type="file" name="imageFile" id="file1" />
+<input type="file" name="videoFile" id="file1" />
 <input type="text" name="name" id="name" />
 <input type="text" name="description" id="description" />
 <input id="submit" type="button" value="上传" />
+<input id="submit2" type="submit" value="上传submit" />
 </form>
 </body>
 </html>
@@ -23,27 +24,20 @@
             var formData = new FormData();
             formData.append("name", 'aaa');
             formData.append("description", 'bbbb');
-            formData.append("otherFile", document.getElementById("file1").files[0]);
+            formData.append("vedioFile", document.getElementById("file1").files[0]);
             console.log(formData);
-//            $.ajax({
-//                processData : false,
-//                contentType : false,
-//                url : 'http://123.207.108.16/admin/upload/3',
-//                async : true,
-//                cache : true,
-//                type : 'POST',
-//                data : formData,
-//                error:function(result){
-//                    console.log(result);
-//                    if(result.err == 2){
-//                        tishi.text(result.msg + "！");
-//                    }
-//                },
-//                success:function (result) {
-//
-//                    console.log(result);
-//                }
-//            })
+            $.ajax({
+                processData : false,
+                contentType : false,
+                url : 'http://123.207.108.16'+'/admin/upload/1',
+                async : true,
+                cache : true,
+                type : 'POST',
+                data : formData,
+                success:function (result) {
+                    console.log(result);
+                }
+            })
         })
     })
 </script>

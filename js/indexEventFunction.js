@@ -110,7 +110,6 @@ function getMyfall(id,thisList){
 }
 
 function setBackGroundSize(){
-
     windowWidth = $(window).width();
     windowWidthPX =  $(window).width() + 'px';
     b03Height = parseInt(windowWidth/2.55) + 'px';
@@ -151,7 +150,6 @@ function resize_changeFont(){
         $('.l_b_img').css('wdith','480px').css('height','170px');
         $('#b03').css('height','170px')
     }
-
     if($('#Index').css('display') != 'none'){
         if(document.getElementById("Index").clientHeight > 500 && document.getElementById('Index').clientWidth > 1024){
             $('#c_l1_row2').css("font-size",'1.6vmax');

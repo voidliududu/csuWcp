@@ -14,9 +14,10 @@
         <dl class="info_text" >
             <dt>代表图片:</dt>
             <dd  id="">
-                <img src="../../img/profile.png" class="info_img" id="product_img">
-                <input type="file" placeholder=" " name="cover" class="add_input"/>
-                <input type="button" value="上传" name="1" class="" style="display:inline-block;"/>
+                <img src="" class="info_img" id="product_img">
+                <input type="file" placeholder=" " name="cover" class="add_input" accept="image/jpeg, image/jpg, image/png"/>
+                <input type="button" value="上传" name="1" class="upload_img cover" style="display:inline-block;"/>
+                <div class="add_text" style="display:none;color:red"></div>
             </dd>
         </dl>
         <dl class="info_text" >

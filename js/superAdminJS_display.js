@@ -32,7 +32,7 @@ $(function () {
         $(visuable_frame).css("display","none");
         click2display_none();
         $("#add_studio_page")
-            .load( 'add.php')
+            // .load( 'add.php')
             .css("display", "block");
         visuable_frame = "#add_studio_page";
     });
@@ -119,6 +119,7 @@ $(function () {
     });
     $("#add_product").on('click',function () {
         clickActive = click2active(clickActive, $(this));
+        click2display_none();
         $(visuable_frame).css("display","none");
         $('#add_product_page').css('display','block');
         $('#add_product_page_confirm').css("display",'block');
@@ -129,7 +130,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weAct/add.php')
+            // .load('../product/weAct/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main';
     });
@@ -137,7 +138,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weApp/add.php')
+            // .load('../product/weApp/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main';
     });
@@ -145,7 +146,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weCartoon/add.php')
+            // .load('../product/weCartoon/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main';
     });
@@ -153,7 +154,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weMag/add.php')
+            // .load('../product/weMag/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main';
     });
@@ -161,7 +162,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weMovie/add.php')
+            // .load('../product/weMovie/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main,#page_main_movie';
     });
@@ -169,7 +170,7 @@ $(function () {
         $("#add_product_page_confirm").css("display","none");
         $("#add_product_page_main").css("display","block");
         $("#page_main_all")
-            .load('../product/weMusic/add.php')
+            // .load('../product/weMusic/add.php')
             .css("display","block");
         visuable_frame = '#add_product_page_main,#page_main_music';
     });
