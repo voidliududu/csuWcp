@@ -93,3 +93,14 @@ Route::get('common/page/preview/:id', Auth::$api['showPage']);
 Route::post('admin/page/update/:id', Auth::$api['updatePage']);
 //删除页面
 Route::get('admin/page/delete/:id',Auth::$api['deletePage']);
+
+//获取所有横幅信息
+Route::get('common/headbar/getall',Auth::$api['getAllHeadBar']);
+//添加一个横幅
+Route::post('admin/headbar/add',Auth::$api['addHeadBar']);
+//更改横幅信息
+Route::post('admin/headbar/update/:id',Auth::$api['updateHeadBar']);
+//删除横幅信息
+Route::get('admin/headbar/delete/:id',Auth::$api['deleteHeadBar']);
+//获取一个横幅信息
+Route::get('common/headbar/get/:id',Auth::$api['getHeadBar']);

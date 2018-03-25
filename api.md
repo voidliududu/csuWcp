@@ -407,7 +407,7 @@ post:
 ```
 
 3. 预览页面
-/admin/page/preview/[id]
+/common/page/preview/:id
 ```json
 {
     "err":0,
@@ -442,3 +442,28 @@ post:
     "msg":""
 }
 ```
+
+## 横幅管理
+
+1. 获取所有横幅
+get /common/headbar/getall
+
+2. 通过id获取横幅
+get /common/headbar/get/:id
+
+3. 添加横幅
+post /admin/headbar/add
+
+barname 横幅名
+link 横幅的资源链接
+privilige 优先级 显示顺序应按优先级排序 取值为0-10,不可重复
+
+
+4. 更改横幅
+post /admin/headbar/update/:id
+
+参数同上
+
+5. 删除横幅
+
+get /admin/headbar/delete/:id

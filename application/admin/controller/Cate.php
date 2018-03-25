@@ -76,7 +76,7 @@ class Cate extends Controller
                 'err' => 3,
                 'msg' => '需要logo链接'
             ]);
-        $cate->update_at = date('Y-m-d H;i:s');
+        $cate->update_at = date('Y-m-d H:i:s');
         $cate->create_at = $cate->update_at;
         if($cate->save())
             return json([

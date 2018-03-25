@@ -82,7 +82,18 @@ class Auth
         //更新页面
         'updatePage' => 'admin/Page/update',
         //删除页面
-        'deletePage' => 'admin/Page/delete'
+        'deletePage' => 'admin/Page/delete',
+
+        //获取所有横幅信息
+        'getAllHeadBar' => 'admin/HeadBar/index',
+        //添加一个横幅
+        'addHeadBar' => 'admin/HeadBar/save',
+        //获取一个横幅的信息
+        'getHeadBar' => 'admin/HeadBar/read',
+        //更改横幅信息
+        'updateHeadBar' => 'admin/HeadBar/update',
+        //删除横幅
+        'deleteHeadBar' => 'admin/HeadBar/delete',
     ];
     //登录，记录session
     static function login($user){
