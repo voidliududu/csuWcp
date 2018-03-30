@@ -28,7 +28,7 @@
 	margin:0 auto；
 }
 #titles{
-	background-color:orange;
+	background-color:white;
 	width:30%;
 	height:50%;
 	text-align:center;
@@ -86,19 +86,19 @@
 }
 .button:hover{
 	border-radius:50%;
-    background-color:orange;
+    background-color:white;
     color: black;	
 }
 .active{
 	border: none;
-	background-color:orange;
+	background-color:white;
 	padding: 5px 10px;
 	border-radius:50%;
     color: black;	
 }
 .arrow{
 	border: none;
-	background-color:orange;
+	background-color:white;
 	padding: 6px 3px;
 	border-radius:50%;
 }

@@ -25,7 +25,7 @@
 	width:100%
 }
 #titles{
-	background-color:orange;
+	background-color:white;
 	width:40%;
 	height:50%;
 	padding-top:1.5%;
@@ -83,19 +83,19 @@
 }
 .button:hover{
 	border-radius:50%;
-    background-color:orange;
+    background-color:white;
     color: black;	
 }
 .active{
 	border: none;
-	background-color:orange;
+	background-color:white;
 	padding:6px 10px;
 	border-radius:50%;
     color: black;	
 }
 .arrow{
 	border: none;
-	background-color:orange;
+	background-color:white;
 	padding:1px 8px;
 	border-radius:50%;
 }

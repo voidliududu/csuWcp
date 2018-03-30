@@ -2,6 +2,7 @@
  * Created by hesongxian on 2018/3/17.
  */
 $(function () {
+    bindClick2banner();
     for(i=0; i<click2list.length; i++){
         bindClick2list(click2list[i],i);
     }
@@ -21,6 +22,60 @@ $(function () {
         click2showAddPro(proAddPage[m],m);
     }
 });
+
+function bindClick2banner(){
+    $('#manage_source').on('click',function () {
+        click2display_none();
+        $('#banner_info_page').css('display','block').load('banner.php','',function(a,b){
+            if(b == 'success'){
+                for(i=0;i<5;i++){
+                    $.ajax({
+                        processData : false,
+                        contentType : false,
+                        url : basicUrl+'get/common/headbar/get/'+i,
+                        async : true,
+                        cache : true,
+                        type : 'POST',
+                        success:function (result) {
+                            $('#banner_img'+i).attr('src',result.link).attr('name',result.barname);
+                        }
+                    })
+                }
+                bindClick2uploadBanner($('.banner_change'));
+            }
+        })
+    })
+}
+
+function bindClick2uploadBanner(obj) {
+    obj.on('click',function () {
+        thisObj = $(this);
+        $.ajax({
+            processData : false,
+            contentType : false,
+            url : basicUrl+' post/admin/headbar/update'+thisObj.attr('name'),
+            async : true,
+            cache : true,
+            type : 'POST',
+            data:{
+                link:$('#banner_img'+thisObj.attr('name')).attr('src'),
+                barname:$('#banner_img'+thisObj.attr('name')).attr('name'),
+                privilige:thisObj.attr('name')
+            },
+            beforeSend:function () {
+                thisObj.next().text('正在修改...').css('display','inline-block').css('color','red');
+            },
+            success:function (result) {
+                if(result.err == 0){
+                    thisObj.next().text('修改成功！').css('display','inline-block').css('color','green');
+                }
+                else{
+                    thisObj.next().text('修改失败！').css('display','inline-block').css('color','red');
+                }
+            }
+        })
+    })
+}
 
 function bindClick2list(name,i) {
     $('#'+name).unbind('click').on('click',function () {
@@ -45,7 +100,7 @@ function bindClick2list(name,i) {
 
 function ajaxClick2list(page,i){
     if(page == 'all_studio_page'){
-        url = basicUrl + '/admin/studio/all/0/100';
+        url = basicUrl + '/admin/studio/all/0/300';
         cateList = 'studio_table'
     }
     else{
@@ -323,6 +378,7 @@ function click2display_none(){
     $('#all_product_page').css('display','none');
     $('#product_info_page').css('display','none');
     $('#add_product_page').css('display','none');
+    $('#banner_info_page').css('display','none');
 }
 
 function click2uploadFile(name,i) {
@@ -347,6 +403,11 @@ function click2uploadFile(name,i) {
         else if(thisObj.attr('class') == 'upload_img cartoon'){
             name = 'pic';
             description = 'cartoon';
+            imageFile =  thisObj.prev().get(0).files[0];
+        }
+        else if(thisObj.attr('class') == 'upload_img banner'){
+            name = 'banner';
+            description = 'banner';
             imageFile =  thisObj.prev().get(0).files[0];
         }
         textarea = thisObj.parent().next().next();
@@ -377,7 +438,6 @@ function click2uploadFile(name,i) {
                 if(result.err == 0){
                     thisObj.next().text('上传成功！').css('display','inline-block').css('color','green').prev().attr('url',result.link);
                     if(thisObj.prev().prev().attr('class') == 'info_img'){
-
                       thisObj.prev().prev().attr('src',basicUrl+result.link)
                     }
                 }
@@ -604,9 +664,7 @@ function addMusicMovieMag(thisObj,Name,Description,file,Studio,Img,Template,Cate
         data : {
             name:Name.val(),
             template:Template,
-            data:{
-                file:basicUrl+file.attr('url')
-            }
+            file: basicUrl+file.attr('url')
         },
         beforeSend:function () {
             thisObj.next().text("正在生成模板中......").css('display','inline-block');
@@ -693,7 +751,6 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
     });
     $('#add_studio_page').on('click','#studio_add_check',function () {
         thisObj = $(this);
-        console.log('v')
         if(!Name.val()){
             Name.next().text("请输入名字！").css('display','inline-block');
             return false;
@@ -711,7 +768,6 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
             add[i] = 0;
         }
         length = pic.length;
-        console.log('b')
         for(i=0;i<length;i++){
             if(!$(pic[i]).attr('url')){
                 picData[i] = 0;
@@ -756,7 +812,6 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
                 template += 0;
             }
         }
-        console.log('a')
         var formData = new FormData();
         var formDataPage = new FormData();
         var formDataPage_data = new FormData();
@@ -838,16 +893,13 @@ function addActApp(thisObj,Name,Description,pic,Studio,Img,Template,Cate){
     }
     console.log(template);
     var formData = new FormData();
-    var formDataPage = new FormData();
-    var formDataPage_data = new FormData();
     formData.append("name", Name.val());
     formData.append("template", template);
     for(i=0;i<length;i++){
-        formDataPage_data.append("img",$(pic[i]).attr('url'));
-        formDataPage_data.append("description",$(description[i]).val());
-        formDataPage.append(i, formDataPage_data);
+        formData.append("img"+i,$(pic[i]).attr('url'));
+        formData.append("description"+i,$(Description[i]).val());
+        console.log($(description[i]).val());
     }
-    formData.append("data",formDataPage);
     ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,'pro');
 }
 

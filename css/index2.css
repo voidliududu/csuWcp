@@ -140,6 +140,7 @@ body{
     -moz-transform:scale(1); 	/* Firefox */
     -webkit-transform:scale(1); /* Safari 和 Chrome */
     -o-transform:scale(1);
+
     /*background-color: mediumblue;*/
 }
 .p_pic:before{
@@ -165,6 +166,9 @@ body{
     -webkit-transform:scale(1.1); /* Safari 和 Chrome */
     -o-transform:scale(1.1);
     /*background-color: mediumblue;*/
+}
+.p_pic a{
+    height:100%;
 }
 .p_title,.p_introduce{
     /*position: absolute;*/

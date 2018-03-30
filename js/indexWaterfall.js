@@ -64,16 +64,19 @@ function waterFall(name,father,grandfather,width,minWidth){
             setWaterLeft(water,oWater_HL[this.name],j);
             oWaterList[this.name][m][1]['height'] = parseInt(water.css('height')) + parseInt(water.css('margin-bottom')) + parseInt(water.css('margin-top'))+ parseInt(water.css('padding-bottom'))+ parseInt(water.css('padding-top')) ;
             oWater_HL[this.name][m]['height'] = parseInt(water.css('height')) + parseInt(water.css('margin-bottom')) + parseInt(water.css('margin-top'))+ parseInt(water.css('padding-bottom'))+ parseInt(water.css('padding-top')) ;
+            if(isNaN(oWater_HL[this.name][m]['height'])){
+                oWater_HL[this.name][m]['height'] = 0;
+            }
                 m++;
             water.fadeIn('slow');
         }
         this.father.css('height',findMaxHeight(oWater_HL[this.name],this.n));
     };
     //触发事件后，对加载的对象进行布局
-    this.setWater = function (){
+    this.setWater = function (dataLength){
         storeN_id[this.name]['num'] = father.children().length;
         length = storeN_id[this.name].length - 1;
-        for (k = length; k < this.getCol()+length; k++) {
+        for (k = length; k < dataLength+length; k++) {
             oMin = findMinArray(oWater_HL[this.name],this.n);
             $(this.father.children()[k]).attr('id', this.name + k);
             storeN_id[this.name][k+1] = (this.name + (k));
@@ -89,6 +92,7 @@ function waterFall(name,father,grandfather,width,minWidth){
                 oWaterList[this.name][oMin.locate] = [];
                 listLength = 1;
             }
+
             oWaterList[this.name][oMin.locate][listLength] = {
                 left : 0,
                 height: 0,
@@ -100,6 +104,7 @@ function waterFall(name,father,grandfather,width,minWidth){
             oWater_HL[this.name][oMin.locate]['height'] =oWater_HL[this.name][oMin.locate]['height'] + parseInt(water.css('height')) + parseInt(water.css('margin-bottom')) + parseInt(water.css('margin-top'))+ parseInt(water.css('padding-bottom'))+ parseInt(water.css('padding-top')) ;
             setWaterLeft(water,oWater_HL[this.name],oMin.locate);
             water.css('display','block');
+
         }
 
     };
@@ -176,11 +181,14 @@ function waterFall(name,father,grandfather,width,minWidth){
                 else{
                     p = this.n;
                 }
+                // console.log(oWaterList[this.name]);
+                // console.log(oWaterList[this.name][p]);
                 for(p; p>nowN; p--){
                     moveCol(oWater_HL[this.name],oWaterList[this.name][p],nowN,this.name,p);
                     judge = 1;
                 }
-                console.log(oWater_HL);
+                // console.log(judge);
+
             }
             //当页面列数变大
             else{

@@ -18,7 +18,6 @@ function iniPic(id,myFall,async){
         async: false,
         cache: true,
         success: function (result) {
-
             string ='';
             if (result.err != 0) {
                 return false;
@@ -30,10 +29,12 @@ function iniPic(id,myFall,async){
                 $('#l_b_middle-'+id).attr('full',0);
             }
             for(i=0; i<result.data.length; i++){
+                str = result.data[i].info_page.split('/');
+                href = getTemplate(str[5],result.data[i].cate,str[4]);
                 string +=
                     '<div class="pic">'+
-                    '<div class="p_pic">'+
-                    '<img class="p_p_p" id="" src="'+result.data[i][img]+'">'+
+                    '<div class="p_pic" href="'+href+'">'+
+                    '<img class="p_p_p" src="'+result.data[i][img]+'">'+
                     '<div class="p_title">'+result.data[i][name]+'</div>'+
                     '<div class="p_introduce">'+result.data[i].description+'</div>'+
                     '</div>'+
@@ -75,10 +76,12 @@ function getPic(id,myFall){
             string ='';
             if (result.err == 0) {
                 for(i=0; i<result.data.length; i++){
+                    str = result.data[i].info_page.split('/');
+                    href = getTemplate(str[5],result.data[i].cate,str[4]);
                     string +=
                         '<div class="pic">'+
-                        '<div class="p_pic">'+
-                        '<img class="p_p_p" id="" src="'+result.data[i][img]+'">'+
+                        '<div class="p_pic" href="'+href+'">'+
+                        '<img class="p_p_p" src="'+result.data[i][img]+'">'+
                         '<div class="p_title">'+result.data[i][name]+'</div>'+
                         '<div class="p_introduce">'+result.data[i].description+'</div>'+
                         '</div>'+
@@ -86,7 +89,7 @@ function getPic(id,myFall){
                 }
                 picID[myFall.name] += myFall.n;
                 myFall.father.append(string);
-                myFall.setWater();
+                myFall.setWater(result.data.length);
             }
             else {
                 return false;
@@ -94,3 +97,4 @@ function getPic(id,myFall){
         }
     })
 }
+

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../css/templet/whd5.css">
-    <script src="../../js/templet/jquery-1.11.3.min.js"></script>
-</head>
-<body>
-<div id="lside">
+<div id="rside">
     <header>XXX工作室</header>
     <article>
             XXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -19,19 +10,19 @@
         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     </article>
 </div>
-<div id="rside">
-    <div id="picture" >
+<div id="lside">
+    <div id="picture">
         <img src="../../img/templet/whd2.jpg" style="border:15px solid #fff;width: 100%;">
     </div>
 </div>
-<footer id="footer">
+<footer>
     <div id="footer-div">
         <a class="colored" href="#"><img src="../../img/templet/whd_left-arrow.png" class="arrow-left"></a>
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
-        <a href="#">4</a>
-        <a class="colored" href="#">5</a>
+        <a class="colored" href="#">4</a>
+        <a href="#">5</a>
         <a href="#">6</a>
         <a href="#">7</a>
         <a href="#">8</a>
@@ -41,10 +32,10 @@
     </div>
 </footer>
 <img id="bcground" src="../../img/templet/whd2.jpg" class="blur">
-</body>
 <script>
     var height=($("footer").height()-44)/2+"px";
     $("#footer-div").css("top",height);
+    console.log(height);
     function aa() {
         var b_name = navigator.appName;
         var b_version = navigator.appVersion;
@@ -60,4 +51,3 @@
     }
     aa();
 </script>
-</html>

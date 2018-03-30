@@ -33,7 +33,6 @@ nameZN_forPHP = {
     whd : 6,
     gzs : 7
 };
-var base_url = "http://127.0.0.2/index.php/";
 var nowN = 0;
 var picID = {
     // gzs:0,
@@ -71,7 +70,7 @@ var delCheck = ['studio_del_check','product_del_check'];
 var delCheck2 = ['stu_delete','pro_delete'];
 var infChange = ['stu_change','pro_change'];
 var infPage = ['studio_info_page','product_info_page'];
-var uploadCheck = ['page_main_all','studio_info_page','product_info_page','add_studio_page'];
+var uploadCheck = ['page_main_all','studio_info_page','product_info_page','add_studio_page','banner_info_page'];
 var proAddPage = ['page_confirm_act','page_confirm_app','page_confirm_cartoon','page_confirm_mag','page_confirm_movie','page_confirm_music',''];
 var proAddPagePHP = ['../product/weAct/add.php','../product/weApp/add.php','../product/weCartoon/add.php','../product/weMag/add.php','../product/weMovie/add.php','../product/weMusic/add.php',''];
 var basicUrl = 'http://123.207.108.16';

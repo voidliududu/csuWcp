@@ -51,44 +51,17 @@ $(function(){
         showWater(id);
     });
 
-    //----------------------------------点击（出现/关闭）产品页-------------------------------------------
-    var scrollTop = 0;
-    $('.l_b_middle').on('click','.pic',function () {
-        var name = $(this).parent().attr('class').substring(22,25);
-        if(name == "wyy"){
-            name = "wdy"
-        }else if(name == "gzs"||name == "app"||name == "whd"){
-            name = "wcp"
-        }
-        // $('.page-bac').css('display','block');
-        // $('.'+name+'-page').css("display","block");
+    $('#l_body').unbind('click').on('click','.p_pic',function () {
+        window.open($(this).attr('href'))
+    });
 
-    });
-    $('.page-close').on('click',function () {
-        $('.page-bac').css('display','none');
-        $(this).parent().css('display','none');
-        scrollTop = 0;
-    });
-    //产品里的滚动条
-    $('.scroll').on('mousewheel',function (event,delta) {
-        height = $(this).children('.height');
-        if(delta === -1){
-            if(height.length == 0)
-                height = $(this);
-            if(($(height.children()[1]).height()*$(height).children().length) - $(this).height() +50 > scrollTop)
-                scrollTop +=100;
-            $(this).scrollTop(scrollTop);
-        }
-        else{
-            if(0 > scrollTop)
-                return;
-            scrollTop -=100;
-            $(this).scrollTop(scrollTop);
-        }
-    });
     $(window).on('resize',function () {
         resize_changeFont();
         setBackGroundSize();
         $('#b03').css('width', '100%');
     })
 });
+
+
+
+

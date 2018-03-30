@@ -53,26 +53,28 @@ function showWater(id){
     thisList = $('#l_b_middle-'+id);
     $('#l_body').attr('now',id);
     if(thisList.attr('click')){
-        $('#l_b_middle-'+id).css('display','block');
+        thisList.css('display','block');
     }
     else{
         myfall = getMyfall(id,thisList);
         iniPic(id,myfall,false);
-        if(thisList.attr('full') == 1){
-            $(window).unbind('resize').on('resize',function () {
-                judge = myfall.moveWater();
-                if(judge == 0){
-                    getPic(id,myfall);
-                }
-            });
-            return false;
-        }
+
+        // if(thisList.attr('full') == 1){
+        //         $(window).unbind('scroll').unbind('resize');
+        //         return false;
+        // }
         $(window).unbind('scroll').on('scroll',function () {
+            if(thisList.attr('full') == 1){
+                    return false;
+            }
             if($(this).scrollTop() >= parseInt($(document).height()-$(this).height())){
                 getPic(id,myfall);
             }
         }).unbind('resize').on('resize',function () {
             judge = myfall.moveWater();
+            if(thisList.attr('full') == 1){
+                return false;
+            }
             if(judge == 0){
                 getPic(id,myfall);
             }
@@ -172,4 +174,40 @@ function resize_changeFont(){
             $('.c_r1_bg_bottom').css("bottom",'30px');
         }
     }
+}
+
+function getTemplate(id,cate,template) {
+    if(template > 100){
+        template = template.toString();
+    }
+    if(cate == nameZN_forPHP.wdy){
+        if(template == 7){
+            url ='../wdy/wdy2.php?id='+id;
+        }
+        else{
+            url ='../wdy/wdy3.php?id='+id;
+        }
+    }
+    else if(cate == nameZN_forPHP.wmh){
+        url ='../wmh/wmh.php?id='+id;
+
+    }
+    else if(cate == nameZN_forPHP.app || cate == nameZN_forPHP.gzs || cate == nameZN_forPHP.whd ){
+        url ='../whd/whd.php?id='+id;
+    }
+    else if(cate == nameZN_forPHP.wyy){
+        url ='../wyy/wyy.php?id='+id;
+    }
+    else if(cate == nameZN_forPHP.wdy){
+        if(template == 7){
+            url ='../wdy/wdy2.php?id='+id;
+        }
+        else{
+            url ='../wdy/wdy3.php?id='+id;
+        }
+    }
+    else if(cate == nameZN_forPHP.wdy) {
+        url = '../wzz/web/viewer.php?id=' + id;
+    }
+    return url;
 }
