@@ -1,7 +1,6 @@
 ﻿<div id="main">
     <img src="" id="background" data-adaptive-background="1" data-ab-css-background="1"  class="blur" width="100%" height="100%">
 </div>
-<script type="text/javascript" src="../../js/templet/whdIEVersion.js"></script>
 <div id="header">
     <div id="titles">
         <p></p>

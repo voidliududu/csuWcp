@@ -15,22 +15,7 @@
         <img src="../../img/templet/whd2.jpg" style="border:15px solid #fff;width: 100%;">
     </div>
 </div>
-<footer>
-    <div id="footer-div">
-        <a class="colored" href="#"><img src="../../img/templet/whd_left-arrow.png" class="arrow-left"></a>
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a class="colored" href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">7</a>
-        <a href="#">8</a>
-        <a href="#">9</a>
-        <a href="#">10</a>
-        <a class="colored" href="#"><img src="../../img/templet/whd_right-arrow.png" class="arrow-right"></a>
-    </div>
-</footer>
+<div id="footer"></div>
 <img id="bcground" src="../../img/templet/whd2.jpg" class="blur">
 <script>
     var height=($("footer").height()-44)/2+"px";

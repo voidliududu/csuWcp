@@ -9,10 +9,10 @@
     <script src="../../js/rgbaster.js"></script>
     <script src="../../js/define.js"></script>
     <script src="../../js/templet/whd.js"></script>
+    <script type="text/javascript" src="../../js/templet/whdIEVersion.js"></script>
 </head>
 
 <body>
 
-	
 </body>
 </html>

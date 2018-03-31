@@ -7,10 +7,7 @@
         <img src="" id="img" style="border:15px solid #fff;width: 100%;">
     </div>
 </div>
-<footer id="footer">
-    <div id="footer-div">
-   </div>
-</footer>
+<div id="footer"></div>
 <img id="bcground" src="" class="blur">
 <script>
     var height=($("footer").height()-44)/2+"px";

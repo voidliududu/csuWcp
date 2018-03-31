@@ -112,6 +112,45 @@ a:hover{
     top: 2px;
     left: -2px;
 }
+#footer{
+    position:relative;
+    float:right;
+    top:10%;
+    width:100%;
+    text-align:center;
+}
+.button{
+    border: none;
+    color: black;
+    padding:6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background:rgba(225,225,225,0);
+    border-radius:50%;
+}
+.button:hover{
+    border-radius:50%;
+    background-color:white;
+    color: black;
+}
+.active{
+    border: none;
+    background-color:white;
+    padding:6px 10px;
+    border-radius:50%;
+    color: black;
+}
+.arrow{
+    border: none;
+    background-color:white;
+    padding:1px 8px;
+    border-radius:50%;
+}
 @media only screen and (max-width: 2000px) { article{ font-size: 26px; }}
 @media only screen and (max-width: 1900px) { article{ font-size: 24px; }}
 @media only screen and (max-width: 1800px) { article{ font-size: 24px; }}
