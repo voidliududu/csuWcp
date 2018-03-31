@@ -65,4 +65,11 @@ function setvalue(){
     myvideo.muted=false;
 }
 
+$(function () {
+    $('#ran').on('change',function () {
+        myvideo.volume=$(this).val()/100;
+        myvideo.muted=false;
+
+    })
+});
 

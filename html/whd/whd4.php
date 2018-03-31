@@ -1,22 +1,14 @@
 <div id="rside">
-    <header>XXX工作室</header>
-    <article>
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        <br>
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    </article>
+    <header></header>
+    <article> </article>
 </div>
 <div id="lside">
     <div id="picture">
-        <img src="../../img/templet/whd2.jpg" style="border:15px solid #fff;width: 100%;">
+        <img src="" style="border:15px solid #fff;width: 100%;" id="img">
     </div>
 </div>
 <div id="footer"></div>
-<img id="bcground" src="../../img/templet/whd2.jpg" class="blur">
+<img id="bcground" src="" class="blur">
 <script>
     var height=($("footer").height()-44)/2+"px";
     $("#footer-div").css("top",height);

@@ -54,14 +54,20 @@ $(function () {
                     $('#bcground').attr('src',basicUrl+json.img0);
                     $('#titles p').text(result.info.aname);
                     $('#lside header').text(result.info.aname);
+                    $('#rside header').text(result.info.aname);
                     $('#main-text h1').text(json.description0);
                     $('#lside article').text(json.description0);
+                    $('#rside article').text(json.description0);
                     RGBaster.colors(basicUrl+json.img0, {
                         success: function(payload) {
                             $('#titles').css('background-color',payload.dominant);
                             $('.button:hover').css('background-color',payload.dominant);
                             $('.arrow').css('background-color',payload.dominant);
                             $('#picture').css('background-color',payload.dominant);
+                            $('#lside header').css('background-color',payload.dominant);
+                            $('#rside header').css('background-color',payload.dominant);
+                            $('#rside #picture #img').css('border-color',payload.dominant);
+                            $('#lside #picture #img').css('border-color',payload.dominant);
                         }
                     });
                     footStr = '<button class="active" page="'+first+'">1</button>';
@@ -81,10 +87,28 @@ $(function () {
 
 function click2page(result) {
     $('body').on('click','.button',function () {
-        console.log(result);
+        phpPage = $(this).attr('page');
         load = $(this).attr('page');
+        if(phpPage == 1){
+            loadPhp = 1;
+        }
+        else if(phpPage == 2){
+            loadPhp = 0;
+        }
+        else if(phpPage == 3){
+            loadPhp = 2;
+        }
+        else if(phpPage == 4){
+            loadPhp = 3;
+        }
+        else if(phpPage == 5){
+            loadPhp = 4;
+        }
+        else if(phpPage == 6){
+            loadPhp = 5;
+        }
         page = $(this).text();
-        php = 'whd'+load+'.php';
+        php = 'whd'+loadPhp+'.php';
         $('body').html('');
         $('body').load(php,'',function (a,b) {
             if(result.info.temp_id > 100){
@@ -120,21 +144,26 @@ function click2page(result) {
                 }
                 str =  result.info.data_info.substring(0,result.info.data_info.length);
                 json = JSON.parse(str);
-                console.log('img'+page-1)
                 $('title').text(result.info.aname);
                 $('#img').attr('src',basicUrl+json['img'+(page-1)]);
                 $('#background').attr('src',basicUrl+json['img'+(page-1)]);
                 $('#bcground').attr('src',basicUrl+json['img'+(page-1)]);
                 $('#titles p').text(result.info.aname);
                 $('#lside header').text(result.info.aname);
+                $('#rside header').text(result.info.aname);
                 $('#main-text h1').text(json['description'+(page-1)]);
                 $('#lside article').text(json['description'+(page-1)]);
+                $('#rside article').text(json['description'+(page-1)]);
                 RGBaster.colors(basicUrl+json['img'+(page-1)], {
                     success: function(payload) {
                         $('#titles').css('background-color',payload.dominant);
                         $('.button:hover').css('background-color',payload.dominant);
                         $('.arrow').css('background-color',payload.dominant);
                         $('#picture').css('background-color',payload.dominant);
+                        $('#lside header').css('background-color',payload.dominant);
+                        $('#rside header').css('background-color',payload.dominant);
+                        $('#rside #picture #img').css('border-color',payload.dominant);
+                        $('#lside #picture #img').css('border-color',payload.dominant);
                     }
                 });
                 footStr = '';

@@ -63,7 +63,7 @@ article{
 #picture{
     width: 45%;
     position: relative;
-    top:15%;
+    top:3%;
     right: 5%;
     float: right;
 }
@@ -96,13 +96,13 @@ a:hover{
     width: 24px;
     height: 24px;
     border-radius: 24px;
-    background-color: #FFA328;
+    background-color: white;
 }
 .colored{
     width: 24px;
     height: 24px;
     border-radius: 24px;
-    background-color: #FFA328;
+    background-color: white;
 }
 .arrow-right{
     position: relative;

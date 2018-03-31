@@ -3,26 +3,21 @@
  */
 $(function () {
     $.ajax({
-        processData : false,
-        contentType : false,
-        url : basicUrl+'/admin/upload/1',
-        async : true,
+        url : basicUrl + '/common/page/preview/'+ parseInt(thisID),
+        async : false,
         cache : true,
-        type : 'POST',
-        data : formData,
-        beforeSend:function(result){
-            thisObj.next().text('正在上传中,请稍后......').css('display','inline-block')
-        },
         success:function (result) {
-            if(result.err == 0){
-                thisObj.next().text('上传成功！').css('display','inline-block').css('color','green').prev().attr('url',result.link);
-                if(thisObj.prev().prev().attr('class') == 'info_img'){
-                    thisObj.prev().prev().attr('src',basicUrl+result.link)
+            $('title').text(result.info.aname);
+            $('#header').text(result.info.aname);
+            str =  result.info.data_info.substring(0,result.info.data_info.length);
+            json = JSON.parse(str);
+            i=0;
+            while(1){
+                if(json['cartoon'+i] == 'undefined'){
+                    break;
                 }
-            }
-            else{
-                thisObj.next().text('上传失败，请确认文件格式是否正确或检查网络。').css('display','inline-block')
-                    .css('color','red')
+                $('#content').append('<img src="'+basicUrl+json['cartoon'+i]+'">')
+                i++;
             }
         }
     })

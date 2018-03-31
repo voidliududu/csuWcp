@@ -74,7 +74,7 @@ body {
     line-height: 100%;
     word-break: keep-all;
     white-space: nowrap;
-    background-color: #6B1EAC;
+    background-color: white;
     width: 37%;
     padding: 25px 0; /*   (head_line.height-fontsize)/2  */
     box-shadow: 5px 5px 3px #000000;
@@ -113,7 +113,7 @@ body {
 
 #music_name {
     font-size: 45px;
-    color: white;
+    color: black;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
@@ -140,7 +140,7 @@ body {
     left: 0;
     width: 60%;
     height: 80%;
-    color: white;
+    color: black;
     font-size: 18px;
     overflow-y: scroll;
     word-break: break-all;
@@ -185,7 +185,6 @@ body {
 #small_cover {
     cursor: pointer;
     height: 88%;
-    background-image: url("../../img/templet/wyy.jpg");
     background-size: 100% 100%;
     float: left;
     position: relative;

@@ -88,7 +88,6 @@ Change = function () {
     ran_height = ran_height.replace("px", "");
     ran_top = (player_height - ran_height) / 2+20;
     ran.css("top", ran_top);
-
     music_list = $("#music_list_wrapper");
     music_list_height = music_list.css("height");
     music_list_height = music_list_height.replace("px", "");

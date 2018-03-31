@@ -1,8 +1,6 @@
 
 <?php
-$array = explode('/',$_GET);
-$template = $array[2];
-$id = $array[3];
+$id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +10,9 @@ $id = $array[3];
     <title>微动漫</title>
     <link href="../../css/templet/wmh.css" rel="stylesheet" type="text/css" />
     <script src="../../js/templet/jquery-1.11.3.min.js"></script>
-    <script src="../../js/templet/wmhFonts.js"></script>
+    <script src="../../js/define.js"></script>
     <script>
-        var id ="<?php echo $id ?>";
-        var template = "<?php echo $template ?>";
+        var thisID = "<?php echo $id ?>";
     </script>
     <script src="../../js/templet/wmh.js"></script>
     <link media="screen and (min-device-width:300px) and (max-device-width:900px)" rel="stylesheet" href="../../css/templet/wmh2.css"/>
@@ -23,7 +20,7 @@ $id = $array[3];
 <body class="changbody_fontSize" id="">
 
 <!--标题-->
-<div id="header">微漫画：</div>
+<div id="header"></div>
 
 <!--漫画内容-->
 <div id="content" >
