@@ -42,6 +42,8 @@ class Auth
         'getAllStudio' => 'admin/Stud/getAllStudio',
         //根据id获取工作室信息
         'getStudioById' => 'admin/Stud/getStudioById',
+		//添加工作室
+		'addStudio' => 'admin/Stud/addStudio',
         //更改工作室
         'updateStudio' => 'admin/Stud/modifyStudio',
         //删除工作室

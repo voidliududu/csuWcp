@@ -55,7 +55,7 @@ Route::get('admin/studio/all/[:offset]/[:number]',Auth::$api['getAllStudio']);
 //删除工作室
 Route::get('admin/studio/delete/:id',Auth::$api['deleteStudio']);
 //添加工作室
-Route::post('admin/studio/add',Auth::$api['addProduct']);
+Route::post('admin/studio/add',Auth::$api['addStudio']);
 //更改工作室        (ok)
 Route::post('admin/studio/modify/:id',Auth::$api['updateStudio']);
 
