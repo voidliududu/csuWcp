@@ -214,9 +214,9 @@ class HeadBar extends Controller
                'msg' => '指定资源不存在'
             ]);
         }
-        $hb->isdelete = 1;
+//        $hb->isdelete = 1;
 		try{
-        $hb->save();
+        $hb->delete();
         return json([
                'err' => 0,
                'msg' => '成功'
