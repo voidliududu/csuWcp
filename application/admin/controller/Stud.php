@@ -144,7 +144,7 @@ class Stud extends Controller
         if($req->has('description', 'post'))
             $stu->description = $req->post('description');
         if($req->has('info_page', 'post'))
-            $stu->info_page = $req->post('info_apge');
+            $stu->info_page = $req->post('info_page');
         if($stu->save())
             return json([
                'err' => 0,
