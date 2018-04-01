@@ -456,7 +456,7 @@ post /admin/headbar/add
 
 barname 横幅名
 link 横幅的资源链接
-privilige 优先级 显示顺序应按优先级排序 取值为0-10,不可重复
+privilege 优先级 显示顺序应按优先级排序 取值为0-10,不可重复
 
 
 4. 更改横幅

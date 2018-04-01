@@ -90,17 +90,23 @@ class HeadBar extends Controller
         }
         $hb->create_at = date('Y-m-d H:i:s');
         $hb->update_at = $hb->create_at;
-        if($hb->save())
-            return json([
-                'err' => 0,
-                'msg' => '成功'
-            ]);
-        else
-            return json([
+		try{
+        	$hb->save();
+		}catch(\Exception $e) {
+		    return json([
                 'err' => 6,
                 'msg' => '数据库错误'
             ]);
+
+		}
+		return json([
+               'err' => 0,
+               'msg' => '成功'
+	   	]);
+
+
     }
+
 
     /**
      * 显示指定的资源
@@ -171,17 +177,20 @@ class HeadBar extends Controller
             $hb->privilege = $temp_pri;
         }
         $hb->update_at = date('Y-m-d H:i:s');
-        if ($hb->save()) {
-            return json([
-                'err' => 0,
-                'msg' => '成功'
-            ]);
-        }else{
-            return json([
-                'err' => 4,
+        try{
+        	$hb->save();
+		}catch(\Exception $e) {
+		    return json([
+                'err' => 6,
                 'msg' => '数据库错误'
             ]);
-        }
+
+		}
+		return json([
+               'err' => 0,
+               'msg' => '成功'
+	   	]);
+
     }
 
     /**
@@ -206,16 +215,18 @@ class HeadBar extends Controller
             ]);
         }
         $hb->isdelete = 1;
-        if ($hb->save()) {
-           return json([
+		try{
+        $hb->save();
+        return json([
                'err' => 0,
                'msg' => '成功'
-           ]);
-        }else{
-            return json([
+	   	]);
+		}catch(\PDOException $e) {
+		    return json([
                 'err' => 3,
                 'msg' => '数据库错误'
             ]);
-        }
+
+		}
     }
 }
