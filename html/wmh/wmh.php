@@ -24,16 +24,7 @@ $id = $_GET['id'];
 
 <!--漫画内容-->
 <div id="content" >
-    <!--<img src="../../img/templet/images/1.jpg">-->
-    <!--<img src="../../img/templet/images/2.jpg">-->
-    <!--<img src="../../img/templet/images/3.jpg">-->
-    <!--<img src="../../img/templet/images/4.jpg">-->
-    <!--<img src="../../img/templet/images/5.jpg">-->
-    <!--<img src="../../img/templet/images/6.jpg">-->
-    <!--<img src="../../img/templet/images/7.jpg">-->
-    <!--<img src="../../img/templet/images/8.jpg">-->
-    <!--<img src="../../img/templet/images/9.jpg">-->
-    <!--<img src="../../img/templet/images/10.jpg">-->
+
 </div>
 
 </body>

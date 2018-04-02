@@ -54,7 +54,7 @@ html,body
     top: 24%;
     height: 54%;
     width: 40%;
-    background-color:#369DEF;
+    background-color:white;
     box-shadow:10px 10px 10px black;
     font-size: 46px;
     text-align:center;
@@ -120,7 +120,7 @@ html,body
 }
 .block
 {
-    background-color:#369DEF;
+    background-color:white;
     box-shadow:10px 10px 10px black;
     width: 5%;
     height: 35%;

@@ -120,6 +120,7 @@ body{
 .l_b_img{
     width:1920px;
     height:720px;
+    cursor:pointer;
 }
 .p_pic{
     cursor: pointer;

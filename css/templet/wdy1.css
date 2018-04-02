@@ -50,7 +50,7 @@ body {
 .top-square {
     width: 40%;
     height: 60%;
-    background-color: #369DEF;
+    background-color: white;
     font-size: 48px;
     box-shadow: 10px 10px 10px black;
 }
@@ -106,7 +106,7 @@ body {
     height: 50%;
 }
 .line{
-    background-color: #369DEF;
+    background-color: white;
     box-shadow: 10px 10px 10px black;
 }
 #line1{

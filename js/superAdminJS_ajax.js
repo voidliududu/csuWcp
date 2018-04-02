@@ -3,6 +3,7 @@
  */
 $(function () {
     bindClick2banner();
+    bindClick2uploadBanner();
     for(i=0; i<click2list.length; i++){
         bindClick2list(click2list[i],i);
     }
@@ -28,52 +29,56 @@ function bindClick2banner(){
         click2display_none();
         $('#banner_info_page').css('display','block').load('banner.php','',function(a,b){
             if(b == 'success'){
-                for(i=0;i<5;i++){
-                    $.ajax({
-                        processData : false,
-                        contentType : false,
-                        url : basicUrl+'get/common/headbar/get/'+i,
-                        async : true,
-                        cache : true,
-                        type : 'POST',
-                        success:function (result) {
-                            $('#banner_img'+i).attr('src',result.link).attr('name',result.barname);
+                $.ajax({
+                    processData : false,
+                    contentType : false,
+                    url : basicUrl+'/common/headbar/getall',
+                    async : true,
+                    cache : true,
+                    success:function (result) {
+                        for(i=1;i<=result.data.length;i++){
+
+                            $('#banner_img'+i).attr('src',result.data[i-1].link);
+                            changeBut = $('#banner_img'+i).next().next().next().next();
+                            changeBut.attr('hid',result.data[i-1].hid).attr('privilege',result.data[i-1].privilege).attr('name',i);
+                            changeBut.prev().prev().prev().prev().prev().val(result.data[i-1].bar_name);
+
                         }
-                    })
-                }
-                bindClick2uploadBanner($('.banner_change'));
+                    }
+                });
             }
         })
     })
 }
 
-function bindClick2uploadBanner(obj) {
-    obj.on('click',function () {
+function bindClick2uploadBanner() {
+    $('#banner_info_page').on('click','.info_show fieldset .info_text dd .banner_change',function () {
         thisObj = $(this);
-        $.ajax({
-            processData : false,
-            contentType : false,
-            url : basicUrl+' post/admin/headbar/update'+thisObj.attr('name'),
-            async : true,
-            cache : true,
-            type : 'POST',
-            data:{
-                link:$('#banner_img'+thisObj.attr('name')).attr('src'),
-                barname:$('#banner_img'+thisObj.attr('name')).attr('name'),
-                privilige:thisObj.attr('name')
-            },
-            beforeSend:function () {
-                thisObj.next().text('正在修改...').css('display','inline-block').css('color','red');
-            },
-            success:function (result) {
-                if(result.err == 0){
-                    thisObj.next().text('修改成功！').css('display','inline-block').css('color','green');
+        pro_id = thisObj.prev().prev().prev().prev().prev().val();
+        if(pro_id && !isNaN(pro_id)) {
+            $.ajax({
+                url: basicUrl + '/admin/headbar/update/' + thisObj.attr('hid'),
+                async: true,
+                cache: true,
+                type: 'POST',
+                data: {
+                    link: $('#banner_img' + thisObj.attr('name')).attr('src'),
+                    barname: pro_id,
+                    privilege: thisObj.attr('privilege')
+                },
+                beforeSend: function () {
+                    thisObj.next().text('正在修改...').css('display', 'inline-block').css('color', 'red');
+                },
+                success: function (result) {
+                    if (result.err == 0) {
+                        thisObj.next().text('修改成功！').css('display', 'inline-block').css('color', 'green');
+                    }
+                    else {
+                        thisObj.next().text('修改失败！').css('display', 'inline-block').css('color', 'red');
+                    }
                 }
-                else{
-                    thisObj.next().text('修改失败！').css('display','inline-block').css('color','red');
-                }
-            }
-        })
+            })
+        }
     })
 }
 
@@ -295,7 +300,7 @@ function click2delInf(i) {
         if(!confirm("确认不是手抖点了删除啊？")){
             return;
         }
-        url = basicUrl + $(this).attr('del');
+        url = $(this).attr('del');
         $.ajax({
             url : url,
             async : true,
@@ -611,7 +616,7 @@ function click2showAddPro(name,i){
         $("#add_studio_page").load( 'add.php','',function (a,b) {
             if(b == 'success'){
                 name = $('#stu_name');
-                img = $('#pro_img');
+                img = $('#stu_img');
                 department = $('#stu_department');
                 $('.preview').click(function (e) {
                     $(this).siblings().stop().fadeTo(500,0.4);
@@ -648,7 +653,7 @@ function addMusicMovieMag(thisObj,Name,Description,file,Studio,Img,Template,Cate
     }
     Name.next().css('display','none');
     if(!Description.val()){
-        Description.css('display','inline-block');
+        Description.next().text("请输入描述！").css('display','inline-block');
         return false;
     }
     Description.next().css('display','none');
@@ -664,7 +669,9 @@ function addMusicMovieMag(thisObj,Name,Description,file,Studio,Img,Template,Cate
         data : {
             name:Name.val(),
             template:Template,
-            file: basicUrl+file.attr('url')
+            file: basicUrl+file.attr('url'),
+            description: Description.val(),
+            img:basicUrl + Img.attr('url')
         },
         beforeSend:function () {
             thisObj.next().text("正在生成模板中......").css('display','inline-block');
@@ -707,7 +714,6 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
         addActApp(thisObj,Name,Description,pic,Studio,Img,Template,Cate)
     })
     .on('click','#cartoon_add_check',function () {
-        console.log('n')
         thisObj = $(this);
         if(!Name.val()){
             Name.next().text("请输入名字！").css('display','inline-block');
@@ -729,9 +735,8 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
         var formData = new FormData();
         formData.append("name", Name.val());
         formData.append("template", Template);
-        var formDataPage = new FormData();
         for(k=0;k<length;k++){
-            formDataPage.append("cartoon", $(pic[i]).attr('url') );
+            formData.append("cartoon"+k, $(pic[k]).attr('url') );
             if(add[0] == 0){
                 $('#last_text2').text('请上传图片。').css('display','inline-block');
                 return false;
@@ -743,7 +748,6 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
             $('#last_text2').css('display','none')
         }
         ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,'pro')
-
     })
     .on('click','#app_add_check',function () {
         thisObj = $(this);
@@ -789,7 +793,7 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
             }
             add[i] =  picData[i] + templateData[i] + descriptionData[i];
             if(add[i] == 1 || add[i] == 2){
-                $('#last_text').text('如果想添加新的页面，请完整输入介绍图片、介绍内容，选择模版。').css('display','inline-block')
+                $('#last_text').text('如果想添加新的页面，请完整输入介绍图片、介绍内容，选择模版。').css('display','inline-block');
                 return false;
             }
             $('#last_text').css('display','none')
@@ -797,7 +801,7 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
 
         for(k=0;k<length;k++){
             if(add[k] == 0 && add[k+1] != 0 && k != 9){
-                $('#last_text2').text('添加的页面要按照顺序添加，中间不能跳过。请完整添加页面。').css('display','inline-block')
+                $('#last_text2').text('添加的页面要按照顺序添加，中间不能跳过。请完整添加页面。').css('display','inline-block');
                 return false;
             }
             $('#last_text2').css('display','none')
@@ -811,18 +815,16 @@ function click2addActAppStudioCartoon(Name,Description,pic,Studio,Img,Template,C
             else{
                 template += 0;
             }
+            j++;
         }
+        console.log(template);
         var formData = new FormData();
-        var formDataPage = new FormData();
-        var formDataPage_data = new FormData();
         formData.append("name", Name.val());
         formData.append("template", template);
         for(i=0;i<length;i++){
-            formDataPage_data.append("img",$(pic[i]).attr('url'));
-            formDataPage_data.append("description",$(description[i]).val());
-            formDataPage.append(i, formDataPage_data);
+            formData.append("img"+i,$(pic[i]).attr('url'));
+            formData.append("description"+i,$(Description[i]).val());
         }
-        formData.append("data",formDataPage);
         ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,'stu');
     });
 }
@@ -898,7 +900,6 @@ function addActApp(thisObj,Name,Description,pic,Studio,Img,Template,Cate){
     for(i=0;i<length;i++){
         formData.append("img"+i,$(pic[i]).attr('url'));
         formData.append("description"+i,$(Description[i]).val());
-        console.log($(description[i]).val());
     }
     ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,'pro');
 }
@@ -912,12 +913,14 @@ function ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,type){
         formData2.append('img',basicUrl + Img.attr('url'));
         formData2.append('description','');
         console.log(Name.val());
+        URL =  basicUrl + '/admin/product/add'
     }
     else if(type == 'stu'){
         formData2.append('studio_name',Name.val());
         formData2.append('department',Studio.val());
         formData2.append('logo',basicUrl + Img.attr('url'));
         formData2.append('description','');
+        URL = basicUrl + '/admin/studio/add'
     }
     $.ajax({
         processData : false,
@@ -931,7 +934,7 @@ function ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,type){
             thisObj.next().text("正在生成模板中......").css('display','inline-block');
         },
         success:function (result) {
-            console.log(result);
+            // console.log(result);
             thisObj.next().text(result.msg);
             if(result.err == 0){
                 thisObj.next().text("生成模板成功！正在生成页面......").css('display','inline-block');
@@ -941,7 +944,7 @@ function ajax2uploadProStu(thisObj,Name,formData,Studio,Cate,Img,type){
                 $.ajax({
                     processData : false,
                     contentType : false,
-                    url : basicUrl+'/admin/product/add',
+                    url : URL,
                     async : true,
                     cache : true,
                     type : 'POST',

@@ -16,7 +16,7 @@ $(function () {
                 if(json['cartoon'+i] == 'undefined'){
                     break;
                 }
-                $('#content').append('<img src="'+basicUrl+json['cartoon'+i]+'">')
+                $('#content').append('<img src="'+basicUrl+json['cartoon'+i]+'">');
                 i++;
             }
         }

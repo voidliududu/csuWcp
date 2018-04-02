@@ -4,7 +4,8 @@
 $(function(){
     //主页的齿轮旋转
     rotateGear();
-
+    //获取横幅
+    getBanner();
     //回主导航页
     $('#r_index').on('click',function () {
         showIndex();
@@ -44,7 +45,9 @@ $(function(){
         },1000);
 
     });
-
+    $('.l_b_img').on('click',function () {
+        link2pro($(this));
+    });
     //二级页面点击触发事件
     $('.nav').unbind('click').on('click',function () {
         var id = $(this).attr('id').split('r_')[1];

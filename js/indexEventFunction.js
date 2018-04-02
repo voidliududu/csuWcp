@@ -206,8 +206,8 @@ function getTemplate(id,cate,template) {
             url ='../wdy/wdy3.php?id='+id;
         }
     }
-    else if(cate == nameZN_forPHP.wdy) {
-        url = '../wzz/web/viewer.php?id=' + id;
+    else if(cate == nameZN_forPHP.wzz) {
+        url = '../wzz/wzz.php?id=' + id;
     }
     return url;
 }
